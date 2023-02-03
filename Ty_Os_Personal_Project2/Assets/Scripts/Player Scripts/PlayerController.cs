@@ -4,13 +4,14 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    private CharacterController characterController;
+    private CharacterController cC;
     public bool isRunning;
     public float footstepSpeed;
+
     // Start is called before the first frame update
     void Start()
     {
-        characterController = GetComponent<CharacterController>();
+        cC = GetComponent<CharacterController>();
     }
 
     // Update is called once per frame
