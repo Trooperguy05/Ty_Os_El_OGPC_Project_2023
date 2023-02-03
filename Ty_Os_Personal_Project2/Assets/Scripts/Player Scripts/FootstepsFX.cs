@@ -8,6 +8,7 @@ public class FootstepsFX : MonoBehaviour
     private FMOD.Studio.EventInstance footsteps;
     private FMOD.Studio.EventInstance runningFootsteps;
     private PlayerController playerController;
+    private PlayerMovement playerMovement;
     private float timer = 0.0f;
     [Header("Event References")]
     public FMODUnity.EventReference footstepsReference;
@@ -17,21 +18,22 @@ public class FootstepsFX : MonoBehaviour
     // Get Stuff \\
     {
         playerController = GetComponent<PlayerController>();
+        playerMovement = GetComponent<PlayerMovement>();
     }
 
     // Update is called once per frame
     void Update()
     {   
         // Time running footsteps \\
-        if (playerController.isRunning) {
-            if (timer > playerController.footstepSpeed) {
+        if (playerMovement.isRunning && playerMovement.grounded) {
+            if (timer > playerMovement.footstepSpeed) {
                 PlayFootstep(true);
                 timer = 0.0f;
             }
         }
         // Time walking footsteps \\
-        else {
-            if (timer > playerController.footstepSpeed) {
+        else if (!playerMovement.isRunning && playerMovement.grounded) {
+            if (timer > playerMovement.footstepSpeed) {
                 PlayFootstep(false);
                 timer = 0.0f;
             }
