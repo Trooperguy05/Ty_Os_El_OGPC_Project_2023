@@ -10,6 +10,8 @@ public class PlayerMovement : MonoBehaviour
     [Header("Movement")]
     public float moveSpeed;
     public Transform orientation;
+    public bool isRunning;
+    public float footstepSpeed;
     private float hI;
     private float vI;
     private Vector3 moveDir;
@@ -31,6 +33,7 @@ public class PlayerMovement : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        footstepSpeed = 1.0f;
     }
 
     // Update is called once per frame
