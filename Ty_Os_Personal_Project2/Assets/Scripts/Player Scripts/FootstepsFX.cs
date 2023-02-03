@@ -7,7 +7,6 @@ public class FootstepsFX : MonoBehaviour
 {
     private FMOD.Studio.EventInstance footsteps;
     private FMOD.Studio.EventInstance runningFootsteps;
-    private PlayerController playerController;
     private PlayerMovement playerMovement;
     private float timer = 0.0f;
     [Header("Event References")]
@@ -17,7 +16,6 @@ public class FootstepsFX : MonoBehaviour
     void Start()
     // Get Stuff \\
     {
-        playerController = GetComponent<PlayerController>();
         playerMovement = GetComponent<PlayerMovement>();
     }
 

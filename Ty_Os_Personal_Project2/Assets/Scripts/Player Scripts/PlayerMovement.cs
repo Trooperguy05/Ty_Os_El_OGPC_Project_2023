@@ -6,12 +6,14 @@ public class PlayerMovement : MonoBehaviour
 {
     [Header("Keybinds")]
     public KeyCode jumpKey = KeyCode.Space;
+    public KeyCode runKey = KeyCode.LeftShift;
 
     [Header("Movement")]
     public float moveSpeed;
     public Transform orientation;
-    public bool isRunning;
     public float footstepSpeed;
+    public bool isRunning;
+    [SerializeField] private bool ableToRun = true;
     private float hI;
     private float vI;
     private Vector3 moveDir;
@@ -51,12 +53,24 @@ public class PlayerMovement : MonoBehaviour
     }
 
     void FixedUpdate() {
-        movePlayer();
+        movePlayer(isRunning);
     }
 
     private void input() {
         hI = Input.GetAxisRaw("Horizontal");
         vI = Input.GetAxisRaw("Vertical");
+
+        if (Input.GetKeyDown(runKey)) {
+            if (isRunning) {
+                footstepSpeed = 1.0f;
+                isRunning = false;
+            }
+            else if (!isRunning && ableToRun) {
+                footstepSpeed = 0.5f;
+                isRunning = true;
+                StartCoroutine(runningStamina(2.0f));
+            }
+        }
 
         if (Input.GetKey(jumpKey) && canJump && grounded) {
             canJump = false;
@@ -65,10 +79,11 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    private void movePlayer() {
+    private void movePlayer(bool running) {
         moveDir = orientation.forward * vI + orientation.right * hI;
 
-        if (grounded) rb.AddForce(moveDir * moveSpeed * 10f, ForceMode.Force);
+        if (grounded && !running) rb.AddForce(moveDir * moveSpeed * 10f, ForceMode.Force);
+        else if (grounded && running) rb.AddForce(moveDir * moveSpeed * 20f, ForceMode.Force);
         else if (!grounded) {
             rb.AddForce(moveDir * moveSpeed * 10f * airMultiplier, ForceMode.Force);
         }
@@ -90,4 +105,24 @@ public class PlayerMovement : MonoBehaviour
         rb.AddForce(transform.up * jumpForce, ForceMode.Impulse);
     }
     private void resetJump() { canJump = true; }
+
+    public IEnumerator runningStamina(float sprintDuration) {
+        float timer = 0.0f;
+        while (isRunning) {
+            if (timer > sprintDuration) {
+                isRunning = false;
+                ableToRun = false;
+            }
+            else { timer += Time.deltaTime; }
+        }
+        StartCoroutine(runningCooldown(3.0f));
+        yield return null;
+    }
+
+    public IEnumerator runningCooldown(float sprintCooldown) {
+        float timer = 0.0f;
+        while (timer < sprintCooldown) timer += Time.deltaTime;
+        ableToRun = true;
+        yield return null;
+    }
 }
