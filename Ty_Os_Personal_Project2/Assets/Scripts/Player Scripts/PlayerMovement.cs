@@ -13,7 +13,7 @@ public class PlayerMovement : MonoBehaviour
     public Transform orientation;
     public float footstepSpeed;
     public bool isRunning;
-    [SerializeField] private bool ableToRun = true;
+    public bool ableToRun;
     private float hI;
     private float vI;
     private Vector3 moveDir;
@@ -36,6 +36,7 @@ public class PlayerMovement : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         footstepSpeed = 1.0f;
+        ableToRun = true;
     }
 
     // Update is called once per frame
@@ -65,7 +66,7 @@ public class PlayerMovement : MonoBehaviour
                 footstepSpeed = 1.0f;
                 isRunning = false;
             }
-            else if (!isRunning && ableToRun) {
+            else if (ableToRun) {
                 footstepSpeed = 0.5f;
                 isRunning = true;
                 StartCoroutine(runningStamina(2.0f));
