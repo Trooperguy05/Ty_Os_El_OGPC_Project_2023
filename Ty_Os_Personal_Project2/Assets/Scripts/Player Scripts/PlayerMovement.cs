@@ -13,7 +13,8 @@ public class PlayerMovement : MonoBehaviour
     public Transform orientation;
     public float footstepSpeed;
     public bool isRunning;
-    public bool ableToRun;
+    public bool isMoving;
+    [SerializeField] private bool ableToRun;
     private float hI;
     private float vI;
     private Vector3 moveDir;
@@ -64,13 +65,21 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetKeyDown(runKey)) {
             if (isRunning) {
                 footstepSpeed = 1.0f;
+                StopCoroutine(runningStamina(2.0f));
                 isRunning = false;
+                StartCoroutine(runningCooldown(3.0f));
             }
             else if (ableToRun) {
                 footstepSpeed = 0.5f;
-                isRunning = true;
                 StartCoroutine(runningStamina(2.0f));
             }
+        }
+        // Stop running and start cooldown if player stops moving \\
+        if (isRunning && !isMoving) {
+            footstepSpeed = 1.0f;
+            StopCoroutine(runningStamina(2.0f));
+            isRunning = false;
+            StartCoroutine(runningCooldown(3.0f));
         }
 
         if (Input.GetKey(jumpKey) && canJump && grounded) {
@@ -82,6 +91,10 @@ public class PlayerMovement : MonoBehaviour
 
     private void movePlayer(bool running) {
         moveDir = orientation.forward * vI + orientation.right * hI;
+        
+        // Checks if player is moving \\
+        if (rb.velocity == new Vector3(0, 0, 0)) isMoving = false;
+        else isMoving = true;
 
         if (grounded && !running) rb.AddForce(moveDir * moveSpeed * 10f, ForceMode.Force);
         else if (grounded && running) rb.AddForce(moveDir * moveSpeed * 20f, ForceMode.Force);
@@ -107,23 +120,34 @@ public class PlayerMovement : MonoBehaviour
     }
     private void resetJump() { canJump = true; }
 
+    // Sprinting \\
     public IEnumerator runningStamina(float sprintDuration) {
+        // Change bools \\
+        ableToRun = false;
+        isRunning = true;
+        // allow player to sprint for "sprintDuration" \\
         float timer = 0.0f;
         while (isRunning) {
             if (timer > sprintDuration) {
                 isRunning = false;
                 ableToRun = false;
+                footstepSpeed = 1.0f;
             }
             else { timer += Time.deltaTime; }
+            yield return null;
         }
+        // Start running cooldown \\
         StartCoroutine(runningCooldown(3.0f));
-        yield return null;
     }
 
+    // sprint cooldown \\
     public IEnumerator runningCooldown(float sprintCooldown) {
         float timer = 0.0f;
-        while (timer < sprintCooldown) timer += Time.deltaTime;
+        while (timer < sprintCooldown) {
+            timer += Time.deltaTime;
+            yield return null;
+        }
+        // Change bool \\
         ableToRun = true;
-        yield return null;
     }
 }

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 
-public class FootstepsFX : MonoBehaviour
+public class MovementSFX : MonoBehaviour
 {
     private FMOD.Studio.EventInstance footsteps;
     private FMOD.Studio.EventInstance runningFootsteps;
@@ -23,14 +23,14 @@ public class FootstepsFX : MonoBehaviour
     void Update()
     {   
         // Time running footsteps \\
-        if (playerMovement.isRunning && playerMovement.grounded) {
+        if (playerMovement.isRunning && playerMovement.grounded && playerMovement.isMoving) {
             if (timer > playerMovement.footstepSpeed) {
                 PlayFootstep(true);
                 timer = 0.0f;
             }
         }
         // Time walking footsteps \\
-        else if (!playerMovement.isRunning && playerMovement.grounded) {
+        else if (playerMovement.grounded && playerMovement.isMoving) {
             if (timer > playerMovement.footstepSpeed) {
                 PlayFootstep(false);
                 timer = 0.0f;
