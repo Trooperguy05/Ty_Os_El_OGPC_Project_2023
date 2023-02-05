@@ -36,7 +36,7 @@ public class PlayerMovement : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-        footstepSpeed = 1.0f;
+        footstepSpeed = 0.5f;
         ableToRun = true;
     }
 
@@ -64,22 +64,22 @@ public class PlayerMovement : MonoBehaviour
 
         if (Input.GetKeyDown(runKey)) {
             if (isRunning) {
-                footstepSpeed = 1.0f;
-                StopCoroutine(runningStamina(2.0f));
+                footstepSpeed = 0.5f;
+                StopCoroutine(runningStamina(5.0f));
                 isRunning = false;
-                StartCoroutine(runningCooldown(3.0f));
+                StartCoroutine(runningCooldown(7.0f));
             }
             else if (ableToRun) {
-                footstepSpeed = 0.5f;
-                StartCoroutine(runningStamina(2.0f));
+                footstepSpeed = 0.3f;
+                StartCoroutine(runningStamina(5.0f));
             }
         }
         // Stop running and start cooldown if player stops moving \\
         if (isRunning && !isMoving) {
-            footstepSpeed = 1.0f;
-            StopCoroutine(runningStamina(2.0f));
+            footstepSpeed = 0.5f;
+            StopCoroutine(runningStamina(5.0f));
             isRunning = false;
-            StartCoroutine(runningCooldown(3.0f));
+            StartCoroutine(runningCooldown(7.0f));
         }
 
         if (Input.GetKey(jumpKey) && canJump && grounded) {
@@ -131,13 +131,13 @@ public class PlayerMovement : MonoBehaviour
             if (timer > sprintDuration) {
                 isRunning = false;
                 ableToRun = false;
-                footstepSpeed = 1.0f;
+                footstepSpeed = 0.5f;
             }
             else { timer += Time.deltaTime; }
             yield return null;
         }
         // Start running cooldown \\
-        StartCoroutine(runningCooldown(3.0f));
+        StartCoroutine(runningCooldown(7.0f));
     }
 
     // sprint cooldown \\
