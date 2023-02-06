@@ -15,7 +15,7 @@ MonoBehaviour:
   Path: Ty_Os_Personal_Project2 - Audio/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638111597571155104
+  lastModified: 638112169119311746
   FileSizes:
   - Name: Desktop
     Value: 862
@@ -44,7 +44,7 @@ MonoBehaviour:
   - {fileID: 2208223744993099090}
   StringsBanks:
   - {fileID: -527039166719169522}
-  cacheTime: 638111597571155104
+  cacheTime: 638112169119311746
   cacheVersion: 131601
 --- !u!114 &1964985642378486319
 MonoBehaviour:
@@ -72,7 +72,7 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 310
+  Length: 300
 --- !u!114 &2208223744993099090
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -88,10 +88,10 @@ MonoBehaviour:
   Path: Ty_Os_Personal_Project2 - Audio/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638111597571135272
+  lastModified: 638112169119282631
   FileSizes:
   - Name: Desktop
-    Value: 60800
+    Value: 85664
   Exists: 1
 --- !u!114 &5598959316083190594
 MonoBehaviour:
@@ -146,4 +146,4 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 627
+  Length: 300
