@@ -15,9 +15,9 @@ MonoBehaviour:
   Path: Ty_Os_Personal_Project2 - Audio/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638112697653233856
+  lastModified: 638112704893521969
   FileSizes:
-  - Name: Desktop
+  - Name: 
     Value: 862
   Exists: 1
 --- !u!114 &11400000
@@ -44,7 +44,7 @@ MonoBehaviour:
   - {fileID: 2208223744993099090}
   StringsBanks:
   - {fileID: -527039166719169522}
-  cacheTime: 638112697653233856
+  cacheTime: 638112704893521969
   cacheVersion: 131601
 --- !u!114 &1964985642378486319
 MonoBehaviour:
@@ -88,10 +88,8 @@ MonoBehaviour:
   Path: Ty_Os_Personal_Project2 - Audio/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638112697653203926
-  FileSizes:
-  - Name: Desktop
-    Value: 85664
+  lastModified: 638112704893452141
+  FileSizes: []
   Exists: 1
 --- !u!114 &5598959316083190594
 MonoBehaviour:
