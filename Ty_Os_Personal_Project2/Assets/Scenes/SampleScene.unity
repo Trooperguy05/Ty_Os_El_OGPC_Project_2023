@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.18028334, g: 0.22571328, b: 0.3069217, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -263,6 +263,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   referencePlaceholder1:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  referencePlaceholder2:
     Guid:
       Data1: 0
       Data2: 0
@@ -525,6 +532,7 @@ GameObject:
   - component: {fileID: 2126236220}
   - component: {fileID: 2126236214}
   - component: {fileID: 2126236221}
+  - component: {fileID: 2126236219}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -627,6 +635,37 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2126236219
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2126236213}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aeb598b94b054b643a4725c5f2ef9a81, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  jumpKey: 32
+  runKey: 304
+  crouchKey: 306
+  walkSpeed: 7
+  runSpeed: 14
+  orientation: {fileID: 1703436284}
+  jumpForce: 10
+  jumpCooldown: 1
+  airMultiplier: 0.4
+  canJump: 1
+  crouchSpeed: 3.5
+  crouchYScale: 0.5
+  playerHeight: 2
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 64
+  groundDrag: 10
+  grounded: 0
+  state: 0
 --- !u!114 &2126236220
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -660,7 +699,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2126236213}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9f12c6f824ff03d4baa542896b75678b, type: 3}
   m_Name: 
