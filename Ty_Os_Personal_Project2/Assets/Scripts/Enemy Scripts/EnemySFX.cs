@@ -5,11 +5,11 @@ using UnityEngine;
 public class EnemySFX : MonoBehaviour
 {
     [Header("Event References")]
-    public FMODUnity.EventReference referencePlaceholder1;
-    public FMODUnity.EventReference referencePlaceholder2;
+    public FMODUnity.EventReference runningFootstepsReference;
+    public FMODUnity.EventReference walkingFootstepsReference;
 
-    private FMOD.Studio.EventInstance instancePlaceholder1;
-    private FMOD.Studio.EventInstance instancePlaceholder2;
+    private FMOD.Studio.EventInstance runningFootsteps;
+    private FMOD.Studio.EventInstance walkingFootsteps;
     private float timer;
     // Start is called before the first frame update
     void Start()
@@ -39,17 +39,17 @@ public class EnemySFX : MonoBehaviour
     public void playEnemyFootsteps(bool isRunning) {
         // Play running footsteps if running \\
         if (isRunning) {
-            instancePlaceholder1 = FMODUnity.RuntimeManager.CreateInstance(referencePlaceholder1);
-            instancePlaceholder1.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(gameObject));
-            instancePlaceholder1.start();
-            instancePlaceholder1.release();
+            runningFootsteps = FMODUnity.RuntimeManager.CreateInstance(runningFootstepsReference);
+            runningFootsteps.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(gameObject));
+            runningFootsteps.start();
+            runningFootsteps.release();
         }
         // Play walking footsteps if not running \\
         else {
-            instancePlaceholder2 = FMODUnity.RuntimeManager.CreateInstance(referencePlaceholder2);
-            instancePlaceholder2.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(gameObject));
-            instancePlaceholder2.start();
-            instancePlaceholder2.release();
+            walkingFootsteps = FMODUnity.RuntimeManager.CreateInstance(walkingFootstepsReference);
+            walkingFootsteps.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(gameObject));
+            walkingFootsteps.start();
+            walkingFootsteps.release();
         }
     }
 }
