@@ -40,6 +40,7 @@ public class PlayerMovementTest : MonoBehaviour
     public PlayerState state;
     public enum PlayerState {
         none,
+        stand,
         walk,
         run,
         crouch,
@@ -113,9 +114,12 @@ public class PlayerMovementTest : MonoBehaviour
                 moveSpeed = runSpeed;
             }
             // walking
-            else if (grounded) {
+            else if (grounded && (vI != 0 || hI != 0)) {
                 state = PlayerState.walk;
                 moveSpeed = walkSpeed;
+            }
+            else if (grounded) {
+                state = PlayerState.stand;
             }
             // air
             else {

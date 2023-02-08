@@ -10,6 +10,8 @@ public class MovementSFX : MonoBehaviour
     private PlayerMovement playerMovement;
     private PlayerMovementTest playerMovementTest;
     private float timer = 0.0f;
+    [SerializeField] private float runningFootstepsSpeed = 0.3f;
+    [SerializeField] private float footstepsSpeed = 0.5f;
     [Header("Event References")]
     public FMODUnity.EventReference footstepsReference;
     public FMODUnity.EventReference runningFootstepsReference;
@@ -25,15 +27,15 @@ public class MovementSFX : MonoBehaviour
     void Update()
     {   
         // Time running footsteps \\
-        if (playerMovement.isRunning && playerMovement.grounded && playerMovement.isMoving) {
-            if (timer > playerMovement.footstepSpeed) {
+        if (playerMovementTest.state == PlayerMovementTest.PlayerState.run) {
+            if (timer > runningFootstepsSpeed) {
                 PlayFootstep(true);
                 timer = 0.0f;
             }
         }
         // Time walking footsteps \\
-        else if (/*playerMovement.grounded && playerMovement.isMoving && */playerMovementTest.state == PlayerMovementTest.PlayerState.walk) {
-            if (timer > /*playerMovement.footstepSpeed*/ 1.0f) {
+        else if (playerMovementTest.state == PlayerMovementTest.PlayerState.walk) {
+            if (timer > footstepsSpeed) {
                 PlayFootstep(false);
                 timer = 0.0f;
             }
