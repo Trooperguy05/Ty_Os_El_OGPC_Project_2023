@@ -13,7 +13,7 @@ public class Stamina : MonoBehaviour
     public float staminaConsumeRate;
     public float staminaRechargeRate;
     public float staminaRechargeDelay;
-    [SerializeField] private float currentStamina;
+    public float currentStamina;
 
     [Header("Test Vars")]
     public bool isDepleting = false;

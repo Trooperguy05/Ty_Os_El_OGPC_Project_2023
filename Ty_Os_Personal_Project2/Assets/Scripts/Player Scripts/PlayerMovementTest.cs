@@ -119,7 +119,7 @@ public class PlayerMovementTest : MonoBehaviour
             /// sprinting
             if (grounded && Input.GetKeyDown(runKey)) {
                 // toggle on running
-                if (state != PlayerState.run) {
+                if (state != PlayerState.run && playerStamina.currentStamina > 0) {
                     state = PlayerState.run;
                     moveSpeed = runSpeed;
                     playerStamina.startRunning();
