@@ -19,6 +19,9 @@ public class PlayerMovementTest : MonoBehaviour
     private Vector3 moveDir;
     private Rigidbody rb;
 
+    [Header("Stamina")]
+    private Stamina playerStamina;
+
     [Header("Jumping")]
     public float jumpForce;
     public float jumpCooldown;
@@ -29,6 +32,10 @@ public class PlayerMovementTest : MonoBehaviour
     public float crouchSpeed;
     public float crouchYScale;
     private float startYScale;
+
+    [Header("Slope Vars")]
+    public float maxAngle;
+    private RaycastHit slopeHit;
 
     [Header("Ground Check")]
     public float playerHeight;
@@ -51,6 +58,7 @@ public class PlayerMovementTest : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        playerStamina = GetComponent<Stamina>();
 
         startYScale = transform.localScale.y;
     }
@@ -108,22 +116,49 @@ public class PlayerMovementTest : MonoBehaviour
         }
         // when not crouching
         else {
-            // sprinting
-            if (grounded && Input.GetKey(runKey)) {
-                state = PlayerState.run;
-                moveSpeed = runSpeed;
+            /// sprinting
+            if (grounded && Input.GetKeyDown(runKey)) {
+                // toggle on running
+                if (state != PlayerState.run) {
+                    state = PlayerState.run;
+                    moveSpeed = runSpeed;
+                    playerStamina.startRunning();
+                }
+                // toggle off running
+                else if (state == PlayerState.run) {
+                    state = PlayerState.walk;
+                    moveSpeed = walkSpeed;
+                    playerStamina.stopRunning();
+                }
             }
-            // walking
-            else if (grounded && (vI != 0 || hI != 0)) {
-                state = PlayerState.walk;
-                moveSpeed = walkSpeed;
+            /// if player is running
+            else if (state == PlayerState.run) {
+                // standing
+                if (grounded && (vI == 0 && hI == 0)) {
+                    state = PlayerState.stand;
+                    playerStamina.stopRunning();
+                }
+                // air
+                else if (!grounded) {
+                    state = PlayerState.air;
+                    playerStamina.stopRunning();
+                }
             }
-            else if (grounded) {
-                state = PlayerState.stand;
-            }
-            // air
-            else {
-                state = PlayerState.air;
+            /// if player is not running
+            if (state != PlayerState.run) {
+                /// walking
+                if (grounded && (vI != 0 || hI != 0)) {
+                    state = PlayerState.walk;
+                    moveSpeed = walkSpeed;
+                }
+                /// standing
+                else if (grounded) {
+                    state = PlayerState.stand;
+                }
+                /// air
+                else {
+                    state = PlayerState.air;
+                }
             }
         }
     }
@@ -132,17 +167,36 @@ public class PlayerMovementTest : MonoBehaviour
     private void movePlayer() {
         moveDir = orientation.forward * vI + orientation.right * hI;
 
-        if (grounded) rb.AddForce(moveDir * moveSpeed * 10f, ForceMode.Force);
-        else rb.AddForce(moveDir * moveSpeed * 10f * airMultiplier, ForceMode.Force);
+        // if on a slope
+        if (onSlope()) {
+            rb.AddForce(getSlopeMoveDirection() * moveSpeed * 10f, ForceMode.Force);
+        }
+        // if not on slope
+        else {
+            if (grounded) rb.AddForce(moveDir * moveSpeed * 10f, ForceMode.Force);
+            else rb.AddForce(moveDir * moveSpeed * 10f * airMultiplier, ForceMode.Force);
+        }
+
+        // turn off gravity on a slope
+        rb.useGravity = !onSlope();
     }
     
     // method that limits the player's speed
     private void speedControl() {
-        Vector3 flatVel = new Vector3(rb.velocity.x, 0f, rb.velocity.z);
+        // limit speed on slope
+        if (onSlope()) {
+            if (rb.velocity.magnitude > moveSpeed) {
+                rb.velocity = rb.velocity.normalized * moveSpeed;
+            }
+        }
+        // limit speed on ground and air
+        else {
+            Vector3 flatVel = new Vector3(rb.velocity.x, 0f, rb.velocity.z);
 
-        if (flatVel.magnitude > moveSpeed) {
-            Vector3 limitedVel = flatVel.normalized * moveSpeed;
-            rb.velocity = new Vector3(limitedVel.x, rb.velocity.y, limitedVel.z);
+            if (flatVel.magnitude > moveSpeed) {
+                Vector3 limitedVel = flatVel.normalized * moveSpeed;
+                rb.velocity = new Vector3(limitedVel.x, rb.velocity.y, limitedVel.z);
+            }
         }
     }
 
@@ -155,4 +209,18 @@ public class PlayerMovementTest : MonoBehaviour
     }
     // method that resets ability to jump
     private void resetJump() { canJump = true; }
+
+    // method that checks if player is on a slope
+    private bool onSlope() {
+        if (Physics.Raycast(transform.position, Vector3.down, out slopeHit, playerHeight * 0.5f + 0.3f)) {
+            float angle = Vector3.Angle(Vector3.up, slopeHit.normal);
+            return angle < maxAngle && angle != 0;
+        }
+        return false;
+    }
+
+    // method that gets a move direction based on slope angle
+    private Vector3 getSlopeMoveDirection() {
+        return Vector3.ProjectOnPlane(moveDir, slopeHit.normal).normalized;
+    }
 }
