@@ -19,12 +19,16 @@ public class Stamina : MonoBehaviour
     public bool isDepleting = false;
     public bool isRegenerating = false;
 
+    [Header("MovementSFX")]
+    private MovementSFX movementSFX;
+
     // set values on slider
     void Awake()
     {
         currentStamina = maxStamina;
         staminaSlider.maxValue = maxStamina;
         staminaSlider.value = maxStamina;
+        movementSFX = GetComponent<MovementSFX>();
     }
 
     // method that depletes stamina
@@ -36,6 +40,7 @@ public class Stamina : MonoBehaviour
                 currentStamina -= staminaConsumeRate;
                 updateStaminaUI();
                 yield return new WaitForSeconds(0.1f);
+                if (currentStamina < 30) movementSFX.startHeavyBreathing(); 
 
             }
             isDepleting = false;
@@ -55,6 +60,7 @@ public class Stamina : MonoBehaviour
             updateStaminaUI();
             yield return new WaitForSeconds(0.1f);
         }
+        movementSFX.stopHeavyBreathing();
         isRegenerating = false;
     }
 

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028334, g: 0.22571328, b: 0.3069217, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1180,6 +1180,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   runningFootstepsSpeed: 0.3
   footstepsSpeed: 0.5
+  isBreathing: 0
   footstepsReference:
     Guid:
       Data1: -956735714
@@ -1194,6 +1195,13 @@ MonoBehaviour:
       Data3: -1645430338
       Data4: -1735626454
     Path: event:/RunningFootsteps
+  heavyBreathingReference:
+    Guid:
+      Data1: 1289914647
+      Data2: 1215308159
+      Data3: -246926705
+      Data4: -362544657
+    Path: event:/HeavyBreathing
 --- !u!114 &2126236221
 MonoBehaviour:
   m_ObjectHideFlags: 0
