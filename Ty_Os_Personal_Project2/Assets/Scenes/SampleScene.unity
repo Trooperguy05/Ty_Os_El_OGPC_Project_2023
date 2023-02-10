@@ -1126,6 +1126,7 @@ GameObject:
   - component: {fileID: 2126236216}
   - component: {fileID: 2126236215}
   - component: {fileID: 2126236220}
+  - component: {fileID: 2126236223}
   - component: {fileID: 2126236214}
   - component: {fileID: 2126236221}
   - component: {fileID: 2126236219}
@@ -1293,13 +1294,7 @@ MonoBehaviour:
       Data3: -1645430338
       Data4: -1735626454
     Path: event:/RunningFootsteps
-  heavyBreathingReference:
-    Guid:
-      Data1: 1289914647
-      Data2: 1215308159
-      Data3: -246926705
-      Data4: -362544657
-    Path: event:/HeavyBreathing
+  heavyBreathingEmitter: {fileID: 2126236223}
 --- !u!114 &2126236221
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1350,6 +1345,38 @@ MonoBehaviour:
   currentStamina: 0
   isDepleting: 0
   isRegenerating: 0
+--- !u!114 &2126236223
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2126236213}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 1289914647
+      Data2: 1215308159
+      Data3: -246926705
+      Data4: -362544657
+    Path: event:/HeavyBreathing
+  Event: 
+  PlayEvent: 0
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params:
+  - Name: Stamina
+    Value: 0
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &2144237684
 GameObject:
   m_ObjectHideFlags: 0

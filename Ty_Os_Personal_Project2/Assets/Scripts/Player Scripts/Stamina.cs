@@ -39,8 +39,8 @@ public class Stamina : MonoBehaviour
             while (currentStamina > 0) {
                 currentStamina -= staminaConsumeRate;
                 updateStaminaUI();
-                yield return new WaitForSeconds(0.1f);
                 if (currentStamina < 30) movementSFX.startHeavyBreathing(); 
+                yield return new WaitForSeconds(0.1f);
 
             }
             isDepleting = false;
@@ -58,9 +58,9 @@ public class Stamina : MonoBehaviour
         while (currentStamina < maxStamina) {
             currentStamina += staminaRechargeRate;
             updateStaminaUI();
+            movementSFX.heavyBreathingEmitter.SetParameter("Stamina", currentStamina); 
             yield return new WaitForSeconds(0.1f);
         }
-        movementSFX.stopHeavyBreathing();
         isRegenerating = false;
     }
 

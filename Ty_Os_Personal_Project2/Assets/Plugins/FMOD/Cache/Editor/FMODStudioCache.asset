@@ -15,7 +15,7 @@ MonoBehaviour:
   Path: Ty_Os_Personal_Project2 - Audio/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638115498823609376
+  lastModified: 638115666873101600
   FileSizes:
   - Name: 
     Value: 956
@@ -45,7 +45,7 @@ MonoBehaviour:
   - {fileID: 2208223744993099090}
   StringsBanks:
   - {fileID: -527039166719169522}
-  cacheTime: 638115498823609376
+  cacheTime: 638115666873101600
   cacheVersion: 131601
 --- !u!114 &1569701885451422544
 MonoBehaviour:
@@ -62,7 +62,7 @@ MonoBehaviour:
   Name: Stamina
   StudioPath: 
   Min: 0
-  Max: 1
+  Max: 100
   Default: 0
   ID:
     data1: 4088995819
@@ -113,7 +113,7 @@ MonoBehaviour:
   Path: Ty_Os_Personal_Project2 - Audio/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638115498823529654
+  lastModified: 638115666873056592
   FileSizes: []
   Exists: 1
 --- !u!114 &4784980388548172503
@@ -136,14 +136,14 @@ MonoBehaviour:
     Data4: -362544657
   Banks:
   - {fileID: 2208223744993099090}
-  IsStream: 1
+  IsStream: 0
   Is3D: 0
   IsOneShot: 0
   Parameters:
   - {fileID: 1569701885451422544}
   MinDistance: 1
   MaxDistance: 20
-  Length: 102857
+  Length: 19000
 --- !u!114 &5598959316083190594
 MonoBehaviour:
   m_ObjectHideFlags: 0
