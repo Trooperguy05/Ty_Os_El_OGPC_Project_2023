@@ -17,10 +17,8 @@ public class NodeManager : MonoBehaviour
     public float nodeSpacing;
     private Vector2 nodePlacement;
 
-    void Update() {
-        if (Input.GetKeyDown(KeyCode.O)) {
-            createGrid();
-        }
+    void Start() {
+        createGrid();
     }
     
     // method that creates the node grid for the monster
@@ -31,11 +29,14 @@ public class NodeManager : MonoBehaviour
         nodePlacement = new Vector2((gridOrigin.transform.position.x-gridSize.x)/2, (gridOrigin.transform.position.z+gridSize.y)/2);
 
         // instantiate nodes
+        int count = 0;
         for (int i = 0; i < gridSize.x; i++) {
             for (int j = 0; j < gridSize.y; j++) {
                 if (checkSpacing()) {
                     GameObject foo = Instantiate(nodePrefab, new Vector3(nodePlacement.x, 2f, nodePlacement.y), nodePrefab.transform.rotation);
                     nodesCreated.Add(foo);
+                    foo.name = "Movement Node " + count;
+                    count++;
                 }
                 nodePlacement.x += nodeSpacing * 1.25f;
             }

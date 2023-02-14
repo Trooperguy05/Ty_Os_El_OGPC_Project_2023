@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 
 public interface IState
 {
@@ -42,6 +43,9 @@ public class StandState : IState
 
         // reset
         owner.stopEverything();
+
+        // reset moving
+        owner.moving = false;
     }
 
     public void Execute() { }
@@ -186,6 +190,9 @@ public class MonsterMovement : MonoBehaviour
                 nodeAdjacents.Add(hit.gameObject);
             }
         }
+
+        // remove dupes
+        nodeAdjacents = nodeAdjacents.Distinct().ToList();
     }
 
     // method that checks whether an adjacent node node is closer to its target, and set as next node
@@ -196,12 +203,17 @@ public class MonsterMovement : MonoBehaviour
 
         // check each node in node adjacents
         for (int i = 0; i < nodeAdjacents.Count; i++) {
+            // closest node
             float distance = Vector3.Distance(nodeAdjacents[i].transform.position, target.position);
             if (distance < closestDistance && nodeAdjacents[i] != previousNode) {
                 nodeIndex = i;
                 closestDistance = distance;
+
+                // if target node is closest, set the target to it
+                if (nodeAdjacents[i].name == target.gameObject.name) { break; }
             }
         }
+        // if there is a next node, continue to it
         if (nodeIndex != -1) {
             nextNode = nodeAdjacents[nodeIndex];
         }
@@ -234,7 +246,7 @@ public class MonsterMovement : MonoBehaviour
         currentNode = nextNode;
         nextNode = null;
 
-        // get new adjacent nodes
+        // get adjacent nodes
         getAdjacentNodes();
 
         // set moving to false
