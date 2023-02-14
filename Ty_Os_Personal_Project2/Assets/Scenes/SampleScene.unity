@@ -123,6 +123,50 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &34542042
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 34542044}
+  - component: {fileID: 34542043}
+  m_Layer: 0
+  m_Name: Sound Radius
+  m_TagString: player sound
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!135 &34542043
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 34542042}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!4 &34542044
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 34542042}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2126236218}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &338350939
 GameObject:
   m_ObjectHideFlags: 0
@@ -921,6 +965,63 @@ MonoBehaviour:
   m_BeforeTransparentBundles: []
   m_BeforeStackBundles: []
   m_AfterStackBundles: []
+--- !u!1 &1187968833
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1187968834}
+  - component: {fileID: 1187968836}
+  - component: {fileID: 1187968835}
+  m_Layer: 0
+  m_Name: Sound Detection
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1187968834
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1187968833}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1439695343}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!135 &1187968835
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1187968833}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 7
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1187968836
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1187968833}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a32faae22407ed349abbbb5ebb8741a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1439695339
 GameObject:
   m_ObjectHideFlags: 0
@@ -1013,7 +1114,8 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 8.32, y: 3, z: 6}
   m_LocalScale: {x: 5, y: 5, z: 5}
-  m_Children: []
+  m_Children:
+  - {fileID: 1187968834}
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1029,6 +1131,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af5bf15cfd2a12546afd23b3f3562e05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isWandering: 1
+  isChasing: 0
+  isInvestigating: 0
   moving: 0
   reachedTarget: 0
   speed: 1
@@ -1258,6 +1363,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82050ed1c87e5b345a0dfa6b0374a9c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tagList:
+  - player
+  - ground
+  - enemy detection
+  - player sound
   nodeList: []
   nodePrefab: {fileID: 8375656641620617827, guid: e2d98dbfe8c9ed7428cf6baaba6cd9eb, type: 3}
   monster: {fileID: 1439695339}
@@ -1293,9 +1403,9 @@ GameObject:
   - component: {fileID: 2126236220}
   - component: {fileID: 2126236223}
   - component: {fileID: 2126236214}
-  - component: {fileID: 2126236221}
   - component: {fileID: 2126236219}
   - component: {fileID: 2126236222}
+  - component: {fileID: 2126236221}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -1395,6 +1505,7 @@ Transform:
   m_Children:
   - {fileID: 1703436284}
   - {fileID: 418557361}
+  - {fileID: 34542044}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1467,29 +1578,15 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2126236213}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9f12c6f824ff03d4baa542896b75678b, type: 3}
+  m_Script: {fileID: 11500000, guid: 001f673c37ed25e479328f7c4104a35b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jumpKey: 32
-  runKey: 304
-  moveSpeed: 7
-  orientation: {fileID: 1703436284}
-  footstepSpeed: 0
-  isRunning: 0
-  isMoving: 0
-  ableToRun: 1
-  jumpForce: 10
-  jumpCooldown: 1
-  airMultiplier: 0.4
-  canJump: 1
-  playerHeight: 2
-  groundLayer:
-    serializedVersion: 2
-    m_Bits: 64
-  groundDrag: 10
-  grounded: 0
+  soundCollider: {fileID: 34542043}
+  walkRadius: 1
+  runRadius: 5
+  crouchRadius: 0.5
 --- !u!114 &2126236222
 MonoBehaviour:
   m_ObjectHideFlags: 0

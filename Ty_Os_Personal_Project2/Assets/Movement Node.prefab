@@ -9,7 +9,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8375656641620617826}
-  - component: {fileID: 8375656641620617829}
   - component: {fileID: -5269037207499094390}
   m_Layer: 0
   m_Name: Movement Node
@@ -32,20 +31,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8375656641620617829
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8375656641620617827}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9b3c43434f9bab54c97bf5cac20b16bf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  coordinates: {x: 0, y: 0}
-  adjacentNodes: []
 --- !u!135 &-5269037207499094390
 SphereCollider:
   m_ObjectHideFlags: 0

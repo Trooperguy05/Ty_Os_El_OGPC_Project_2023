@@ -3,7 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class NodeManager : MonoBehaviour
-{
+{   
+    [Header("Tag List")]
+    public List<string> tagList = new List<string>();
+
     [Header("Node List")]
     public List<GameObject> nodeList = new List<GameObject>();
 
@@ -17,7 +20,7 @@ public class NodeManager : MonoBehaviour
     public float nodeSpacing;
     private Vector2 nodePlacement;
 
-    void Start() {
+    void Awake() {
         createGrid();
     }
     
@@ -55,7 +58,7 @@ public class NodeManager : MonoBehaviour
         Collider[] hitColliders = Physics.OverlapSphere(nodePlacement, nodeSpacing);
 
         foreach(Collider hit in hitColliders) {
-            if (hit.gameObject.tag != "Player" && hit.gameObject.tag != "ground") {
+            if (tagList.Contains(hit.gameObject.tag)) {
                 return false;
             }
         }

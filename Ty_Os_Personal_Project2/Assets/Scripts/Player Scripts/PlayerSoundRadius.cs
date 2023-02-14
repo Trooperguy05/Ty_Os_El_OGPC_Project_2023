@@ -7,6 +7,11 @@ public class PlayerSoundRadius : MonoBehaviour
     [Header("Sound Radius Collider")]
     public SphereCollider soundCollider;
 
+    [Header("Sound Values")]
+    public float walkValue;
+    public float runValue;
+    public float crouchValue;
+
     [Header("Sound Radi(?)")]
     public float walkRadius;
     public float runRadius;

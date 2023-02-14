@@ -99,6 +99,27 @@ public class WanderState : IState
     public void Exit() { Debug.Log(owner.gameObject.name + " exiting Wander State"); }
 }
 
+// investigate state: go to point closest to sound created by player
+public class InvestigateState : IState
+{
+    MonsterMovement owner;
+
+    public InvestigateState(MonsterMovement owner) { this.owner = owner; }
+
+    public string name { get { return "InvestigateState"; } }
+
+    public void Enter() { 
+        Debug.Log(owner.gameObject.name + " entering Investigate State");
+
+        // reset
+        owner.stopEverything();
+    }
+    
+    public void Execute() { }
+
+    public void Exit() { Debug.Log(owner.gameObject.name + " exiting Investigate State"); }
+}
+
 // enemy transitions between moving to calculating next node
 public class TransitionState : IState
 {
@@ -127,6 +148,11 @@ public class MonsterMovement : MonoBehaviour
 
     MonsterStateMachine stateMachine = new MonsterStateMachine();
 
+    [Header("Action Bools")]
+    public bool isWandering = false;
+    public bool isChasing = false;
+    public bool isInvestigating = false;
+
     [Header("Movement Node Variables")]
     public bool moving = false;
     public bool reachedTarget = false;
@@ -141,10 +167,14 @@ public class MonsterMovement : MonoBehaviour
     [Header("Adjacent Nodes")]
     public List<GameObject> nodeAdjacents = new List<GameObject>();
 
+    [Header("Sound Detection")]
+    private MonsterSoundDetection mSD;
+
     // get stuff
-    void Awake()
+    void Start()
     {
         rb = GetComponent<Rigidbody>();
+        mSD = transform.GetChild(0).GetComponent<MonsterSoundDetection>();
 
         stateMachine.ChangeState(new StandState(this));
 
@@ -154,25 +184,23 @@ public class MonsterMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {   
-        /*
-        if (Input.GetKeyDown(KeyCode.H) && stateMachine.currentState.name != "ChaseState") {
-            stateMachine.ChangeState(new ChaseState(this));
-        }
-        */
-        if (Input.GetKeyDown(KeyCode.G) && stateMachine.currentState.name != "StandState") {
-            stateMachine.ChangeState(new StandState(this));
-        }
-        // state handler
-        /*
-        if (stateMachine.currentState.name != "ChaseState") {
-            stateMachine.ChangeState(new ChaseState(this));
-            StartCoroutine(moveToTarget());
-        }
-        */
+        /// sound detection \\\
+        // pain
 
+        /// state handler \\\
         // wander state
-        if (Input.GetKeyDown(KeyCode.H) && stateMachine.currentState.name != "WanderState") {
+        if (isWandering && stateMachine.currentState.name != "WanderState") {
             stateMachine.ChangeState(new WanderState(this));
+        }
+
+        // investigate state
+        if (isInvestigating && stateMachine.currentState.name != "InvestigateState") {
+            stateMachine.ChangeState(new InvestigateState(this));
+        }
+
+        // stand state
+        if (!(isWandering || isInvestigating || isChasing) && stateMachine.currentState.name != "StandState") {
+            stateMachine.ChangeState(new StandState(this));
         }
     }
 
@@ -218,8 +246,8 @@ public class MonsterMovement : MonoBehaviour
             nextNode = nodeAdjacents[nodeIndex];
         }
         else {
-            stopEverything();
-            stateMachine.ChangeState(new StandState(this));
+            //stopEverything();
+            //stateMachine.ChangeState(new StandState(this));
             reachedTarget = true;
         }
     }
@@ -288,5 +316,8 @@ public class MonsterMovement : MonoBehaviour
     public void stopEverything() {
         CancelInvoke();
         StopAllCoroutines();
+
+        // if the monster was inbetween nodes, reset
+        transform.position = currentNode.transform.position;
     }
 }
