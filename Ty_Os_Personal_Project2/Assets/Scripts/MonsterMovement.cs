@@ -63,11 +63,36 @@ public class ChaseState : IState
 
         // reset
         owner.stopEverything();
+
+        owner.moveToTarget_wrapper();
     }
     
     public void Execute() { }
 
     public void Exit() { Debug.Log(owner.gameObject.name + " exiting Chase State"); }
+}
+
+// wander state: chooses a random node and travels to it
+public class WanderState : IState
+{
+    MonsterMovement owner;
+
+    public WanderState(MonsterMovement owner) { this.owner = owner; }
+
+    public string name { get { return "WanderState"; } }
+
+    public void Enter() { 
+        Debug.Log(owner.gameObject.name + " entering Wander State");
+
+        // reset
+        owner.stopEverything();
+
+        owner.monsterWander_wrapper();
+    }
+    
+    public void Execute() { }
+
+    public void Exit() { Debug.Log(owner.gameObject.name + " exiting Wander State"); }
 }
 
 // enemy transitions between moving to calculating next node
@@ -120,25 +145,46 @@ public class MonsterMovement : MonoBehaviour
         stateMachine.ChangeState(new StandState(this));
 
         speed = Mathf.Pow(2, (-speed+1));
-
-        getAdjacentNodes();
     }
 
     // Update is called once per frame
     void Update()
     {   
+        /*
+        if (Input.GetKeyDown(KeyCode.H) && stateMachine.currentState.name != "ChaseState") {
+            stateMachine.ChangeState(new ChaseState(this));
+        }
+        */
+        if (Input.GetKeyDown(KeyCode.G) && stateMachine.currentState.name != "StandState") {
+            stateMachine.ChangeState(new StandState(this));
+        }
         // state handler
+        /*
         if (stateMachine.currentState.name != "ChaseState") {
             stateMachine.ChangeState(new ChaseState(this));
             StartCoroutine(moveToTarget());
+        }
+        */
+
+        // wander state
+        if (Input.GetKeyDown(KeyCode.H) && stateMachine.currentState.name != "WanderState") {
+            stateMachine.ChangeState(new WanderState(this));
         }
     }
 
     // method that gets the adjacent nodes from current nod
     private void getAdjacentNodes() {
-        MovementNode mN = currentNode.GetComponent<MovementNode>();
-        foreach (GameObject node in mN.adjacentNodes) {
-            nodeAdjacents.Add(node);
+        // reset list
+        for (int i = 0; i < nodeAdjacents.Count; i++) {
+            nodeAdjacents.RemoveAt(0);
+        }
+
+        // get new list
+        Collider[] hitColliders = Physics.OverlapSphere(transform.position, 10f);
+        foreach(Collider hit in hitColliders) {
+            if (hit.gameObject.tag == "movement node") {
+                nodeAdjacents.Add(hit.gameObject);
+            }
         }
     }
 
@@ -195,8 +241,28 @@ public class MonsterMovement : MonoBehaviour
         moving = false;
     }
 
+    // method that handles the monster wandering around the map
+    public IEnumerator monsterWander() {
+        bool wandering = false;
+        while (true) {
+            if (!wandering) {
+                wandering = true;
+                GameObject[] nodes = GameObject.FindGameObjectsWithTag("movement node");
+                target = nodes[Random.Range(0, nodes.Length-1)].transform;
+                moveToTarget_wrapper();
+            }
+            if (reachedTarget) {
+                wandering = false;
+            }
+            yield return null;
+        }
+    }
+    public void monsterWander_wrapper() { StartCoroutine(monsterWander()); }
+
     // method that combines methods to move the monster
     private IEnumerator moveToTarget() {
+        reachedTarget = false;
+        getAdjacentNodes();
         while (!reachedTarget) {
             movingToNode();
             StartCoroutine(moveMonster());
@@ -204,6 +270,7 @@ public class MonsterMovement : MonoBehaviour
             yield return null;
         }
     }
+    public void moveToTarget_wrapper() { StartCoroutine(moveToTarget()); }
 
     // method that stops all invokes and coroutines on the monobehaviour
     public void stopEverything() {

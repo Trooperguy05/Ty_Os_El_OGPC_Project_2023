@@ -10,9 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 8375656641620617826}
   - component: {fileID: 8375656641620617829}
+  - component: {fileID: -5269037207499094390}
   m_Layer: 0
   m_Name: Movement Node
-  m_TagString: Untagged
+  m_TagString: movement node
   m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -45,3 +46,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coordinates: {x: 0, y: 0}
   adjacentNodes: []
+--- !u!135 &-5269037207499094390
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8375656641620617827}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}
