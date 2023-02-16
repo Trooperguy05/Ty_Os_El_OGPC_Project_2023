@@ -1022,6 +1022,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a32faae22407ed349abbbb5ebb8741a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inEarshot: 0
+  soundSensitivity: 5
 --- !u!1 &1439695339
 GameObject:
   m_ObjectHideFlags: 0
@@ -1562,14 +1564,14 @@ MonoBehaviour:
       Data2: 1203426255
       Data3: -818106995
       Data4: -902484276
-    Path: event:/Footsteps
+    Path: event:/Player Footsteps/Footsteps
   runningFootstepsReference:
     Guid:
       Data1: -1363133309
       Data2: 1335119615
       Data3: -1645430338
       Data4: -1735626454
-    Path: event:/RunningFootsteps
+    Path: event:/Player Footsteps/RunningFootsteps
   heavyBreathingEmitter: {fileID: 2126236223}
 --- !u!114 &2126236221
 MonoBehaviour:
@@ -1584,6 +1586,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   soundCollider: {fileID: 34542043}
+  walkValue: 0
+  runValue: 0
+  crouchValue: 0
   walkRadius: 1
   runRadius: 5
   crouchRadius: 0.5
@@ -1626,7 +1631,7 @@ MonoBehaviour:
       Data2: 1215308159
       Data3: -246926705
       Data4: -362544657
-    Path: event:/HeavyBreathing
+    Path: event:/Player Breathing/HeavyBreathing
   Event: 
   PlayEvent: 0
   StopEvent: 0

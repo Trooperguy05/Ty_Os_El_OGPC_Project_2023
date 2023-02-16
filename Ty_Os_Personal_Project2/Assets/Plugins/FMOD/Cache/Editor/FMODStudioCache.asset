@@ -1,53 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-527039166719169522
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/Master.strings.bank
-  m_EditorClassIdentifier: 
-  Path: Ty_Os_Personal_Project2 - Audio/Build/Desktop/Master.strings.bank
-  Name: Master.strings
-  StudioPath: bank:/Master.strings
-  lastModified: 638115498823609376
-  FileSizes:
-  - Name: 
-    Value: 956
-  Exists: 1
---- !u!114 &11400000
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d32cf7c32a3ed8347bac48ef5ed56d82, type: 3}
-  m_Name: FMODStudioCache
-  m_EditorClassIdentifier: 
-  EditorBanks:
-  - {fileID: -527039166719169522}
-  - {fileID: 2208223744993099090}
-  EditorEvents:
-  - {fileID: 8947130775130460858}
-  - {fileID: 1964985642378486319}
-  - {fileID: 5598959316083190594}
-  - {fileID: 4784980388548172503}
-  EditorParameters: []
-  MasterBanks:
-  - {fileID: 2208223744993099090}
-  StringsBanks:
-  - {fileID: -527039166719169522}
-  cacheTime: 638118734699263195
-  cacheVersion: 131601
---- !u!114 &1569701885451422544
+--- !u!114 &-2549073553910492350
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -71,7 +24,53 @@ MonoBehaviour:
   IsGlobal: 0
   Labels: []
   Exists: 1
---- !u!114 &1964985642378486319
+--- !u!114 &-527039166719169522
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.strings.bank
+  m_EditorClassIdentifier: 
+  Path: Ty_Os_Personal_Project2 - Audio/Build/Desktop/Master.strings.bank
+  Name: Master.strings
+  StudioPath: bank:/Master.strings
+  lastModified: 638121356558633523
+  FileSizes:
+  - Name: 
+    Value: 1012
+  Exists: 1
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d32cf7c32a3ed8347bac48ef5ed56d82, type: 3}
+  m_Name: FMODStudioCache
+  m_EditorClassIdentifier: 
+  EditorBanks:
+  - {fileID: -527039166719169522}
+  - {fileID: 2208223744993099090}
+  EditorEvents:
+  - {fileID: 3388900085379425491}
+  - {fileID: 7928619929368019541}
+  - {fileID: 2053636056338949444}
+  EditorParameters: []
+  MasterBanks:
+  - {fileID: 2208223744993099090}
+  StringsBanks:
+  - {fileID: -527039166719169522}
+  cacheTime: 638121356558633523
+  cacheVersion: 131601
+--- !u!114 &2053636056338949444
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -81,9 +80,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/RunningFootsteps
+  m_Name: event:/Player Footsteps/RunningFootsteps
   m_EditorClassIdentifier: 
-  Path: event:/RunningFootsteps
+  Path: event:/Player Footsteps/RunningFootsteps
   Guid:
     Data1: -1363133309
     Data2: 1335119615
@@ -113,10 +112,10 @@ MonoBehaviour:
   Path: Ty_Os_Personal_Project2 - Audio/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638118734699263195
+  lastModified: 638121356558583649
   FileSizes: []
   Exists: 1
---- !u!114 &4784980388548172503
+--- !u!114 &3388900085379425491
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -126,9 +125,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/HeavyBreathing
+  m_Name: event:/Player Breathing/HeavyBreathing
   m_EditorClassIdentifier: 
-  Path: event:/HeavyBreathing
+  Path: event:/Player Breathing/HeavyBreathing
   Guid:
     Data1: 1289914647
     Data2: 1215308159
@@ -140,11 +139,11 @@ MonoBehaviour:
   Is3D: 0
   IsOneShot: 0
   Parameters:
-  - {fileID: 1569701885451422544}
+  - {fileID: -2549073553910492350}
   MinDistance: 1
   MaxDistance: 20
   Length: 19000
---- !u!114 &5598959316083190594
+--- !u!114 &7928619929368019541
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -154,36 +153,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Stinger
+  m_Name: event:/Player Footsteps/Footsteps
   m_EditorClassIdentifier: 
-  Path: event:/Stinger
-  Guid:
-    Data1: -2094147175
-    Data2: 1268065302
-    Data3: -136585054
-    Data4: -636058277
-  Banks:
-  - {fileID: 2208223744993099090}
-  IsStream: 0
-  Is3D: 1
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 400
---- !u!114 &8947130775130460858
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Footsteps
-  m_EditorClassIdentifier: 
-  Path: event:/Footsteps
+  Path: event:/Player Footsteps/Footsteps
   Guid:
     Data1: -956735714
     Data2: 1203426255
