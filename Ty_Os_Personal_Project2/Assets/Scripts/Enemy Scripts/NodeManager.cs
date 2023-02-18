@@ -28,8 +28,12 @@ public class NodeManager : MonoBehaviour
     public void createGrid() {
         List<GameObject> nodesCreated = new List<GameObject>();
 
+        // calculate first node placement
+        nodePlacement.x = gridOrigin.transform.position.x - ((nodeSpacing * 1.25f) * gridSize.x)/2;
+        nodePlacement.y = gridOrigin.transform.position.z + ((nodeSpacing * 1.25f) * gridSize.y)/2;
+
         // set up grid
-        nodePlacement = new Vector2((gridOrigin.transform.position.x-gridSize.x), (gridOrigin.transform.position.z+gridSize.y));
+        //nodePlacement = new Vector2((gridOrigin.transform.position.x-gridSize.x), (gridOrigin.transform.position.z+gridSize.y));
 
         // instantiate nodes
         int count = 0;
@@ -44,7 +48,7 @@ public class NodeManager : MonoBehaviour
                 }
                 nodePlacement.x += nodeSpacing * 1.25f;
             }
-            nodePlacement.x = (gridOrigin.transform.position.x-gridSize.x);
+            nodePlacement.x = gridOrigin.transform.position.x - ((nodeSpacing * 1.25f) * gridSize.x)/2;
             nodePlacement.y -= nodeSpacing * 1.25f;
         }
 

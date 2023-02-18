@@ -481,7 +481,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 477844525}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7.75, y: 2.5, z: -6.75}
+  m_LocalPosition: {x: -3.96, y: 2.5, z: -1.01}
   m_LocalScale: {x: 5, y: 5, z: 3}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1510,7 +1510,7 @@ MonoBehaviour:
   nodePrefab: {fileID: 8375656641620617827, guid: e2d98dbfe8c9ed7428cf6baaba6cd9eb, type: 3}
   monster: {fileID: 1439695339}
   gridOrigin: {fileID: 2144237688}
-  gridSize: {x: 5, y: 5}
+  gridSize: {x: 15, y: 15}
   nodeSpacing: 5
 --- !u!4 &2065259232
 Transform:
@@ -1520,7 +1520,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2065259230}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -34.959618, y: -103.083336, z: 178.15556}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
