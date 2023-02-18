@@ -29,7 +29,7 @@ public class NodeManager : MonoBehaviour
         List<GameObject> nodesCreated = new List<GameObject>();
 
         // set up grid
-        nodePlacement = new Vector2((gridOrigin.transform.position.x-gridSize.x)/2, (gridOrigin.transform.position.z+gridSize.y)/2);
+        nodePlacement = new Vector2((gridOrigin.transform.position.x-gridSize.x), (gridOrigin.transform.position.z+gridSize.y));
 
         // instantiate nodes
         int count = 0;
@@ -38,12 +38,13 @@ public class NodeManager : MonoBehaviour
                 if (checkSpacing()) {
                     GameObject foo = Instantiate(nodePrefab, new Vector3(nodePlacement.x, 2f, nodePlacement.y), nodePrefab.transform.rotation);
                     nodesCreated.Add(foo);
+                    nodeList.Add(foo);
                     foo.name = "Movement Node " + count;
                     count++;
                 }
                 nodePlacement.x += nodeSpacing * 1.25f;
             }
-            nodePlacement.x = (gridOrigin.transform.position.x-(gridSize.x/2));
+            nodePlacement.x = (gridOrigin.transform.position.x-gridSize.x);
             nodePlacement.y -= nodeSpacing * 1.25f;
         }
 
@@ -55,13 +56,26 @@ public class NodeManager : MonoBehaviour
 
     // method that checks the spacing before placing a node
     public bool checkSpacing() {
-        Collider[] hitColliders = Physics.OverlapSphere(nodePlacement, nodeSpacing);
+        Collider[] hitColliders = Physics.OverlapSphere(new Vector3(nodePlacement.x, 2f, nodePlacement.y), nodeSpacing);
 
+        // check space
         foreach(Collider hit in hitColliders) {
+            // no space
             if (tagList.Contains(hit.gameObject.tag)) {
                 return false;
             }
         }
+        // is space
         return true;
     }
+
+    /*
+    private void OnDrawGizmos() {
+        Gizmos.color = Color.yellow;
+
+        foreach(GameObject node in nodeList) {
+            Gizmos.DrawWireSphere(node.transform.position, nodeSpacing);
+        }
+    }
+    */
 }

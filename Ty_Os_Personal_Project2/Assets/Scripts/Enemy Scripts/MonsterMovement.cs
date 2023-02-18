@@ -176,8 +176,10 @@ public class MonsterMovement : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         mSD = transform.GetChild(0).GetComponent<MonsterSoundDetection>();
 
+        // set default state
         stateMachine.ChangeState(new StandState(this));
 
+        // set speed
         speed = Mathf.Pow(2, (-speed+1));
     }
 
@@ -212,9 +214,10 @@ public class MonsterMovement : MonoBehaviour
         }
 
         // get new list
-        Collider[] hitColliders = Physics.OverlapSphere(transform.position, 10f);
+        Collider[] hitColliders = Physics.OverlapSphere(transform.position, 12f);
         foreach(Collider hit in hitColliders) {
             if (hit.gameObject.tag == "movement node") {
+                Debug.LogError("H");
                 nodeAdjacents.Add(hit.gameObject);
             }
         }
@@ -318,6 +321,6 @@ public class MonsterMovement : MonoBehaviour
         StopAllCoroutines();
 
         // if the monster was inbetween nodes, reset
-        transform.position = currentNode.transform.position;
+        transform.position = new Vector3(currentNode.transform.position.x, transform.position.y, currentNode.transform.position.z);
     }
 }
