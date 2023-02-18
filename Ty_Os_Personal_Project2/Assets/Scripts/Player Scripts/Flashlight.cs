@@ -17,5 +17,5 @@ public class Flashlight : MonoBehaviour
         
     }
 
-    public void
+    //public void
 }
