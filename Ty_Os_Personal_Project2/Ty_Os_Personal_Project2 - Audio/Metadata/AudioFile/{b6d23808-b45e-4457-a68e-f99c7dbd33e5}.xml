@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.02.00">
 	<object class="AudioFile" id="{b6d23808-b45e-4457-a68e-f99c7dbd33e5}">
 		<property name="assetPath">
-			<value>Test Audio/mus_lvl3_clean_1_loop.ogg</value>
+			<value>Test Audio Assets/mus_lvl3_clean_1_loop.ogg</value>
 		</property>
 		<property name="isStreaming">
 			<value>true</value>

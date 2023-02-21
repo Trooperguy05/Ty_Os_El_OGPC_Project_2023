@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.02.00">
 	<object class="AudioFile" id="{c942bcaf-5480-4f17-8cc8-93e850d8f96d}">
 		<property name="assetPath">
-			<value>Flashlight Audio/Flashlight1-ClickOut2.wav</value>
+			<value>Player Audio Assets/Flashlight/Flashlight1-ClickOut2.wav</value>
 		</property>
 		<property name="frequencyInKHz">
 			<value>44.0999985</value>
