@@ -1358,14 +1358,14 @@ MonoBehaviour:
       Data2: 1328894731
       Data3: 601132422
       Data4: -491683796
-    Path: event:/Player Flashlight/FlashlightClickOn
+    Path: event:/Player Audio/Player Flashlight/FlashlightClickOn
   clickOffReference:
     Guid:
       Data1: 1238461418
       Data2: 1223649899
       Data3: -575751764
       Data4: -1680553027
-    Path: event:/Player Flashlight/FlashlightClickOff
+    Path: event:/Player Audio/Player Flashlight/FlashlightClickOff
 --- !u!1 &1703436283
 GameObject:
   m_ObjectHideFlags: 0
@@ -1716,14 +1716,14 @@ MonoBehaviour:
       Data2: 1203426255
       Data3: -818106995
       Data4: -902484276
-    Path: event:/Player Footsteps/Footsteps
+    Path: event:/Player Audio/Player Footsteps/Footsteps
   runningFootstepsReference:
     Guid:
       Data1: -1363133309
       Data2: 1335119615
       Data3: -1645430338
       Data4: -1735626454
-    Path: event:/Player Footsteps/RunningFootsteps
+    Path: event:/Player Audio/Player Footsteps/RunningFootsteps
   heavyBreathingEmitter: {fileID: 2126236223}
 --- !u!114 &2126236221
 MonoBehaviour:
@@ -1783,7 +1783,7 @@ MonoBehaviour:
       Data2: 1215308159
       Data3: -246926705
       Data4: -362544657
-    Path: event:/Player Breathing/HeavyBreathing
+    Path: event:/Player Audio/Player Breathing/HeavyBreathing
   Event: 
   PlayEvent: 0
   StopEvent: 0
