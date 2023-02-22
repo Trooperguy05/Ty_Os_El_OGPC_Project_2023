@@ -1,33 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-8231185008704622124
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Player Audio/Player Flashlight/FlashlightClickOff
-  m_EditorClassIdentifier: 
-  Path: event:/Player Audio/Player Flashlight/FlashlightClickOff
-  Guid:
-    Data1: 1238461418
-    Data2: 1223649899
-    Data3: -575751764
-    Data4: -1680553027
-  Banks:
-  - {fileID: 2208223744993099090}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 383
---- !u!114 &-527039166719169522
+--- !u!114 &-7934305257158388709
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -37,17 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/Master.strings.bank
+  m_Name: bank:/PlayerSFX.bank
   m_EditorClassIdentifier: 
-  Path: Ty_Os_Personal_Project2 - Audio/Build/Desktop/Master.strings.bank
-  Name: Master.strings
-  StudioPath: bank:/Master.strings
-  lastModified: 638125691883312879
+  Path: Ty_Os_Personal_Project2 - Audio/Build/Desktop/PlayerSFX.bank
+  Name: PlayerSFX
+  StudioPath: bank:/PlayerSFX
+  lastModified: 638126557848471162
   FileSizes:
-  - Name: 
-    Value: 1192
+  - Name: Desktop
+    Value: 277952
   Exists: 1
---- !u!114 &-73352236309333326
+--- !u!114 &-6739782144229974774
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -57,16 +30,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Player Audio/Player Footsteps/RunningFootsteps
+  m_Name: event:/Player Audio/Player Footsteps/Footsteps
   m_EditorClassIdentifier: 
-  Path: event:/Player Audio/Player Footsteps/RunningFootsteps
+  Path: event:/Player Audio/Player Footsteps/Footsteps
   Guid:
-    Data1: -1363133309
-    Data2: 1335119615
-    Data3: -1645430338
-    Data4: -1735626454
+    Data1: -956735714
+    Data2: 1203426255
+    Data3: -818106995
+    Data4: -902484276
   Banks:
-  - {fileID: 2208223744993099090}
+  - {fileID: -7934305257158388709}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -74,53 +47,7 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 300
---- !u!114 &11400000
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d32cf7c32a3ed8347bac48ef5ed56d82, type: 3}
-  m_Name: FMODStudioCache
-  m_EditorClassIdentifier: 
-  EditorBanks:
-  - {fileID: -527039166719169522}
-  - {fileID: 2208223744993099090}
-  EditorEvents:
-  - {fileID: 6082425483489709181}
-  - {fileID: 8756821730709966209}
-  - {fileID: -73352236309333326}
-  - {fileID: 3349760618752534149}
-  - {fileID: -8231185008704622124}
-  EditorParameters: []
-  MasterBanks:
-  - {fileID: 2208223744993099090}
-  StringsBanks:
-  - {fileID: -527039166719169522}
-  cacheTime: 638125691883312879
-  cacheVersion: 131601
---- !u!114 &2208223744993099090
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/Master.bank
-  m_EditorClassIdentifier: 
-  Path: Ty_Os_Personal_Project2 - Audio/Build/Desktop/Master.bank
-  Name: Master
-  StudioPath: bank:/Master
-  lastModified: 638125691883272893
-  FileSizes: []
-  Exists: 1
---- !u!114 &3349760618752534149
+--- !u!114 &-3087703330484421821
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -139,7 +66,7 @@ MonoBehaviour:
     Data3: 601132422
     Data4: -491683796
   Banks:
-  - {fileID: 2208223744993099090}
+  - {fileID: -7934305257158388709}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -147,7 +74,7 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 429
---- !u!114 &6082425483489709181
+--- !u!114 &-2187833484765701944
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -166,16 +93,85 @@ MonoBehaviour:
     Data3: -246926705
     Data4: -362544657
   Banks:
-  - {fileID: 2208223744993099090}
+  - {fileID: -7934305257158388709}
   IsStream: 0
   Is3D: 0
   IsOneShot: 0
   Parameters:
-  - {fileID: 7749693825418509097}
+  - {fileID: 2344026692532710060}
   MinDistance: 1
   MaxDistance: 20
   Length: 19000
---- !u!114 &7749693825418509097
+--- !u!114 &-527039166719169522
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.strings.bank
+  m_EditorClassIdentifier: 
+  Path: Ty_Os_Personal_Project2 - Audio/Build/Desktop/Master.strings.bank
+  Name: Master.strings
+  StudioPath: bank:/Master.strings
+  lastModified: 638126557846171308
+  FileSizes:
+  - Name: Desktop
+    Value: 1244
+  Exists: 1
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d32cf7c32a3ed8347bac48ef5ed56d82, type: 3}
+  m_Name: FMODStudioCache
+  m_EditorClassIdentifier: 
+  EditorBanks:
+  - {fileID: -527039166719169522}
+  - {fileID: 2208223744993099090}
+  - {fileID: -7934305257158388709}
+  EditorEvents:
+  - {fileID: -2187833484765701944}
+  - {fileID: -6739782144229974774}
+  - {fileID: 3361661158823094608}
+  - {fileID: -3087703330484421821}
+  - {fileID: 4909923307164634675}
+  EditorParameters: []
+  MasterBanks:
+  - {fileID: 2208223744993099090}
+  StringsBanks:
+  - {fileID: -527039166719169522}
+  cacheTime: 638126557848471162
+  cacheVersion: 131601
+--- !u!114 &2208223744993099090
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: Ty_Os_Personal_Project2 - Audio/Build/Desktop/Master.bank
+  Name: Master
+  StudioPath: bank:/Master
+  lastModified: 638126557846131417
+  FileSizes:
+  - Name: Desktop
+    Value: 1602
+  Exists: 1
+--- !u!114 &2344026692532710060
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -199,7 +195,7 @@ MonoBehaviour:
   IsGlobal: 0
   Labels: []
   Exists: 1
---- !u!114 &8756821730709966209
+--- !u!114 &3361661158823094608
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -209,16 +205,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Player Audio/Player Footsteps/Footsteps
+  m_Name: event:/Player Audio/Player Footsteps/RunningFootsteps
   m_EditorClassIdentifier: 
-  Path: event:/Player Audio/Player Footsteps/Footsteps
+  Path: event:/Player Audio/Player Footsteps/RunningFootsteps
   Guid:
-    Data1: -956735714
-    Data2: 1203426255
-    Data3: -818106995
-    Data4: -902484276
+    Data1: -1363133309
+    Data2: 1335119615
+    Data3: -1645430338
+    Data4: -1735626454
   Banks:
-  - {fileID: 2208223744993099090}
+  - {fileID: -7934305257158388709}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -226,3 +222,30 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 300
+--- !u!114 &4909923307164634675
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Player Audio/Player Flashlight/FlashlightClickOff
+  m_EditorClassIdentifier: 
+  Path: event:/Player Audio/Player Flashlight/FlashlightClickOff
+  Guid:
+    Data1: 1238461418
+    Data2: 1223649899
+    Data3: -575751764
+    Data4: -1680553027
+  Banks:
+  - {fileID: -7934305257158388709}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 383
