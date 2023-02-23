@@ -19,6 +19,7 @@ public class FMODManager : MonoBehaviour
     // Loads a specified FMOD bank \\
     public IEnumerator LoadBank(string bank) {
         FMODUnity.RuntimeManager.LoadBank(bank);
+        Debug.Log(bank + " is loading");
         yield return null;
     }
     
@@ -26,6 +27,7 @@ public class FMODManager : MonoBehaviour
     public IEnumerator LoadBank(List<string> banks) {
         foreach (string bank in banks){
             FMODUnity.RuntimeManager.LoadBank(bank);
+            Debug.Log(bank + " is loading");
             yield return null;
         }
     }
@@ -33,6 +35,7 @@ public class FMODManager : MonoBehaviour
     // Unloads a specified FMOD bank \\
     public IEnumerator UnloadBank(string bank) {
         FMODUnity.RuntimeManager.UnloadBank(bank);
+        Debug.Log(bank + " is unloading");
         yield return null;
     }
 
@@ -40,6 +43,7 @@ public class FMODManager : MonoBehaviour
     public IEnumerator UnloadBank(List<string> banks) {
         foreach (string bank in banks) {
             FMODUnity.RuntimeManager.UnloadBank(bank);
+            Debug.Log(bank + " is unloading");
             yield return null;
         }
     }

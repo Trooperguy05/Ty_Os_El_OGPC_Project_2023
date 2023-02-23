@@ -1,5 +1,23 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-8107191979887394622
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Map Ambience.bank
+  m_EditorClassIdentifier: 
+  Path: Ty_Os_Personal_Project2 - Audio/Build/Desktop/Map Ambience.bank
+  Name: Map Ambience
+  StudioPath: bank:/Map Ambience
+  lastModified: 638127056285035527
+  FileSizes: []
+  Exists: 1
 --- !u!114 &-7934305257158388709
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15,10 +33,8 @@ MonoBehaviour:
   Path: Ty_Os_Personal_Project2 - Audio/Build/Desktop/PlayerSFX.bank
   Name: PlayerSFX
   StudioPath: bank:/PlayerSFX
-  lastModified: 638126557848471162
-  FileSizes:
-  - Name: Desktop
-    Value: 277952
+  lastModified: 638127056285900677
+  FileSizes: []
   Exists: 1
 --- !u!114 &-6739782144229974774
 MonoBehaviour:
@@ -47,6 +63,34 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 300
+--- !u!114 &-5638023322426571575
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Map Audio/Map 'Red Herrings'/Scooby Doo Laugh
+  m_EditorClassIdentifier: 
+  Path: event:/Map Audio/Map 'Red Herrings'/Scooby Doo Laugh
+  Guid:
+    Data1: -1745399940
+    Data2: 1269737126
+    Data3: -1624156272
+    Data4: 1471320446
+  Banks:
+  - {fileID: -8107191979887394622}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters:
+  - {fileID: 4376910675260179213}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2938
 --- !u!114 &-3087703330484421821
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -117,10 +161,10 @@ MonoBehaviour:
   Path: Ty_Os_Personal_Project2 - Audio/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638126557846171308
+  lastModified: 638127056285130541
   FileSizes:
-  - Name: Desktop
-    Value: 1244
+  - Name: 
+    Value: 1514
   Exists: 1
 --- !u!114 &11400000
 MonoBehaviour:
@@ -138,18 +182,21 @@ MonoBehaviour:
   - {fileID: -527039166719169522}
   - {fileID: 2208223744993099090}
   - {fileID: -7934305257158388709}
+  - {fileID: 2752134702777178224}
+  - {fileID: -8107191979887394622}
   EditorEvents:
   - {fileID: -2187833484765701944}
   - {fileID: -6739782144229974774}
   - {fileID: 3361661158823094608}
   - {fileID: -3087703330484421821}
   - {fileID: 4909923307164634675}
+  - {fileID: -5638023322426571575}
   EditorParameters: []
   MasterBanks:
   - {fileID: 2208223744993099090}
   StringsBanks:
   - {fileID: -527039166719169522}
-  cacheTime: 638126557848471162
+  cacheTime: 638127056285900677
   cacheVersion: 131601
 --- !u!114 &2208223744993099090
 MonoBehaviour:
@@ -166,10 +213,8 @@ MonoBehaviour:
   Path: Ty_Os_Personal_Project2 - Audio/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638126557846131417
-  FileSizes:
-  - Name: Desktop
-    Value: 1602
+  lastModified: 638127056285095532
+  FileSizes: []
   Exists: 1
 --- !u!114 &2344026692532710060
 MonoBehaviour:
@@ -194,6 +239,24 @@ MonoBehaviour:
   Type: 0
   IsGlobal: 0
   Labels: []
+  Exists: 1
+--- !u!114 &2752134702777178224
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/EnemySFX.bank
+  m_EditorClassIdentifier: 
+  Path: Ty_Os_Personal_Project2 - Audio/Build/Desktop/EnemySFX.bank
+  Name: EnemySFX
+  StudioPath: bank:/EnemySFX
+  lastModified: 638127056284685457
+  FileSizes: []
   Exists: 1
 --- !u!114 &3361661158823094608
 MonoBehaviour:
@@ -222,6 +285,30 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 300
+--- !u!114 &4376910675260179213
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Scooby Doo Laugh/WTF
+  m_EditorClassIdentifier: 
+  Name: WTF
+  StudioPath: 
+  Min: 0
+  Max: 9999
+  Default: 0
+  ID:
+    data1: 2372444723
+    data2: 2132399025
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
 --- !u!114 &4909923307164634675
 MonoBehaviour:
   m_ObjectHideFlags: 0

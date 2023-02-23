@@ -558,10 +558,10 @@ MonoBehaviour:
   m_Name: FMODStudioSettings
   m_EditorClassIdentifier: 
   switchSettingsMigration: 1
-  HasSourceProject: 1
-  HasPlatforms: 1
+  HasSourceProject: 0
+  HasPlatforms: 0
   sourceProjectPath: Ty_Os_Personal_Project2 - Audio/Ty_Os_Personal_Project2 - Audio.fspro
-  sourceBankPath: Ty_Os_Personal_Project2 - Audio/Build
+  sourceBankPath: Ty_Os_Personal_Project2 - Audio/Build/Desktop
   sourceBankPathUnformatted: 
   BankRefreshCooldown: 5
   ShowBankRefreshWindow: 1
@@ -585,6 +585,8 @@ MonoBehaviour:
   MasterBanks:
   - Master
   Banks:
+  - EnemySFX
+  - Map Ambience
   - PlayerSFX
   BanksToLoad:
   - Master
