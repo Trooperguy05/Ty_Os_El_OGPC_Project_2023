@@ -15,7 +15,7 @@ MonoBehaviour:
   Path: Ty_Os_Personal_Project2 - Audio/Build/Desktop/Map Ambience.bank
   Name: Map Ambience
   StudioPath: bank:/Map Ambience
-  lastModified: 638127056285035527
+  lastModified: 638127555598985032
   FileSizes: []
   Exists: 1
 --- !u!114 &-7934305257158388709
@@ -33,7 +33,7 @@ MonoBehaviour:
   Path: Ty_Os_Personal_Project2 - Audio/Build/Desktop/PlayerSFX.bank
   Name: PlayerSFX
   StudioPath: bank:/PlayerSFX
-  lastModified: 638127056285900677
+  lastModified: 638127555599221417
   FileSizes: []
   Exists: 1
 --- !u!114 &-6739782144229974774
@@ -161,7 +161,7 @@ MonoBehaviour:
   Path: Ty_Os_Personal_Project2 - Audio/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638127056285130541
+  lastModified: 638127555599196419
   FileSizes:
   - Name: 
     Value: 1514
@@ -196,7 +196,7 @@ MonoBehaviour:
   - {fileID: 2208223744993099090}
   StringsBanks:
   - {fileID: -527039166719169522}
-  cacheTime: 638127056285900677
+  cacheTime: 638127555599221417
   cacheVersion: 131601
 --- !u!114 &2208223744993099090
 MonoBehaviour:
@@ -213,7 +213,7 @@ MonoBehaviour:
   Path: Ty_Os_Personal_Project2 - Audio/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638127056285095532
+  lastModified: 638127555599186419
   FileSizes: []
   Exists: 1
 --- !u!114 &2344026692532710060
@@ -255,7 +255,7 @@ MonoBehaviour:
   Path: Ty_Os_Personal_Project2 - Audio/Build/Desktop/EnemySFX.bank
   Name: EnemySFX
   StudioPath: bank:/EnemySFX
-  lastModified: 638127056284685457
+  lastModified: 638127555598975053
   FileSizes: []
   Exists: 1
 --- !u!114 &3361661158823094608

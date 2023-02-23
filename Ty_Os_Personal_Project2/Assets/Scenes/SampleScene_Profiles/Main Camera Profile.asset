@@ -91,6 +91,35 @@ MonoBehaviour:
   opacity:
     overrideState: 0
     value: 1
+--- !u!114 &-675229560614135633
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0ec101e57707714fa49507910ba249c, type: 3}
+  m_Name: GBCameraSettings
+  m_EditorClassIdentifier: 
+  active: 0
+  enabled:
+    overrideState: 1
+    value: 1
+  _Palette:
+    overrideState: 1
+    value: {fileID: 2800000, guid: 1d2cde19061d5418a84dd491b0ce85d0, type: 3}
+    defaultState: 1
+  _ResX:
+    overrideState: 1
+    value: 180
+  _ResY:
+    overrideState: 1
+    value: 180
+  _Fade:
+    overrideState: 1
+    value: 1
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -107,6 +136,7 @@ MonoBehaviour:
   - {fileID: -2811416505504087301}
   - {fileID: -1700943160526450251}
   - {fileID: 8981289463454078775}
+  - {fileID: -675229560614135633}
 --- !u!114 &8981289463454078775
 MonoBehaviour:
   m_ObjectHideFlags: 3
