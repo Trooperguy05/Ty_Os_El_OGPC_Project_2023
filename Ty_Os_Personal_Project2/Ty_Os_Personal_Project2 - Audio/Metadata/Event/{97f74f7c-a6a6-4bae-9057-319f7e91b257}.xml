@@ -31,9 +31,6 @@
 		<relationship name="timeline">
 			<destination>{62e161ef-e5c7-43b5-a840-c87d5e9578dd}</destination>
 		</relationship>
-		<relationship name="parameters">
-			<destination>{b956ade3-d261-4626-8dd5-48c673007ca6}</destination>
-		</relationship>
 		<relationship name="banks">
 			<destination>{a62f749e-dec4-4a87-83b5-6a54c42af98c}</destination>
 		</relationship>
@@ -74,11 +71,6 @@
 			<destination>{74bbbb71-cdb1-4414-8e29-09e375078804}</destination>
 		</relationship>
 	</object>
-	<object class="ParameterProxy" id="{b956ade3-d261-4626-8dd5-48c673007ca6}">
-		<relationship name="preset">
-			<destination>{fb286556-3ebf-4583-810d-afd8df40d207}</destination>
-		</relationship>
-	</object>
 	<object class="EventMixerMaster" id="{25aed65b-c728-4ebc-a9e1-6d439d1ee958}">
 		<relationship name="effectChain">
 			<destination>{18aa4436-e229-4bba-89a0-812f25e905f5}</destination>
@@ -98,7 +90,7 @@
 	<object class="MixerBusPanner" id="{6bdce53d-8c2e-4078-948e-fd11df8ac46d}" />
 	<object class="MultiSound" id="{74bbbb71-cdb1-4414-8e29-09e375078804}">
 		<property name="length">
-			<value>2.9387755102040818</value>
+			<value>2.5600000000000001</value>
 		</property>
 		<relationship name="sounds">
 			<destination>{954aa8bc-f992-447b-b688-93abc16e4be0}</destination>
