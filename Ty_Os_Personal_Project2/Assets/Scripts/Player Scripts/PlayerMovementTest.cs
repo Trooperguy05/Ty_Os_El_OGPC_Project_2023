@@ -151,7 +151,7 @@ public class PlayerMovementTest : MonoBehaviour
                     state = PlayerState.walk;
                     moveSpeed = walkSpeed;
                 }
-                /// standing
+                /// ground/stand
                 else if (grounded) {
                     state = PlayerState.stand;
                 }

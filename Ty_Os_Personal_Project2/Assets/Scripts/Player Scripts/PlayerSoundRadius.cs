@@ -8,16 +8,20 @@ public class PlayerSoundRadius : MonoBehaviour
     public SphereCollider soundCollider;
 
     [Header("Sound Values")]
+    public float soundValue;
     public float walkValue;
     public float runValue;
-    public float crouchValue;
+    public float stompValue;
 
     [Header("Sound Radi(?)")]
     public float walkRadius;
     public float runRadius;
-    public float crouchRadius;
+    public float stompRadius;
 
     [Header("Player Movement")]
+    public bool inAir;
+    public bool stomped;
+    public float stompLength;
     private PlayerMovementTest pM;
 
     // get the player movement test script
@@ -25,22 +29,48 @@ public class PlayerSoundRadius : MonoBehaviour
         pM = GetComponent<PlayerMovementTest>();
     }
 
-    // 
     void Update()
     {
-        /// high noise activities \\\
-        // if player is walking
-        if (pM.state == PlayerMovementTest.PlayerState.walk) {
-            soundCollider.radius = walkRadius;
+        // checking if the player landed from a jump or fall \\
+        // check for jump input
+        if (pM.state == PlayerMovementTest.PlayerState.air) {
+            inAir = true;
         }
-        // if player is running
-        else if (pM.state == PlayerMovementTest.PlayerState.run) {
-            soundCollider.radius = runRadius;
+        // check if they landed
+        if (inAir && pM.grounded) {
+            inAir = false;
+            stomped = true;
+            StartCoroutine(endStomp());
         }
-        /// low noise activities \\\
-        // if player is standing still, in air, or crouching
+        // create noise from landing
+        if (stomped) {
+            soundValue = stompValue;
+            soundCollider.radius = stompRadius;
+        }
         else {
-            soundCollider.radius = 0.01f;
+            /// other high noise activities \\\
+            // if player is walking
+            if (pM.state == PlayerMovementTest.PlayerState.walk) {
+                soundValue = walkValue;
+                soundCollider.radius = walkRadius;
+            }
+            // if player is running
+            else if (pM.state == PlayerMovementTest.PlayerState.run) {
+                soundValue = runValue;
+                soundCollider.radius = runRadius;
+            }
+            /// low noise activities \\\
+            // if player is standing still, in air, or crouching
+            else {
+                soundValue = 0f;
+                soundCollider.radius = 0.01f;
+            }
         }
+    }
+
+    // method that waits a moment to end the stomp sound
+    public IEnumerator endStomp() {
+        yield return new WaitForSeconds(stompLength);
+        stomped = false;
     }
 }

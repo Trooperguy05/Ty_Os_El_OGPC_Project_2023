@@ -6,19 +6,16 @@ public class MonsterSoundDetection : MonoBehaviour
 {
     public bool inEarshot = false;
     public float soundSensitivity = 5f;
-    //private MonsterMovement mM;
-    private PlayerSoundRadius pSR;
-
-    // get stuff
-    void Awake() {
-        //mM = transform.parent.gameObject.GetComponent<MonsterMovement>();
-        pSR = GameObject.Find("Sound Radius").GetComponent<PlayerSoundRadius>();
-    }
+    public Vector3 pointOfSound;
 
     // sound detection
     void OnTriggerEnter(Collider col) {
         if (col.gameObject.tag == "player sound") {
             inEarshot = true;
+
+            pointOfSound = col.ClosestPoint(transform.position);
+
+            Debug.Log(pointOfSound);
         }
     }
     void OnTriggerExit(Collider col) {

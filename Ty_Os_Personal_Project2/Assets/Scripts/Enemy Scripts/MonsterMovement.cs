@@ -113,6 +113,8 @@ public class InvestigateState : IState
 
         // reset
         owner.stopEverything();
+
+        owner.monsterInvestigate_wrapper();
     }
     
     public void Execute() { }
@@ -168,13 +170,16 @@ public class MonsterMovement : MonoBehaviour
     public List<GameObject> nodeAdjacents = new List<GameObject>();
 
     [Header("Sound Detection")]
+    public GameObject soundLocationPrefab;
     private MonsterSoundDetection mSD;
+    private PlayerSoundRadius pSR;
 
     // get stuff
     void Start()
     {
         rb = GetComponent<Rigidbody>();
         mSD = transform.GetChild(0).GetComponent<MonsterSoundDetection>();
+        pSR = GameObject.Find("Player").GetComponent<PlayerSoundRadius>();
 
         // set default state
         stateMachine.ChangeState(new StandState(this));
@@ -187,7 +192,12 @@ public class MonsterMovement : MonoBehaviour
     void Update()
     {   
         /// sound detection \\\
-        // pain
+        if (mSD.inEarshot && pSR.soundValue >= mSD.soundSensitivity) {
+            if (stateMachine.currentState.name != "InvestigateState") {
+                isInvestigating = true;
+                stateMachine.ChangeState(new InvestigateState(this));
+            }
+        }
 
         /// state handler \\\
         // wander state
@@ -217,7 +227,6 @@ public class MonsterMovement : MonoBehaviour
         Collider[] hitColliders = Physics.OverlapSphere(transform.position, 12f);
         foreach(Collider hit in hitColliders) {
             if (hit.gameObject.tag == "movement node") {
-                Debug.LogError("H");
                 nodeAdjacents.Add(hit.gameObject);
             }
         }
@@ -283,6 +292,30 @@ public class MonsterMovement : MonoBehaviour
         // set moving to false
         moving = false;
     }
+
+    // method that handles the monster investigating a noise
+    public IEnumerator monsterInvestigate() {
+        // create an empty with the location of the sound
+        GameObject soundPosition = Instantiate(soundLocationPrefab, mSD.pointOfSound, soundLocationPrefab.transform.rotation);
+        target = soundPosition.transform;
+
+        // move to the target
+        moveToTarget_wrapper();
+
+        // wait for monster to reach the target
+        while (!reachedTarget) {
+            yield return null;
+        }
+
+        // have it 'inspect' the area
+        yield return new WaitForSeconds(2f);
+        
+        // reset
+        isInvestigating = false;
+        target = null;
+        Destroy(soundPosition);
+    }
+    public void monsterInvestigate_wrapper() { StartCoroutine(monsterInvestigate()); }
 
     // method that handles the monster wandering around the map
     public IEnumerator monsterWander() {

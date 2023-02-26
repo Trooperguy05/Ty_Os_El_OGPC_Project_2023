@@ -1055,7 +1055,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 7
+  m_Radius: 3
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &1187968836
 MonoBehaviour:
@@ -1071,6 +1071,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inEarshot: 0
   soundSensitivity: 5
+  pointOfSound: {x: 0, y: 0, z: 0}
 --- !u!1 &1439695339
 GameObject:
   m_ObjectHideFlags: 0
@@ -1191,6 +1192,7 @@ MonoBehaviour:
   nextNode: {fileID: 0}
   target: {fileID: 454126241}
   nodeAdjacents: []
+  soundLocationPrefab: {fileID: 438061183569870677, guid: 7fa0ef235fcf2334f9911a917d5eaf96, type: 3}
 --- !u!1 &1490342987
 GameObject:
   m_ObjectHideFlags: 0
@@ -1538,7 +1540,7 @@ Light:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Intensity: 2
   m_Range: 15
-  m_SpotAngle: 179
+  m_SpotAngle: 30
   m_InnerSpotAngle: 1
   m_CookieSize: 10
   m_Shadows:
@@ -1686,7 +1688,6 @@ GameObject:
   - component: {fileID: 2126236219}
   - component: {fileID: 2126236222}
   - component: {fileID: 2126236221}
-  - component: {fileID: 2126236224}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -1867,12 +1868,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   soundCollider: {fileID: 34542043}
+  soundValue: 0
   walkValue: 0
-  runValue: 0
-  crouchValue: 0
-  walkRadius: 1
+  runValue: 5
+  stompValue: 10
+  walkRadius: 2
   runRadius: 5
-  crouchRadius: 0.5
+  stompRadius: 10
+  jumped: 0
+  stomped: 0
+  stompLength: 0.25
 --- !u!114 &2126236222
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1925,68 +1930,6 @@ MonoBehaviour:
   OverrideAttenuation: 0
   OverrideMinDistance: 1
   OverrideMaxDistance: 20
---- !u!108 &2126236224
-Light:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2126236213}
-  m_Enabled: 1
-  serializedVersion: 10
-  m_Type: 2
-  m_Shape: 0
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 1.25
-  m_Range: 10
-  m_SpotAngle: 30
-  m_InnerSpotAngle: 21.80208
-  m_CookieSize: 10
-  m_Shadows:
-    m_Type: 0
-    m_Resolution: -1
-    m_CustomResolution: -1
-    m_Strength: 1
-    m_Bias: 0.05
-    m_NormalBias: 0.4
-    m_NearPlane: 0.2
-    m_CullingMatrixOverride:
-      e00: 1
-      e01: 0
-      e02: 0
-      e03: 0
-      e10: 0
-      e11: 1
-      e12: 0
-      e13: 0
-      e20: 0
-      e21: 0
-      e22: 1
-      e23: 0
-      e30: 0
-      e31: 0
-      e32: 0
-      e33: 1
-    m_UseCullingMatrixOverride: 0
-  m_Cookie: {fileID: 0}
-  m_DrawHalo: 0
-  m_Flare: {fileID: 0}
-  m_RenderMode: 0
-  m_CullingMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_RenderingLayerMask: 1
-  m_Lightmapping: 4
-  m_LightShadowCasterMode: 0
-  m_AreaSize: {x: 1, y: 1}
-  m_BounceIntensity: 1
-  m_ColorTemperature: 6570
-  m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
-  m_UseBoundingSphereOverride: 0
-  m_UseViewFrustumForShadowCasterCull: 1
-  m_ShadowRadius: 0
-  m_ShadowAngle: 0
 --- !u!1 &2144237684
 GameObject:
   m_ObjectHideFlags: 0
