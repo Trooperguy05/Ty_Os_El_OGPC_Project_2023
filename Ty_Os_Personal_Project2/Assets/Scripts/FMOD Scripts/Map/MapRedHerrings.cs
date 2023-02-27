@@ -15,11 +15,12 @@ public class MapRedHerrings : MonoBehaviour
     [Header("Event Instances")]
     private FMOD.Studio.EventInstance ambienceInstance;
 
-    private FMODManager FMODManager;
+    [Header("Funni ahh playback state")]
     private FMOD.Studio.PLAYBACK_STATE playbackState;
 
     // Unity Variables \\
     private GameObject player;
+    private FMODManager FMODManager;
 
     // Start is called before the first frame update
     void Awake()
