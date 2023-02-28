@@ -52,6 +52,7 @@ public class MapRedHerrings : MonoBehaviour
         ambienceInstance = FMODUnity.RuntimeManager.CreateInstance(reference);
         ambienceInstance.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(gameObject));
         ambienceInstance.start();
+        FMODUnity.RuntimeManager.AttachInstanceToGameObject(ambienceInstance, gameObject.transform);
         
         // Wait for event playback to finish \\
         ambienceInstance.getPlaybackState(out playbackState);
@@ -73,4 +74,6 @@ public class MapRedHerrings : MonoBehaviour
         float randomAngle = Random.Range(0, 2f * Mathf.PI);
         gameObject.transform.position = player.transform.position + new Vector3(Mathf.Cos(randomAngle), 0, Mathf.Sin(randomAngle)) * 15;
     }
+
+    
 }
