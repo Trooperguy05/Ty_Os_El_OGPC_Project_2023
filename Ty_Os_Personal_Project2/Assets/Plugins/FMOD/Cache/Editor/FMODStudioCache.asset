@@ -15,7 +15,7 @@ MonoBehaviour:
   Path: Ty_Os_Personal_Project2 - Audio/Build/Desktop/Map Ambience.bank
   Name: Map Ambience
   StudioPath: bank:/Map Ambience
-  lastModified: 638131697501143541
+  lastModified: 638132592678356632
   FileSizes: []
   Exists: 1
 --- !u!114 &-7934305257158388709
@@ -33,7 +33,7 @@ MonoBehaviour:
   Path: Ty_Os_Personal_Project2 - Audio/Build/Desktop/PlayerSFX.bank
   Name: PlayerSFX
   StudioPath: bank:/PlayerSFX
-  lastModified: 638131697503487552
+  lastModified: 638132592680421108
   FileSizes: []
   Exists: 1
 --- !u!114 &-6739782144229974774
@@ -85,11 +85,11 @@ MonoBehaviour:
   - {fileID: -8107191979887394622}
   IsStream: 0
   Is3D: 1
-  IsOneShot: 0
+  IsOneShot: 1
   Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 2600
+  MinDistance: 0
+  MaxDistance: 45
+  Length: 2560
 --- !u!114 &-3087703330484421821
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -160,7 +160,7 @@ MonoBehaviour:
   Path: Ty_Os_Personal_Project2 - Audio/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638131697501303128
+  lastModified: 638132592678466331
   FileSizes:
   - Name: 
     Value: 1468
@@ -195,7 +195,7 @@ MonoBehaviour:
   - {fileID: 2208223744993099090}
   StringsBanks:
   - {fileID: -527039166719169522}
-  cacheTime: 638131697503487552
+  cacheTime: 638132592680421108
   cacheVersion: 131601
 --- !u!114 &2208223744993099090
 MonoBehaviour:
@@ -212,7 +212,7 @@ MonoBehaviour:
   Path: Ty_Os_Personal_Project2 - Audio/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638131697501263230
+  lastModified: 638132592678416462
   FileSizes: []
   Exists: 1
 --- !u!114 &2344026692532710060
@@ -254,7 +254,7 @@ MonoBehaviour:
   Path: Ty_Os_Personal_Project2 - Audio/Build/Desktop/EnemySFX.bank
   Name: EnemySFX
   StudioPath: bank:/EnemySFX
-  lastModified: 638131697500275862
+  lastModified: 638132592677369273
   FileSizes: []
   Exists: 1
 --- !u!114 &3361661158823094608

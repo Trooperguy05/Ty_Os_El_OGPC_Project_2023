@@ -39,6 +39,7 @@ public class MapRedHerrings : MonoBehaviour
     }
 
     private IEnumerator PlayMapAmbience(FMODUnity.EventReference reference) {
+        while (true) {
         // Load the ambience bank to memory \\
         StartCoroutine(FMODManager.LoadBank(ambienceBank));
         
@@ -67,12 +68,13 @@ public class MapRedHerrings : MonoBehaviour
         // Unload the ambience bank from memory \\
         StartCoroutine(FMODManager.UnloadBank(ambienceBank));
         yield return null;
+        }
     }
 
     // Move the gameObject to a random position around the player \\
     private void RandomPos() {
         float randomAngle = Random.Range(0, 2f * Mathf.PI);
-        gameObject.transform.position = player.transform.position + new Vector3(Mathf.Cos(randomAngle), 0, Mathf.Sin(randomAngle)) * 15;
+        gameObject.transform.position = player.transform.position + new Vector3(Mathf.Cos(randomAngle), 0, Mathf.Sin(randomAngle)) * 35;
     }
 
     
