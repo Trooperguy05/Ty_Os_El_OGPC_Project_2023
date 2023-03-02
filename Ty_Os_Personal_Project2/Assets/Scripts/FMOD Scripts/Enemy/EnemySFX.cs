@@ -4,52 +4,49 @@ using UnityEngine;
 
 public class EnemySFX : MonoBehaviour
 {
+    // FMOD Variables \\
     [Header("Event References")]
-    public FMODUnity.EventReference runningFootstepsReference;
-    public FMODUnity.EventReference walkingFootstepsReference;
-
-    private FMOD.Studio.EventInstance runningFootsteps;
-    private FMOD.Studio.EventInstance walkingFootsteps;
+    public FMODUnity.EventReference footstepsReference;
+    [Header("Event Instances")]
+    private FMOD.Studio.EventInstance footsteps;
+    
+    // Unity Variables \\
     private float timer;
+    private MonsterMovement monsterMovement;
     // Start is called before the first frame update
     void Start()
     {
-        
+        monsterMovement = GameObject.Find("Monster").GetComponent<MonsterMovement>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (true) { // Needs to be set to if Enemy is running
-            if (timer > null) {
-                playEnemyFootsteps(true);
-                timer = 0.0f;
+        if (monsterMovement.stateMachine.currentState.name != "StandState") {
+            if (monsterMovement.stateMachine.currentState.name == "WanderState") {
+                if (timer > 1.0f) {
+                    playEnemyFootsteps(false);
+                    timer = 0.0f;
+                }
             }
-        }
-        else if (false) {
-            if (timer > null) { // Needs to be set to if Enemy is not running
-                playEnemyFootsteps(false);
-                timer = 0.0f;
+
+            else if (monsterMovement.stateMachine.currentState.name == "ChaseState") {
+                if (timer > 0.5f) {
+                    playEnemyFootsteps(true);
+                    timer = 0;
+                }
             }
         }
 
         timer += Time.deltaTime;
     }
 
-    public void playEnemyFootsteps(bool isRunning) {
-        // Play running footsteps if running \\
-        if (isRunning) {
-            runningFootsteps = FMODUnity.RuntimeManager.CreateInstance(runningFootstepsReference);
-            runningFootsteps.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(gameObject));
-            runningFootsteps.start();
-            runningFootsteps.release();
-        }
-        // Play walking footsteps if not running \\
-        else {
-            walkingFootsteps = FMODUnity.RuntimeManager.CreateInstance(walkingFootstepsReference);
-            walkingFootsteps.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(gameObject));
-            walkingFootsteps.start();
-            walkingFootsteps.release();
-        }
+    public void playEnemyFootsteps(bool isChasing) {
+        // Play Enemy Footstep Event \\
+        footsteps = FMODUnity.RuntimeManager.CreateInstance(footstepsReference);
+        footsteps.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(gameObject));
+        footsteps.start();
+        footsteps.release();
+        
     }
 }

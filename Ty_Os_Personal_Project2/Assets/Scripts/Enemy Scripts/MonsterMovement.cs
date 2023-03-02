@@ -148,7 +148,7 @@ public class MonsterMovement : MonoBehaviour
 {
     /// directionVector = destination - origin
 
-    MonsterStateMachine stateMachine = new MonsterStateMachine();
+    [HideInInspector] public MonsterStateMachine stateMachine = new MonsterStateMachine();
 
     [Header("Action Bools")]
     public bool isWandering = false;
