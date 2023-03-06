@@ -5,24 +5,32 @@ using System;
 
 public class MovementSFX : MonoBehaviour
 {
+    // FMOD Variables \\
+    [Header("Event Instances")]
     private FMOD.Studio.EventInstance footsteps;
     private FMOD.Studio.EventInstance runningFootsteps;
-    private PlayerMovement playerMovement;
-    private PlayerMovementTest playerMovementTest;
-    private Stamina stamina;
-    private float timer = 0.0f;
-    [SerializeField] private float runningFootstepsSpeed = 0.3f;
-    [SerializeField] private float footstepsSpeed = 0.5f;
-    public bool isBreathing;
     [Header("Event References")]
     public FMODUnity.EventReference footstepsReference;
     public FMODUnity.EventReference runningFootstepsReference;
     [Header("Event Emitters")]
     public FMODUnity.StudioEventEmitter heavyBreathingEmitter;
+    
+    // Unity Variables \\
+    [Header("Scripts")]
+    private PlayerMovement playerMovement;
+    private PlayerMovementTest playerMovementTest;
+    private Stamina stamina;
+    [Header("Footstep Vars")]
+    private float runningFootstepsSpeed = 0.3f;
+    private float footstepsSpeed = 0.5f;
+    private float timer = 0.0f;
+    [Header("Breathing Vars")]
+    public bool isBreathing;
+
     // Start is called before the first frame update
     void Start()
-    // Get Stuff \\
     {
+        // Get Stuff \\
         playerMovement = GetComponent<PlayerMovement>();
         playerMovementTest = GetComponent<PlayerMovementTest>();
         stamina = GetComponent<Stamina>();
