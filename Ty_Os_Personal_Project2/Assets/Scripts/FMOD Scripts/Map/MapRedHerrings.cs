@@ -7,7 +7,7 @@ public class MapRedHerrings : MonoBehaviour
     // FMOD Variables \\
     [Header("Bank References")]
     [FMODUnity.BankRef]
-    public string ambienceBank;
+    public string redHerringsBank;
 
     [Header("Event References")]
     public FMODUnity.EventReference scoobyDooLaugh;
@@ -41,7 +41,7 @@ public class MapRedHerrings : MonoBehaviour
     private IEnumerator PlayMapAmbience(FMODUnity.EventReference reference) {
         while (true) {
         // Load the ambience bank to memory \\
-        StartCoroutine(FMODManager.LoadBank(ambienceBank));
+        StartCoroutine(FMODManager.LoadBank(redHerringsBank));
         
         // Move the gameObject \\
         RandomPos();
@@ -66,7 +66,7 @@ public class MapRedHerrings : MonoBehaviour
         ambienceInstance.release();
         
         // Unload the ambience bank from memory \\
-        StartCoroutine(FMODManager.UnloadBank(ambienceBank));
+        StartCoroutine(FMODManager.UnloadBank(redHerringsBank));
         yield return null;
         }
     }

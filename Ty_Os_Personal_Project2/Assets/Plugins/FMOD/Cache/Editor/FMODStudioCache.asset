@@ -15,7 +15,7 @@ MonoBehaviour:
   Path: Ty_Os_Personal_Project2 - Audio/Build/Desktop/Map Ambience.bank
   Name: Map Ambience
   StudioPath: bank:/Map Ambience
-  lastModified: 638137107989449106
+  lastModified: 638137789452366930
   FileSizes: []
   Exists: 1
 --- !u!114 &-7934305257158388709
@@ -33,7 +33,7 @@ MonoBehaviour:
   Path: Ty_Os_Personal_Project2 - Audio/Build/Desktop/PlayerSFX.bank
   Name: PlayerSFX
   StudioPath: bank:/PlayerSFX
-  lastModified: 638127555599221417
+  lastModified: 638137789455411695
   FileSizes: []
   Exists: 1
 --- !u!114 &-6739782144229974774
@@ -63,6 +63,24 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 300
+--- !u!114 &-6260326843088194755
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Map Red Herrings.bank
+  m_EditorClassIdentifier: 
+  Path: Ty_Os_Personal_Project2 - Audio/Build/Desktop/Map Red Herrings.bank
+  Name: Map Red Herrings
+  StudioPath: bank:/Map Red Herrings
+  lastModified: 638137789453369398
+  FileSizes: []
+  Exists: 1
 --- !u!114 &-5638023322426571575
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -82,7 +100,7 @@ MonoBehaviour:
     Data3: -1624156272
     Data4: 1471320446
   Banks:
-  - {fileID: -8107191979887394622}
+  - {fileID: -6260326843088194755}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -145,6 +163,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 19000
+--- !u!114 &-544528041217264595
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: snapshot:/Monster Stinger
+  m_EditorClassIdentifier: 
+  Path: snapshot:/Monster Stinger
+  Guid:
+    Data1: -1495157057
+    Data2: 1101642701
+    Data3: -1862808390
+    Data4: -1687660448
+  Banks:
+  - {fileID: 2208223744993099090}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 0
 --- !u!114 &-527039166719169522
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -160,10 +205,10 @@ MonoBehaviour:
   Path: Ty_Os_Personal_Project2 - Audio/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638130140339151861
+  lastModified: 638137789453598803
   FileSizes:
   - Name: 
-    Value: 1468
+    Value: 1686
   Exists: 1
 --- !u!114 &11400000
 MonoBehaviour:
@@ -183,6 +228,7 @@ MonoBehaviour:
   - {fileID: -7934305257158388709}
   - {fileID: 2752134702777178224}
   - {fileID: -8107191979887394622}
+  - {fileID: -6260326843088194755}
   EditorEvents:
   - {fileID: -2187833484765701944}
   - {fileID: -6739782144229974774}
@@ -190,12 +236,13 @@ MonoBehaviour:
   - {fileID: -3087703330484421821}
   - {fileID: 4909923307164634675}
   - {fileID: -5638023322426571575}
+  - {fileID: -544528041217264595}
   EditorParameters: []
   MasterBanks:
   - {fileID: 2208223744993099090}
   StringsBanks:
   - {fileID: -527039166719169522}
-  cacheTime: 638137107989529067
+  cacheTime: 638137789455411695
   cacheVersion: 131601
 --- !u!114 &2208223744993099090
 MonoBehaviour:
@@ -212,7 +259,7 @@ MonoBehaviour:
   Path: Ty_Os_Personal_Project2 - Audio/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638137107989529067
+  lastModified: 638137789453528974
   FileSizes: []
   Exists: 1
 --- !u!114 &2344026692532710060
@@ -254,7 +301,7 @@ MonoBehaviour:
   Path: Ty_Os_Personal_Project2 - Audio/Build/Desktop/EnemySFX.bank
   Name: EnemySFX
   StudioPath: bank:/EnemySFX
-  lastModified: 638127555598975053
+  lastModified: 638137789452297176
   FileSizes: []
   Exists: 1
 --- !u!114 &3361661158823094608

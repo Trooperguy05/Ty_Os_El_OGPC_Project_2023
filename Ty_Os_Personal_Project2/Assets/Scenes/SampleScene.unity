@@ -378,14 +378,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0c871da67d220e4ba92101392698d0f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  runningFootstepsReference:
+  movementReference:
     Guid:
       Data1: 0
       Data2: 0
       Data3: 0
       Data4: 0
     Path: 
-  walkingFootstepsReference:
+  enemyAmbientReference:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  stingerReference:
     Guid:
       Data1: 0
       Data2: 0
@@ -517,6 +524,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerSFX: PlayerSFX
+  enemySFX: EnemySFX
 --- !u!4 &587026405
 Transform:
   m_ObjectHideFlags: 0
@@ -1457,7 +1465,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5fdcb73f124dcfc4696f85737b3a13b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ambienceBank: Map Ambience
+  redHerringsBank: Map Red Herrings
   scoobyDooLaugh:
     Guid:
       Data1: -1745399940
@@ -1837,9 +1845,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc14aa334f7a2d34abb1f4e3df2d601f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  runningFootstepsSpeed: 0.3
-  footstepsSpeed: 0.5
-  isBreathing: 0
   footstepsReference:
     Guid:
       Data1: -956735714
@@ -1855,6 +1860,7 @@ MonoBehaviour:
       Data4: -1735626454
     Path: event:/Player Audio/Player Footsteps/RunningFootsteps
   heavyBreathingEmitter: {fileID: 2126236223}
+  isBreathing: 0
 --- !u!114 &2126236221
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1875,7 +1881,7 @@ MonoBehaviour:
   walkRadius: 2
   runRadius: 5
   stompRadius: 10
-  jumped: 0
+  inAir: 0
   stomped: 0
   stompLength: 0.25
 --- !u!114 &2126236222

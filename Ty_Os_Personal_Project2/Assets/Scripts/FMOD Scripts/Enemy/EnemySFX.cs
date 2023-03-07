@@ -7,19 +7,31 @@ public class EnemySFX : MonoBehaviour
     // FMOD Variables \\
     [Header("Event References")]
     public FMODUnity.EventReference movementReference;
+    public FMODUnity.EventReference enemyAmbientReference;
+    public FMODUnity.EventReference stingerReference;
+
     [Header("Event Instances")]
     private FMOD.Studio.EventInstance movement;
+    private FMOD.Studio.EventInstance enemyAmbient;
+    private FMOD.Studio.EventInstance stinger;
+
+    [Header("Snapshot Instances")]
+    private FMOD.Studio.EventInstance stingerSnapshot;
     
     // Unity Variables \\
     [Header("Scripts")]
     private MonsterMovement monsterMovement;
+
     [Header("Movement Vars")]
     private float timer;
+
     // Start is called before the first frame update
     void Start()
     {
         // Get Stuff \\
         monsterMovement = GameObject.Find("Monster").GetComponent<MonsterMovement>();
+        // Start Stuff \\
+        playEnemyAmbient();
     }
 
     // Update is called once per frame
@@ -62,14 +74,42 @@ public class EnemySFX : MonoBehaviour
         movement.release();
     }
 
-    // Get the playback state of an instance \\
-    private FMOD.Studio.PLAYBACK_STATE checkPlaybackState(FMOD.Studio.EventInstance instance) {
-        // Create a new temporary variable \\
-        FMOD.Studio.PLAYBACK_STATE playbackState;
-        // Get the instances playback state and output into playbackState temp variable \\
-        instance.getPlaybackState(out playbackState);
-        // Return the instances playback state \\
-        return playbackState;
+    // Play the enemy ambience event \\
+    private void playEnemyAmbient() {
+        // Create and play the EnemyAmbient event \\
+        enemyAmbient = FMODUnity.RuntimeManager.CreateInstance(enemyAmbientReference);
+        FMODUnity.RuntimeManager.AttachInstanceToGameObject(enemyAmbient, gameObject.transform);
+        enemyAmbient.start();
     }
 
+    // Play the stinger event \\
+    private void playStinger() {
+        // Create and play the stinger event instance \\
+        stinger = FMODUnity.RuntimeManager.CreateInstance(stingerReference);
+        stinger.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(gameObject));
+        stinger.start();
+        // Start the stinger snapshot \\
+        StartCoroutine(playStingerSnapshot());
+        // Release the stinger event from memory \\
+        stinger.release();
+    }
+
+    // Use the stinger snapshot to bring down the volume of all other events \\
+    private IEnumerator playStingerSnapshot() {
+        // Create and play the stinger snapshot instance \\
+        stingerSnapshot = FMODUnity.RuntimeManager.CreateInstance("snapshot:/Monster Stinger");
+        FMODUnity.RuntimeManager.AttachInstanceToGameObject(stingerSnapshot, gameObject.transform);
+        stingerSnapshot.start();
+        // Check if the stinger event is done playing \\
+        FMOD.Studio.PLAYBACK_STATE playbackState = FMOD.Studio.PLAYBACK_STATE.PLAYING;
+        while (playbackState != FMOD.Studio.PLAYBACK_STATE.STOPPED) {
+            // Wait until the stinger is done playing \\
+            stinger.getPlaybackState(out playbackState);
+            yield return null;
+        }
+        // Once the stinger event is finished stop the snapshot \\
+        stingerSnapshot.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
+        // Release the snapshot from memory \\
+        stingerSnapshot.release();
+    }
 }

@@ -8,12 +8,16 @@ public class FMODManager : MonoBehaviour
     [Header("FMOD Bank References")]
     [FMODUnity.BankRef]
     public string playerSFX;
+    [FMODUnity.BankRef]
+    public string enemySFX;
 
     // Start is called before the first frame update
     void Awake()
     {
         // Load the playerSFX FMOD bank on awake \\
         FMODUnity.RuntimeManager.LoadBank(playerSFX, true);
+        // Load the enemySFX FMOD bank on awake \\
+        FMODUnity.RuntimeManager.LoadBank(enemySFX, true);
     }
 
     // Loads a specified FMOD bank \\
