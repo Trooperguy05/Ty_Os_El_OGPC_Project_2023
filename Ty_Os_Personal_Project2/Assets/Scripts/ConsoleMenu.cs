@@ -15,16 +15,24 @@ public class ConsoleMenu : MonoBehaviour
     private int startingWaveNumber;
     public GameObject consoleLog;
     public GameObject inputField;
+    private MouseLook mouseLook;
 
 
     void Start() {
         // Get stuff \\
-        
+        mouseLook = GameObject.Find("Main Camera").GetComponent<MouseLook>();
     }
     
     void Update() {
         // Opens and closes the console \\
-        
+        if (Input.GetKeyDown(KeyCode.BackQuote)) {
+            isConsoleChecked = !isConsoleChecked;
+            console.SetActive(isConsoleChecked);
+            mouseLook.unlockMouse();
+        }
+        if (Input.GetKeyDown(KeyCode.Return)) {
+            storeInput();
+        }
     }
 
     // Stores the input of the text box \\

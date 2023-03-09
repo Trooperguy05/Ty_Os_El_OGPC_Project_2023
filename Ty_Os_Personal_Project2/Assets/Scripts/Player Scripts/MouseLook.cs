@@ -36,7 +36,13 @@ public class MouseLook : MonoBehaviour
 
     public void unlockMouse() {
         isMenusOpen = !isMenusOpen;
-        Cursor.lockState = CursorLockMode.None;
-        Cursor.visible = true;
+        if (isMenusOpen) {
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+        }
+        else {
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
+        }
     }
 }
