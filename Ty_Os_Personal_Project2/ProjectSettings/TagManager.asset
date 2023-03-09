@@ -10,6 +10,7 @@ TagManager:
   - enemy detection
   - wall
   - monster
+  - battery
   layers:
   - Default
   - TransparentFX
@@ -19,7 +20,7 @@ TagManager:
   - UI
   - ground
   - collideables
-  - 
+  - interactables
   - 
   - 
   - post-processing
