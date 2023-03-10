@@ -22,6 +22,9 @@ public class PlayerMovementTest : MonoBehaviour
     [Header("Stamina")]
     private Stamina playerStamina;
 
+    [Header("GameObjects")]
+    public GameObject consoleMenu;
+
     [Header("Jumping")]
     public float jumpForce;
     public float jumpCooldown;
@@ -81,7 +84,9 @@ public class PlayerMovementTest : MonoBehaviour
 
     // move the player through fixed update
     void FixedUpdate() {
-        movePlayer();
+        if (!consoleMenu.activeSelf) {
+            movePlayer();
+        }
     }
 
     // method that handles player input
@@ -91,7 +96,7 @@ public class PlayerMovementTest : MonoBehaviour
         vI = Input.GetAxisRaw("Vertical");
         
         // jump input
-        if (Input.GetKey(jumpKey) && canJump && grounded) {
+        if (Input.GetKey(jumpKey) && canJump && grounded && !consoleMenu.activeSelf) {
             canJump = false;
             jump();
             Invoke(nameof(resetJump), jumpCooldown);

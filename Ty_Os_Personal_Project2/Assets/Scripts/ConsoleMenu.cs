@@ -43,10 +43,13 @@ public class ConsoleMenu : MonoBehaviour
 
     // Checks if a valid command is entered and executes it \\
     private void checkCommand() {
+        // Help the player learn and understand commands if they choose to use them \\
         if (consoleText == "Help") {
-            consoleLog.GetComponent<TextMeshProUGUI>().text += "\n-----------------------------------------------------";
-            consoleLog.GetComponent<TextMeshProUGUI>().text += "";
-            consoleLog.GetComponent<TextMeshProUGUI>().text += "\n-----------------------------------------------------";
+            consoleLog.GetComponent<TextMeshProUGUI>().text += "\nNothing is here dumb dumb Do gud lul";
+        }
+        // Clear the console menu \\
+        else if (consoleText == "Clear") {
+            consoleLog.GetComponent<TextMeshProUGUI>().text = "";
         }
         else {
             consoleLog.GetComponent<TextMeshProUGUI>().text += "\nunknown command \"" + consoleText + "\"";
