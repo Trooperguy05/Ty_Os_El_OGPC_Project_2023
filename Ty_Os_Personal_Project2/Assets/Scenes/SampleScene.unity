@@ -5182,6 +5182,7 @@ MonoBehaviour:
   walkSpeed: 7
   runSpeed: 14
   orientation: {fileID: 1703436284}
+  consoleMenu: {fileID: 673227334}
   jumpForce: 10
   jumpCooldown: 1
   airMultiplier: 0.4
