@@ -18,6 +18,7 @@ public class NodeManager : MonoBehaviour
     public Transform gridOrigin;
     public Vector2 gridSize;
     public float nodeSpacing;
+    public LayerMask groundLayer;
     private Vector2 nodePlacement;
 
     void Awake() {
@@ -40,7 +41,7 @@ public class NodeManager : MonoBehaviour
         for (int i = 0; i < gridSize.x; i++) {
             for (int j = 0; j < gridSize.y; j++) {
                 if (checkSpacing()) {
-                    GameObject foo = Instantiate(nodePrefab, new Vector3(nodePlacement.x, 2f, nodePlacement.y), nodePrefab.transform.rotation);
+                    GameObject foo = Instantiate(nodePrefab, new Vector3(nodePlacement.x, nodePrefab.transform.position.y, nodePlacement.y), nodePrefab.transform.rotation);
                     nodesCreated.Add(foo);
                     nodeList.Add(foo);
                     foo.name = "Movement Node " + count;
@@ -60,7 +61,12 @@ public class NodeManager : MonoBehaviour
 
     // method that checks the spacing before placing a node
     public bool checkSpacing() {
-        Collider[] hitColliders = Physics.OverlapSphere(new Vector3(nodePlacement.x, 2f, nodePlacement.y), nodeSpacing);
+        // check if there is ground beneath the node \\
+        bool isGround = Physics.Raycast(new Vector3(nodePlacement.x, nodePrefab.transform.position.y, nodePlacement.y), Vector3.down, 10f, groundLayer);
+        if (!isGround) return false;
+
+        // check for spacing \\
+        Collider[] hitColliders = Physics.OverlapSphere(new Vector3(nodePlacement.x, nodePrefab.transform.position.y, nodePlacement.y), nodeSpacing);
 
         // check space
         foreach(Collider hit in hitColliders) {

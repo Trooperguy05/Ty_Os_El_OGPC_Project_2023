@@ -7,6 +7,7 @@ public class BatteryLight : MonoBehaviour
     private Material mat;
     private PlayerInteract pI;
     public float glowIntensity = 2f;
+    public GameObject explosion;
     [SerializeField] private float batteryCharge = 10f;
 
     void Awake() {
@@ -25,8 +26,13 @@ public class BatteryLight : MonoBehaviour
         glowIntensity += n;
         mat.SetColor("_EmissionColor", new Color(0, 191, 71) * (Mathf.Pow(2, glowIntensity-7)));
         if (batteryCharge <= 0) {
-            pI.holdingBattery = false;
-            Destroy(gameObject);
+            destroyBattery();
         }
+    }
+
+    private void destroyBattery() {
+        pI.holdingBattery = false;
+        GameObject foo = Instantiate(explosion, transform.position, Quaternion.identity);
+        Destroy(gameObject);
     }
 }
