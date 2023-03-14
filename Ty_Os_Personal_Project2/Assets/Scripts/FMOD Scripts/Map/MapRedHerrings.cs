@@ -34,8 +34,8 @@ public class MapRedHerrings : MonoBehaviour
     void Update()
     {
         // DEBUG \\
-        if (Input.GetKeyDown(KeyCode.P)) { StartCoroutine(PlayMapAmbience(scoobyDooLaugh)); }
-        if (Input.GetKeyDown(KeyCode.O)) { RandomPos(); }
+        // if (Input.GetKeyDown(KeyCode.P)) { StartCoroutine(PlayMapAmbience(scoobyDooLaugh)); }
+        // if (Input.GetKeyDown(KeyCode.O)) { RandomPos(); }
     }
 
     private IEnumerator PlayMapAmbience(FMODUnity.EventReference reference) {

@@ -7,6 +7,9 @@ public class Flashlight : MonoBehaviour
     [Header("GameObjects")]
     public GameObject spotLight;
 
+    [Header("Scripts")]
+    private ConsoleMenu consoleMenu;
+
     [Header("FMOD Stuff")]
     public FMODUnity.EventReference clickOnReference;
     public FMODUnity.EventReference clickOffReference;
@@ -24,14 +27,15 @@ public class Flashlight : MonoBehaviour
     {
         // Get Stuff \\
         light = spotLight.GetComponent<Light>();
+        consoleMenu = GameObject.Find("Console Manager").GetComponent<ConsoleMenu>();
     }
 
     // Update is called once per frame
     void Update()
     {
         // Toggle flashlight \\
-        if (Input.GetKeyDown(KeyCode.T) && !flashlightActive) flashlightOn();
-        else if (Input.GetKeyDown(KeyCode.T) && flashlightActive) flashlightOff();
+        if (Input.GetKeyDown(KeyCode.T) && !flashlightActive && !consoleMenu.isConsoleActive) flashlightOn();
+        else if (Input.GetKeyDown(KeyCode.T) && flashlightActive && !consoleMenu.isConsoleActive) flashlightOff();
     }
 
 
