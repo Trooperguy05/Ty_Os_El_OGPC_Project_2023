@@ -336,6 +336,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   console: {fileID: 673227334}
+  playerTransform: {fileID: 2126236218}
   consoleIsActive: 0
   consoleText: 
   consoleLog: {fileID: 1732743971}
