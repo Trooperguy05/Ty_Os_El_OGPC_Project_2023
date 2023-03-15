@@ -15,7 +15,7 @@ MonoBehaviour:
   Path: Ty_Os_Personal_Project2 - Audio/Build/Desktop/Map Ambience.bank
   Name: Map Ambience
   StudioPath: bank:/Map Ambience
-  lastModified: 638137789452366930
+  lastModified: 638144357256461321
   FileSizes: []
   Exists: 1
 --- !u!114 &-7934305257158388709
@@ -33,7 +33,7 @@ MonoBehaviour:
   Path: Ty_Os_Personal_Project2 - Audio/Build/Desktop/PlayerSFX.bank
   Name: PlayerSFX
   StudioPath: bank:/PlayerSFX
-  lastModified: 638137789455411695
+  lastModified: 638144357257776549
   FileSizes: []
   Exists: 1
 --- !u!114 &-6739782144229974774
@@ -78,7 +78,7 @@ MonoBehaviour:
   Path: Ty_Os_Personal_Project2 - Audio/Build/Desktop/Map Red Herrings.bank
   Name: Map Red Herrings
   StudioPath: bank:/Map Red Herrings
-  lastModified: 638137789453369398
+  lastModified: 638144357256826381
   FileSizes: []
   Exists: 1
 --- !u!114 &-5638023322426571575
@@ -205,10 +205,10 @@ MonoBehaviour:
   Path: Ty_Os_Personal_Project2 - Audio/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638137789453598803
+  lastModified: 638144357256966407
   FileSizes:
   - Name: 
-    Value: 1686
+    Value: 1766
   Exists: 1
 --- !u!114 &11400000
 MonoBehaviour:
@@ -237,12 +237,13 @@ MonoBehaviour:
   - {fileID: 4909923307164634675}
   - {fileID: -5638023322426571575}
   - {fileID: -544528041217264595}
+  - {fileID: 7385370810424791873}
   EditorParameters: []
   MasterBanks:
   - {fileID: 2208223744993099090}
   StringsBanks:
   - {fileID: -527039166719169522}
-  cacheTime: 638137789455411695
+  cacheTime: 638144357257776549
   cacheVersion: 131601
 --- !u!114 &2208223744993099090
 MonoBehaviour:
@@ -259,7 +260,7 @@ MonoBehaviour:
   Path: Ty_Os_Personal_Project2 - Audio/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638137789453528974
+  lastModified: 638144357256911399
   FileSizes: []
   Exists: 1
 --- !u!114 &2344026692532710060
@@ -301,7 +302,7 @@ MonoBehaviour:
   Path: Ty_Os_Personal_Project2 - Audio/Build/Desktop/EnemySFX.bank
   Name: EnemySFX
   StudioPath: bank:/EnemySFX
-  lastModified: 638137789452297176
+  lastModified: 638144357256406313
   FileSizes: []
   Exists: 1
 --- !u!114 &3361661158823094608
@@ -358,3 +359,30 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 383
+--- !u!114 &7385370810424791873
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Monster Audio/Monster Ambient/Rumbling
+  m_EditorClassIdentifier: 
+  Path: event:/Monster Audio/Monster Ambient/Rumbling
+  Guid:
+    Data1: 129571696
+    Data2: 1211186148
+    Data3: 236102561
+    Data4: -300988137
+  Banks:
+  - {fileID: 2752134702777178224}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 5050
