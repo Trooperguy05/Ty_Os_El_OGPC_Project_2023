@@ -14,8 +14,6 @@ public class MonsterSoundDetection : MonoBehaviour
             inEarshot = true;
 
             pointOfSound = col.ClosestPoint(transform.position);
-
-            Debug.Log(pointOfSound);
         }
     }
     void OnTriggerExit(Collider col) {

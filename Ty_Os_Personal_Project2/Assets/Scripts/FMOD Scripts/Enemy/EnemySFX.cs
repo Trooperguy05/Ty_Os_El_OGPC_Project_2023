@@ -20,7 +20,7 @@ public class EnemySFX : MonoBehaviour
     
     // Unity Variables \\
     [Header("Scripts")]
-    private MonsterMovement monsterMovement;
+    private MonsterMovementNavmesh monsterMovement;
 
     [Header("Movement Vars")]
     private float timer;
@@ -29,7 +29,7 @@ public class EnemySFX : MonoBehaviour
     void Start()
     {
         // Get Stuff \\
-        monsterMovement = GameObject.Find("Monster").GetComponent<MonsterMovement>();
+        monsterMovement = GameObject.Find("Monster").GetComponent<MonsterMovementNavmesh>();
         // Start Stuff \\
         playEnemyAmbient();
     }

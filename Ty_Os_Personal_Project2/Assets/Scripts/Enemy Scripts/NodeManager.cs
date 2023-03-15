@@ -55,8 +55,8 @@ public class NodeManager : MonoBehaviour
 
         // set the position of the monster
         GameObject randomNode = nodesCreated[Random.Range(0, nodesCreated.Count)];
-        monster.transform.position = new Vector3(randomNode.transform.position.x, monster.transform.position.y, randomNode.transform.position.z);
-        monster.GetComponent<MonsterMovement>().currentNode = randomNode;
+        //monster.transform.position = new Vector3(randomNode.transform.position.x, monster.transform.position.y, randomNode.transform.position.z);
+        //monster.GetComponent<MonsterMovement>().currentNode = randomNode;
     }
 
     // method that checks the spacing before placing a node
