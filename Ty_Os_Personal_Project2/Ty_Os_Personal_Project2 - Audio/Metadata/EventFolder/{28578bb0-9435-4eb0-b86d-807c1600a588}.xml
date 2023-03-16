@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="EventFolder" id="{28578bb0-9435-4eb0-b86d-807c1600a588}">
+		<property name="name">
+			<value>Map 'Muddied Audio'</value>
+		</property>
+		<relationship name="folder">
+			<destination>{0fb177a8-1590-4188-a637-0bf1488a3bc7}</destination>
+		</relationship>
+	</object>
+</objects>

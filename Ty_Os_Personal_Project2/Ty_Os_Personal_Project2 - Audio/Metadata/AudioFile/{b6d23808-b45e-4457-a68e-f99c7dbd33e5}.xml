@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{b6d23808-b45e-4457-a68e-f99c7dbd33e5}">
+		<property name="assetPath">
+			<value>Test Audio Assets/mus_lvl3_clean_1_loop.ogg</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>102.85714285714286</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{6fd61683-dba8-44b2-a092-b282ca378fab}</destination>
+		</relationship>
+	</object>
+</objects>

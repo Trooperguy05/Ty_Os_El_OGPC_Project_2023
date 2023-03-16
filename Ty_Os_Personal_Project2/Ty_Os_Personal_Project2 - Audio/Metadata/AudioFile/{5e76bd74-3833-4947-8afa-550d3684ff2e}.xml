@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{5e76bd74-3833-4947-8afa-550d3684ff2e}">
+		<property name="assetPath">
+			<value>Player Audio Assets/Player Breathing/HeavyBreathingEnd.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>8.0724489795918366</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{6fd61683-dba8-44b2-a092-b282ca378fab}</destination>
+		</relationship>
+	</object>
+</objects>

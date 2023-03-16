@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="Bank" id="{5864e809-4198-4e4e-8582-4ead0d2bfdec}">
+		<property name="name">
+			<value>Map Red Herrings</value>
+		</property>
+		<relationship name="folder">
+			<destination>{02193d3a-1066-4122-a799-5cec12459a48}</destination>
+		</relationship>
+	</object>
+</objects>
