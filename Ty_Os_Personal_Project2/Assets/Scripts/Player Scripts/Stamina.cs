@@ -39,6 +39,7 @@ public class Stamina : MonoBehaviour
             while (currentStamina > 0) {
                 currentStamina -= staminaConsumeRate;
                 updateStaminaUI();
+                // Start the heavy breathing FMOD event \\
                 if (currentStamina < 30) movementSFX.startHeavyBreathing(); 
                 yield return new WaitForSeconds(0.1f);
 
@@ -58,6 +59,7 @@ public class Stamina : MonoBehaviour
         while (currentStamina < maxStamina) {
             currentStamina += staminaRechargeRate;
             updateStaminaUI();
+            // Set the "Stamina" FMOD Event parameter to current stamina so FMOD knows when to stop event \\
             movementSFX.heavyBreathingEmitter.SetParameter("Stamina", currentStamina); 
             yield return new WaitForSeconds(0.1f);
         }
