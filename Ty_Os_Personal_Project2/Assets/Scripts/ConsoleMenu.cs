@@ -8,19 +8,31 @@ using TMPro;
 public class ConsoleMenu : MonoBehaviour
 {
     // Declaring Varibles \\
+    [Header("Scripts")]
+    private MouseLook mouseLook;
+    private Stamina stamina;
+    
+    [Header("GameObjects")]
     public GameObject console;
+    public GameObject consoleLog;
+    public GameObject inputField;
+    
+    [Header("Transforms")]
     public Transform playerTransform;
+    
+    [Header("Variables")]
     public string consoleText;
     public bool isConsoleActive;
     private int startingWaveNumber;
-    public GameObject consoleLog;
-    public GameObject inputField;
-    private MouseLook mouseLook;
-
-
+    private bool unlimitedStaminaActive;
+    private float staminaConsumption;
+    
+    
     void Start() {
         // Get stuff \\
         mouseLook = GameObject.Find("Main Camera").GetComponent<MouseLook>();
+        stamina = GameObject.Find("Player").GetComponent<Stamina>();
+        staminaConsumption = stamina.staminaConsumeRate;
     }
     
     void Update() {
@@ -53,6 +65,19 @@ public class ConsoleMenu : MonoBehaviour
             // Get the location specified in the string \\
             string[] tp = consoleText.Split(' ');
             Teleport(tp[1]);
+        }
+        // Toggle unlimited stamina command \\
+        else if (consoleText == "unlimitedstamina") {
+            // Change bool to opposite value \\
+            unlimitedStaminaActive = !unlimitedStaminaActive;
+            // Activate unlimited stamina \\
+            if (unlimitedStaminaActive) {
+                stamina.staminaConsumeRate = 0.0f;
+            }
+            // Deactivate unlimited stamina \\
+            else {
+                stamina.staminaConsumeRate = staminaConsumption;
+            }
         }
         // Clear the console menu \\
         else if (consoleText == "clear") {
