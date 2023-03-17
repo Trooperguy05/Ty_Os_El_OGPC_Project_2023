@@ -1035,7 +1035,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh22034
+  m_Name: pb_Mesh19524
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -2132,8 +2132,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   suspicion: 0
-  mines: []
-  minePlacements: []
+  mines:
+  - {fileID: 8512478608168676371, guid: 19fa34310cd56cd45850c4d471a8ec0b, type: 3}
+  tagList: []
+  mineGridOrigin: {x: -69, y: 2.5, z: 5}
+  mineGridSize: {x: 109, y: 0, z: 215}
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 64
 --- !u!1 &1471276592
 GameObject:
   m_ObjectHideFlags: 0
