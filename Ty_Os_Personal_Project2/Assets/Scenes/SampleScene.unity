@@ -336,11 +336,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   console: {fileID: 673227334}
+  consoleLog: {fileID: 1732743971}
+  inputField: {fileID: 1882103595}
   playerTransform: {fileID: 2126236218}
   consoleText: 
   isConsoleActive: 0
-  consoleLog: {fileID: 1732743971}
-  inputField: {fileID: 1882103595}
 --- !u!4 &383269147
 Transform:
   m_ObjectHideFlags: 0
@@ -1964,6 +1964,7 @@ GameObject:
   - component: {fileID: 1439695340}
   - component: {fileID: 1439695345}
   - component: {fileID: 1439695346}
+  - component: {fileID: 1439695347}
   m_Layer: 0
   m_Name: Monster
   m_TagString: Untagged
@@ -2065,7 +2066,6 @@ MonoBehaviour:
   isInvestigating: 0
   moving: 0
   reachedTarget: 0
-  speed: 0
   soundLocationPrefab: {fileID: 438061183569870677, guid: 7fa0ef235fcf2334f9911a917d5eaf96, type: 3}
 --- !u!114 &1439695345
 MonoBehaviour:
@@ -2119,6 +2119,21 @@ NavMeshAgent:
   m_BaseOffset: 0.5
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!114 &1439695347
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1439695339}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 000ae8d6d54f375489637db666782b3c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  suspicion: 0
+  mines: []
+  minePlacements: []
 --- !u!1 &1471276592
 GameObject:
   m_ObjectHideFlags: 0

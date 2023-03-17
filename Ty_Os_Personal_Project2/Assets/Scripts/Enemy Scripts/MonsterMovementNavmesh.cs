@@ -159,8 +159,6 @@ public class MonsterMovementNavmesh : MonoBehaviour
     [Header("Movement Variables")]
     public bool moving = false;
     public bool reachedTarget = false;
-    public float speed;
-    //private Vector3 moveDir;
     private Rigidbody rb;
     private NavMeshAgent nA;
 
@@ -169,6 +167,9 @@ public class MonsterMovementNavmesh : MonoBehaviour
     private MonsterSoundDetection mSD;
     private PlayerSoundRadius pSR;
 
+    [Header("Suspicion")]
+    private MonsterSuspicion mS;
+
     // get stuff
     void Start()
     {
@@ -176,6 +177,7 @@ public class MonsterMovementNavmesh : MonoBehaviour
         mSD = transform.GetChild(0).GetComponent<MonsterSoundDetection>();
         pSR = GameObject.Find("Player").GetComponent<PlayerSoundRadius>();
         nA = GetComponent<NavMeshAgent>();
+        mS = GetComponent<MonsterSuspicion>();
 
         // set default state
         stateMachine.ChangeState(new StandState(this));
@@ -223,7 +225,7 @@ public class MonsterMovementNavmesh : MonoBehaviour
 
     // method that allows the monster to wander around the map \\
     private IEnumerator monsterInvestigate() {
-        //GameObject soundPosition = Instantiate(soundLocationPrefab, mSD.pointOfSound, soundLocationPrefab.transform.rotation);
+        mS.suspicion += 10;
         do {
             nA.destination = mSD.pointOfSound;
             yield return null;
