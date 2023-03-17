@@ -6,6 +6,7 @@ public class BatteryLight : MonoBehaviour
 {
     private Material mat;
     private PlayerInteract pI;
+    private BatteryGenerator bG;
     public float glowIntensity = 2f;
     public GameObject explosion;
     [SerializeField] private float batteryCharge = 10f;
@@ -13,6 +14,7 @@ public class BatteryLight : MonoBehaviour
     void Awake() {
         mat = GetComponent<Renderer>().material;
         pI = GameObject.Find("Player").GetComponent<PlayerInteract>();
+        bG = GameObject.Find("Battery Generator").GetComponent<BatteryGenerator>();
     }
 
     void Update() {
@@ -32,6 +34,7 @@ public class BatteryLight : MonoBehaviour
 
     private void destroyBattery() {
         pI.holdingBattery = false;
+        bG.spawnedBattery= false;
         GameObject foo = Instantiate(explosion, transform.position, Quaternion.identity);
         Destroy(gameObject);
     }

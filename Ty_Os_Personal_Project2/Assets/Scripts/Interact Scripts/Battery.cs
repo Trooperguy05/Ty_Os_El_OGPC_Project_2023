@@ -5,7 +5,7 @@ using UnityEngine;
 public class Battery : Interactable
 {
     protected override void Interact() {
-        Debug.Log("Interacted with " + gameObject.name);
+        //Debug.Log("Interacted with " + gameObject.name);
 
         // place battery in the hand of the player
         Transform grip = GameObject.Find("Object Grip").GetComponent<Transform>();
