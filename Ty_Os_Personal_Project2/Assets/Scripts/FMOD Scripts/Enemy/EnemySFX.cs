@@ -30,8 +30,6 @@ public class EnemySFX : MonoBehaviour
     {
         // Get Stuff \\
         monsterMovement = GameObject.Find("Monster").GetComponent<MonsterMovementNavmesh>();
-        // Start Stuff \\
-        playEnemyAmbient();
     }
 
     // Update is called once per frame
@@ -64,11 +62,11 @@ public class EnemySFX : MonoBehaviour
 
     // Play the enemy moving sound effect(s) \\
     private void playEnemyMovement(bool isChasing) {
-        // Set FMOD event parameter \\
-        if (isChasing) {} // Set Parameter \\
-        else {} // Set Parameter \\
         // Play the movement sound effect \\
         movement = FMODUnity.RuntimeManager.CreateInstance(movementReference);
+        // Set FMOD event parameter \\
+        if (isChasing) movement.setParameterByName("Monster State", 1); // Set parameter to Chasing \\
+        else { movement.setParameterByName("Monster State", 0); } // Set parameter to wander \\
         FMODUnity.RuntimeManager.AttachInstanceToGameObject(movement, gameObject.transform);
         movement.start();
         movement.release();

@@ -1935,7 +1935,6 @@ GameObject:
   - component: {fileID: 1439695341}
   - component: {fileID: 1439695344}
   - component: {fileID: 1439695340}
-  - component: {fileID: 1439695345}
   - component: {fileID: 1439695346}
   - component: {fileID: 1439695347}
   m_Layer: 0
@@ -2040,36 +2039,6 @@ MonoBehaviour:
   moving: 0
   reachedTarget: 0
   soundLocationPrefab: {fileID: 438061183569870677, guid: 7fa0ef235fcf2334f9911a917d5eaf96, type: 3}
---- !u!114 &1439695345
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1439695339}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  CollisionTag: 
-  EventReference:
-    Guid:
-      Data1: 129571696
-      Data2: 1211186148
-      Data3: 236102561
-      Data4: -300988137
-    Path: event:/Monster Audio/Monster Ambient/Rumbling
-  Event: 
-  PlayEvent: 1
-  StopEvent: 0
-  AllowFadeout: 1
-  TriggerOnce: 0
-  Preload: 0
-  Params: []
-  OverrideAttenuation: 1
-  OverrideMinDistance: 1
-  OverrideMaxDistance: 30
 --- !u!195 &1439695346
 NavMeshAgent:
   m_ObjectHideFlags: 0

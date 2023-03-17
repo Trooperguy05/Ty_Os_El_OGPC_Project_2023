@@ -8,10 +8,10 @@ public class MovementSFX : MonoBehaviour
     // FMOD Variables \\
     [Header("Event Instances")]
     private FMOD.Studio.EventInstance footsteps;
-    private FMOD.Studio.EventInstance runningFootsteps;
+    
     [Header("Event References")]
     public FMODUnity.EventReference footstepsReference;
-    public FMODUnity.EventReference runningFootstepsReference;
+    
     [Header("Event Emitters")]
     public FMODUnity.StudioEventEmitter heavyBreathingEmitter;
     
@@ -20,10 +20,12 @@ public class MovementSFX : MonoBehaviour
     private PlayerMovement playerMovement;
     private PlayerMovementTest playerMovementTest;
     private Stamina stamina;
+    
     [Header("Footstep Vars")]
     private float runningFootstepsSpeed = 0.3f;
     private float footstepsSpeed = 0.5f;
     private float timer = 0.0f;
+    
     [Header("Breathing Vars")]
     public bool isBreathing;
 
@@ -59,20 +61,14 @@ public class MovementSFX : MonoBehaviour
 
     // Play footsteps event \\
     public void PlayFootstep(bool isRunning) {
-        // Play running footsteps \\
-        if (isRunning) {
-            runningFootsteps = FMODUnity.RuntimeManager.CreateInstance(runningFootstepsReference);
-            runningFootsteps.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(gameObject));
-            runningFootsteps.start();
-            runningFootsteps.release();
-        }
-        // Play walking footsteps \\
-        else {
+        // Play footsteps event \\
             footsteps = FMODUnity.RuntimeManager.CreateInstance(footstepsReference);
+            // Set FMOD event parameter \\
+            if (isRunning) footsteps.setParameterByName("Player State", 1); // Set parameter to running \\
+            else { footsteps.setParameterByName("Player State", 0); } // Set parameter to walking \\
             footsteps.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(gameObject));
             footsteps.start();
             footsteps.release();
-        }
     }
 
     // Starts playing heavyBreathing event \\

@@ -1,5 +1,31 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-9101935611528175021
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Footsteps/Player State
+  m_EditorClassIdentifier: 
+  Name: Player State
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 2205139387
+    data2: 3884057945
+  Type: 2
+  IsGlobal: 0
+  Labels:
+  - Walking
+  - Running
+  Exists: 1
 --- !u!114 &-8107191979887394622
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15,7 +41,11 @@ MonoBehaviour:
   Path: Ty_Os_Personal_Project2 - Audio/Build/Desktop/Map Ambience.bank
   Name: Map Ambience
   StudioPath: bank:/Map Ambience
+<<<<<<< Updated upstream
   lastModified: 638142942840404731
+=======
+  lastModified: 638146421549236678
+>>>>>>> Stashed changes
   FileSizes: []
   Exists: 1
 --- !u!114 &-7934305257158388709
@@ -33,7 +63,11 @@ MonoBehaviour:
   Path: Ty_Os_Personal_Project2 - Audio/Build/Desktop/PlayerSFX.bank
   Name: PlayerSFX
   StudioPath: bank:/PlayerSFX
+<<<<<<< Updated upstream
   lastModified: 638142942840477153
+=======
+  lastModified: 638146421551410857
+>>>>>>> Stashed changes
   FileSizes: []
   Exists: 1
 --- !u!114 &-6739782144229974774
@@ -59,7 +93,8 @@ MonoBehaviour:
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
-  Parameters: []
+  Parameters:
+  - {fileID: -9101935611528175021}
   MinDistance: 1
   MaxDistance: 20
   Length: 300
@@ -78,7 +113,11 @@ MonoBehaviour:
   Path: Ty_Os_Personal_Project2 - Audio/Build/Desktop/Map Red Herrings.bank
   Name: Map Red Herrings
   StudioPath: bank:/Map Red Herrings
+<<<<<<< Updated upstream
   lastModified: 638142942840429328
+=======
+  lastModified: 638146421549855143
+>>>>>>> Stashed changes
   FileSizes: []
   Exists: 1
 --- !u!114 &-5638023322426571575
@@ -205,10 +244,14 @@ MonoBehaviour:
   Path: Ty_Os_Personal_Project2 - Audio/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
+<<<<<<< Updated upstream
   lastModified: 638146382115757706
+=======
+  lastModified: 638146421550054486
+>>>>>>> Stashed changes
   FileSizes:
   - Name: 
-    Value: 1766
+    Value: 1876
   Exists: 1
 --- !u!114 &11400000
 MonoBehaviour:
@@ -232,18 +275,22 @@ MonoBehaviour:
   EditorEvents:
   - {fileID: -2187833484765701944}
   - {fileID: -6739782144229974774}
-  - {fileID: 3361661158823094608}
   - {fileID: -3087703330484421821}
   - {fileID: 4909923307164634675}
   - {fileID: -5638023322426571575}
   - {fileID: -544528041217264595}
   - {fileID: 7385370810424791873}
+  - {fileID: 4892293261045831528}
   EditorParameters: []
   MasterBanks:
   - {fileID: 2208223744993099090}
   StringsBanks:
   - {fileID: -527039166719169522}
+<<<<<<< Updated upstream
   cacheTime: 638146382115757706
+=======
+  cacheTime: 638146421551410857
+>>>>>>> Stashed changes
   cacheVersion: 131601
 --- !u!114 &2208223744993099090
 MonoBehaviour:
@@ -260,7 +307,11 @@ MonoBehaviour:
   Path: Ty_Os_Personal_Project2 - Audio/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
+<<<<<<< Updated upstream
   lastModified: 638146382115736363
+=======
+  lastModified: 638146421549974696
+>>>>>>> Stashed changes
   FileSizes: []
   Exists: 1
 --- !u!114 &2344026692532710060
@@ -302,10 +353,14 @@ MonoBehaviour:
   Path: Ty_Os_Personal_Project2 - Audio/Build/Desktop/EnemySFX.bank
   Name: EnemySFX
   StudioPath: bank:/EnemySFX
+<<<<<<< Updated upstream
   lastModified: 638146382115726371
+=======
+  lastModified: 638146421549166882
+>>>>>>> Stashed changes
   FileSizes: []
   Exists: 1
---- !u!114 &3361661158823094608
+--- !u!114 &4892293261045831528
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -315,23 +370,24 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Player Audio/Player Footsteps/RunningFootsteps
+  m_Name: event:/Monster Audio/Monster Foodsteps/MonsterFootsteps
   m_EditorClassIdentifier: 
-  Path: event:/Player Audio/Player Footsteps/RunningFootsteps
+  Path: event:/Monster Audio/Monster Foodsteps/MonsterFootsteps
   Guid:
-    Data1: -1363133309
-    Data2: 1335119615
-    Data3: -1645430338
-    Data4: -1735626454
+    Data1: -942246405
+    Data2: 1121198012
+    Data3: -940638844
+    Data4: 587510386
   Banks:
-  - {fileID: -7934305257158388709}
+  - {fileID: 2752134702777178224}
   IsStream: 0
-  Is3D: 0
+  Is3D: 1
   IsOneShot: 1
-  Parameters: []
+  Parameters:
+  - {fileID: 5787114444591183816}
   MinDistance: 1
   MaxDistance: 20
-  Length: 300
+  Length: 102
 --- !u!114 &4909923307164634675
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -359,6 +415,32 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 383
+--- !u!114 &5787114444591183816
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/MonsterFootsteps/Monster State
+  m_EditorClassIdentifier: 
+  Name: Monster State
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 266611119
+    data2: 2008883448
+  Type: 2
+  IsGlobal: 0
+  Labels:
+  - Wander
+  - Chasing
+  Exists: 1
 --- !u!114 &7385370810424791873
 MonoBehaviour:
   m_ObjectHideFlags: 0
