@@ -6,6 +6,7 @@ public class SunMine : MonoBehaviour
 {
     public bool inEarshot = false;
     public float soundSensitivity;
+    public GameObject explosion;
     private PlayerSoundRadius pSR;
 
     void Start() {
@@ -32,5 +33,11 @@ public class SunMine : MonoBehaviour
         if (col.gameObject.tag == "Player") {
             inEarshot = false;
         }
+    }
+
+    // method that destroys the mine with particles
+    public void destroyMine() {
+        Instantiate(explosion, transform.position, Quaternion.identity);
+        Destroy(transform.parent.gameObject);
     }
 }

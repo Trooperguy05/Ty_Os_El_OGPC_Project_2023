@@ -9,7 +9,7 @@ public class BatteryLight : MonoBehaviour
     private BatteryGenerator bG;
     public float glowIntensity = 2f;
     public GameObject explosion;
-    [SerializeField] private float batteryCharge = 10f;
+    public float batteryCharge = 10f;
 
     void Awake() {
         mat = GetComponent<Renderer>().material;
@@ -23,7 +23,7 @@ public class BatteryLight : MonoBehaviour
         }
     }
 
-    private void updateCharge(float n) {
+    public void updateCharge(float n) {
         batteryCharge += n;
         glowIntensity += n;
         mat.SetColor("_EmissionColor", new Color(0, 191, 71) * (Mathf.Pow(2, glowIntensity-7)));
