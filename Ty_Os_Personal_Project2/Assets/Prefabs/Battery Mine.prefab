@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &6959797387658677717
+--- !u!1 &7275135616891618031
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,9 +8,9 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 3431149149060058379}
-  - component: {fileID: 7119461022287387756}
-  - component: {fileID: 2870202362831234192}
+  - component: {fileID: 7275135616891618030}
+  - component: {fileID: 7275135616891618029}
+  - component: {fileID: 7275135616891618028}
   m_Layer: 0
   m_Name: Sound Detector
   m_TagString: Untagged
@@ -18,48 +18,48 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &3431149149060058379
+--- !u!4 &7275135616891618030
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6959797387658677717}
+  m_GameObject: {fileID: 7275135616891618031}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 8512478608168676383}
+  m_Father: {fileID: 7275135617010881587}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!135 &7119461022287387756
+--- !u!135 &7275135616891618029
 SphereCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6959797387658677717}
+  m_GameObject: {fileID: 7275135616891618031}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 5
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &2870202362831234192
+--- !u!114 &7275135616891618028
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6959797387658677717}
+  m_GameObject: {fileID: 7275135616891618031}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a516170417cabae4292cffb1aa5fb1ad, type: 3}
+  m_Script: {fileID: 11500000, guid: 22e22426aab247b4496f7a2c14556414, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   inEarshot: 0
   soundSensitivity: 5
---- !u!1 &8512478608168676371
+--- !u!1 &7275135617010881583
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -67,48 +67,48 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 8512478608168676383}
-  - component: {fileID: 8512478608168676380}
-  - component: {fileID: 8512478608168676381}
-  - component: {fileID: 8512478608168676370}
-  - component: {fileID: 4542998374033256565}
+  - component: {fileID: 7275135617010881587}
+  - component: {fileID: 7275135617010881580}
+  - component: {fileID: 7275135617010881581}
+  - component: {fileID: 7275135617010881582}
+  - component: {fileID: 7275135617010881586}
   m_Layer: 8
-  m_Name: Sun Mine
+  m_Name: Battery Mine
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &8512478608168676383
+--- !u!4 &7275135617010881587
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8512478608168676371}
+  m_GameObject: {fileID: 7275135617010881583}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -2.71, y: 3.03, z: 2.82}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 3431149149060058379}
+  - {fileID: 7275135616891618030}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &8512478608168676380
+--- !u!33 &7275135617010881580
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8512478608168676371}
+  m_GameObject: {fileID: 7275135617010881583}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
---- !u!23 &8512478608168676381
+--- !u!23 &7275135617010881581
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8512478608168676371}
+  m_GameObject: {fileID: 7275135617010881583}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -121,7 +121,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 647bc3adfb8387143af3118d41da671d, type: 2}
+  - {fileID: 2100000, guid: 0701f8545633e7948adc43056c02a63d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -143,30 +143,30 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!135 &8512478608168676370
+--- !u!135 &7275135617010881582
 SphereCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8512478608168676371}
+  m_GameObject: {fileID: 7275135617010881583}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &4542998374033256565
+--- !u!114 &7275135617010881586
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8512478608168676371}
+  m_GameObject: {fileID: 7275135617010881583}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2a5bb3a83c052564e8e1be8113ee218a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   promptMessage: Destroy? (2 charges)
-  explosion: {fileID: 7411364419287283426, guid: d8280b4ad181fd4419ed68c217242fbc, type: 3}
+  explosion: {fileID: 7411364419287283426, guid: c4d9dd83056988740bc6bd8280e104ea, type: 3}

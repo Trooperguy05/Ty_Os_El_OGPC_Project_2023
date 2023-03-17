@@ -7,7 +7,6 @@ public class BatteryLight : MonoBehaviour
     private Material mat;
     private PlayerInteract pI;
     private BatteryGenerator bG;
-    public float glowIntensity = 2f;
     public GameObject explosion;
     public float batteryCharge = 10f;
 
@@ -25,8 +24,12 @@ public class BatteryLight : MonoBehaviour
 
     public void updateCharge(float n) {
         batteryCharge += n;
-        glowIntensity += n;
-        mat.SetColor("_EmissionColor", new Color(0, 191, 71) * (Mathf.Pow(2, glowIntensity-7)));
+
+        float batteryDiff = 10-batteryCharge;
+        float step = 0.015625f;
+        float netCharge = step/(2*batteryDiff);
+
+        mat.SetColor("_EmissionColor", new Color(0, 191, 71) * netCharge);
         if (batteryCharge <= 0) {
             destroyBattery();
         }

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SunMine : MonoBehaviour
+public class SoundMine : MonoBehaviour
 {
     public bool inEarshot = false;
     public float soundSensitivity;
@@ -16,9 +16,9 @@ public class SunMine : MonoBehaviour
     void Update()
     {
         if (inEarshot && pSR.soundValue >= soundSensitivity) {
+            // increase the monster suspicion
             Mine m = transform.parent.GetComponent<Mine>();
-            // player loses
-            Debug.LogError("Player Loses!!!");
+            GameObject.Find("Monster").GetComponent<MonsterSuspicion>().suspicion += 100;
             m.destroyMine();
         }
     }

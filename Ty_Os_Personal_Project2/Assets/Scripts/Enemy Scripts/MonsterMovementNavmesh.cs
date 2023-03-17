@@ -225,7 +225,7 @@ public class MonsterMovementNavmesh : MonoBehaviour
 
     // method that allows the monster to wander around the map \\
     private IEnumerator monsterInvestigate() {
-        mS.suspicion += 10;
+        mS.suspicion += 50;
         do {
             nA.destination = mSD.pointOfSound;
             yield return null;

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SunMine : MonoBehaviour
+public class BatteryMine : MonoBehaviour
 {
     public bool inEarshot = false;
     public float soundSensitivity;
@@ -16,10 +16,13 @@ public class SunMine : MonoBehaviour
     void Update()
     {
         if (inEarshot && pSR.soundValue >= soundSensitivity) {
+            // destroy battery in hand
+            GameObject grip = GameObject.Find("Object Grip");
             Mine m = transform.parent.GetComponent<Mine>();
-            // player loses
-            Debug.LogError("Player Loses!!!");
-            m.destroyMine();
+            if (grip.transform.GetChild(0) != null) {
+                Destroy(grip.transform.GetChild(0).gameObject);
+                m.destroyMine();
+            }
         }
     }
 
