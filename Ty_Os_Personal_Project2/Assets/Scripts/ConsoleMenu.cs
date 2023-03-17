@@ -11,6 +11,7 @@ public class ConsoleMenu : MonoBehaviour
     [Header("Scripts")]
     private MouseLook mouseLook;
     private Stamina stamina;
+    private MonsterMovementNavmesh monsterAI;
     
     [Header("GameObjects")]
     public GameObject console;
@@ -33,6 +34,7 @@ public class ConsoleMenu : MonoBehaviour
         mouseLook = GameObject.Find("Main Camera").GetComponent<MouseLook>();
         stamina = GameObject.Find("Player").GetComponent<Stamina>();
         staminaConsumption = stamina.staminaConsumeRate;
+        monsterAI = GameObject.Find("Monster").GetComponent<MonsterMovementNavmesh>();
     }
     
     void Update() {
@@ -83,6 +85,11 @@ public class ConsoleMenu : MonoBehaviour
         else if (consoleText == "clear") {
             consoleLog.GetComponent<TextMeshProUGUI>().text = "";
         }
+        // Turn off monster AI \\
+        else if (consoleText == "toggleai") {
+            // Oscar do the funny \\
+        }
+
         // Tell the player that they inputed a non-valid command \\
         else {
             consoleLog.GetComponent<TextMeshProUGUI>().text += "\n-- unknown command \"" + consoleText + "\" --";
