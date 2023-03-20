@@ -16,8 +16,12 @@ public class BatteryMine : MonoBehaviour
     void Update()
     {
         if (inEarshot && pSR.soundValue >= soundSensitivity) {
-            // destroy battery in hand
+            // destroy battery in hand \\
+            // check for battery
             GameObject grip = GameObject.Find("Object Grip");
+            if (grip == null) return;
+
+            // if there is a battery
             Mine m = transform.parent.GetComponent<Mine>();
             if (grip.transform.GetChild(0) != null) {
                 Destroy(grip.transform.GetChild(0).gameObject);

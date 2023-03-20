@@ -231,6 +231,7 @@ public class MonsterMovementNavmesh : MonoBehaviour
             yield return null;
         } while (!monsterArrived());
         isInvestigating = false;
+        yield return new WaitForSeconds(1f);
     }
     public void monsterInvestigate_wrapper() { StartCoroutine(monsterInvestigate()); }
 
