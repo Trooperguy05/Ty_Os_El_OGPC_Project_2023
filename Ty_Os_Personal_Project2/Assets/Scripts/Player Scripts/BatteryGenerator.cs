@@ -15,6 +15,7 @@ public class BatteryGenerator : MonoBehaviour
     private float timer = 0f;
     private GameObject previousPedestal = null;
 
+    // battery spawn routine
     void Update() {
         if (!spawnedBattery) timer += Time.deltaTime;
 
@@ -32,7 +33,8 @@ public class BatteryGenerator : MonoBehaviour
             foo = batteryPedestals[Random.Range(0, batteryPedestals.Length)];
         } while (foo == previousPedestal);
 
-        Instantiate(battery, foo.transform.GetChild(0).position, Quaternion.identity);
+        GameObject boo = Instantiate(battery, foo.transform.GetChild(0).position, Quaternion.identity);
+        boo.name = "Battery";
         Instantiate(batteryParticles, foo.transform.GetChild(0).position, Quaternion.identity);
     }
 }
