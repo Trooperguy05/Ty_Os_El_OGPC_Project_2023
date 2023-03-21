@@ -12,11 +12,13 @@ public class ConsoleMenu : MonoBehaviour
     private MouseLook mouseLook;
     private Stamina stamina;
     private MonsterMovementNavmesh monsterAI;
+    private PlayerMovementTest playerSpeed;
     
     [Header("GameObjects")]
     public GameObject console;
     public GameObject consoleLog;
     public GameObject inputField;
+    public GameObject player;
     
     [Header("Transforms")]
     public Transform playerTransform;
@@ -29,12 +31,14 @@ public class ConsoleMenu : MonoBehaviour
     private float staminaConsumption;
     
     
+    
     void Start() {
         // Get stuff \\
         mouseLook = GameObject.Find("Main Camera").GetComponent<MouseLook>();
         stamina = GameObject.Find("Player").GetComponent<Stamina>();
         staminaConsumption = stamina.staminaConsumeRate;
         monsterAI = GameObject.Find("Monster").GetComponent<MonsterMovementNavmesh>();
+        playerSpeed = player.GetComponent<PlayerMovementTest>();
     }
     
     void Update() {
@@ -90,6 +94,10 @@ public class ConsoleMenu : MonoBehaviour
             // Oscar do the funny \\
         }
 
+        else if (consoleText.StartsWith("playerspeed")) {
+            string[] speed = consoleText.Split(' ');
+            PlayerSpeedChange(speed[1]);
+        }
         // Tell the player that they inputed a non-valid command \\
         else {
             consoleLog.GetComponent<TextMeshProUGUI>().text += "\n-- unknown command \"" + consoleText + "\" --";
@@ -102,11 +110,16 @@ public class ConsoleMenu : MonoBehaviour
         consoleLog.GetComponent<TextMeshProUGUI>().text += "\n-- Nothing is here dumb dumb Do gud lul";
     }
 
+    private void PlayerSpeedChange(string speed) {
+        int walkSpeed = int.Parse(speed);
+        playerSpeed.walkSpeed = walkSpeed;
+    }
     // Teleport the player \\
     private void Teleport(string position) { 
         // Teleport to the start room \\
-        if (position == "startroom") {}// Move here \\
-        // Teleport to the end room \\
+        if (position == "startroom") {
+            playerTransform.position = new Vector3(-3.19f, 1.0f, -1.87f);
+        }// Move here \\
         else if (position == "endroom") {} // Move here \\
         // Teleport to the normal room \\
         else if (position == "normalroom") {} // Move here \\

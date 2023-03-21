@@ -451,6 +451,7 @@ MonoBehaviour:
   console: {fileID: 673227334}
   consoleLog: {fileID: 1732743971}
   inputField: {fileID: 1882103595}
+  player: {fileID: 2126236213}
   playerTransform: {fileID: 2126236218}
   consoleText: 
   isConsoleActive: 0
