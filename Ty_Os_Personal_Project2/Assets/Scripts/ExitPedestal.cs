@@ -12,6 +12,7 @@ public class ExitPedestal : Interactable
 
         // add battery charge to pedestal
         GetComponent<ExitPedestalCharge>().charge += bL.batteryCharge;
+        GetComponent<ExitPedestalCharge>().buttonPress();
         bL.destroyBattery();
     }
 }

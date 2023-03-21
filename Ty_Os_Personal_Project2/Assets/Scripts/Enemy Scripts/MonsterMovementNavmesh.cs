@@ -110,8 +110,10 @@ public class MonsterMovementNavmesh : MonoBehaviour
     [Header("Movement Variables")]
     public bool moving = false;
     public bool reachedTarget = false;
+    public float waitTime;
     private Rigidbody rb;
     private NavMeshAgent nA;
+    private bool isInvestigating = false;
 
     [Header("Sound Detection")]
     public GameObject soundLocationPrefab;
@@ -149,17 +151,10 @@ public class MonsterMovementNavmesh : MonoBehaviour
             }
         }
         else {
-            if (stateMachine.currentState.name != "WanderState") {
+            if (stateMachine.currentState.name != "WanderState" && !isInvestigating) {
                 stateMachine.ChangeState(new WanderState(this));
             }
         }
-
-        // stand state
-        /*
-        if (!(isWandering || isInvestigating) && stateMachine.currentState.name != "StandState") {
-            stateMachine.ChangeState(new StandState(this));
-        }
-        */
     }
 
     // method that checks if the monster arrived at its destination
@@ -192,8 +187,7 @@ public class MonsterMovementNavmesh : MonoBehaviour
             // set the destination
             if (isGround) nA.destination = ranPos;
             
-            // while the monster is going to position, stop looking
-            // for a random position
+            // while the monster is going to position, stop looking for a random position
             while (!monsterArrived()) yield return null;
         } while (true);
     }
@@ -201,12 +195,18 @@ public class MonsterMovementNavmesh : MonoBehaviour
 
     // method that allows the monster to investigate sounds around the map \\
     private IEnumerator monsterInvestigate() {
+        isInvestigating = true;
+        // investigate
         mS.suspicion += 50;
         do {
             nA.destination = mSD.pointOfSound;
             yield return null;
         } while (!monsterArrived());
-        yield return new WaitForSeconds(1f);
+
+        // 'look' around
+        stateMachine.ChangeState(new StandState(this));
+        yield return new WaitForSeconds(waitTime);
+        isInvestigating = false;
     }
     public void monsterInvestigate_wrapper() { StartCoroutine(monsterInvestigate()); }
 

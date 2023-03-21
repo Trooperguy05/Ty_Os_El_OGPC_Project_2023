@@ -10,6 +10,11 @@ public class MonsterSuspicion : MonoBehaviour
     public List<string> tagList = new List<string>();
     public Vector3 mineGridSize;
     public LayerMask groundLayer;
+    private Transform player;
+
+    void Start() {
+        player = GameObject.Find("Player").GetComponent<Transform>();
+    }
 
     // when suspicion is high enough, spawn a mine
     void Update() {
@@ -37,8 +42,8 @@ public class MonsterSuspicion : MonoBehaviour
     // method that checks for a valid mine location
     private Vector3 mineLocation() {
         // random location
-        float ranX = Random.Range(-mineGridSize.x, mineGridSize.x);
-        float ranZ = Random.Range(-mineGridSize.z, mineGridSize.z);
+        float ranX = Random.Range(-mineGridSize.x, mineGridSize.x) + player.position.x;
+        float ranZ = Random.Range(-mineGridSize.z, mineGridSize.z) + player.position.z;
         
         // check if ground is underneath
         bool isGround = Physics.Raycast(new Vector3(ranX, 2f, ranZ), Vector3.down, 10f, groundLayer);
