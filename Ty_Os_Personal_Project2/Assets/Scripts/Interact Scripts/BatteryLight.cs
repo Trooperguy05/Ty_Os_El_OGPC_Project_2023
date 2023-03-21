@@ -37,7 +37,7 @@ public class BatteryLight : MonoBehaviour
     }
 
     // method that destroys the battery with **lights***
-    private void destroyBattery() {
+    public void destroyBattery() {
         pI.holdingBattery = false;
         bG.spawnedBattery= false;
         GameObject foo = Instantiate(explosion, transform.position, Quaternion.identity);

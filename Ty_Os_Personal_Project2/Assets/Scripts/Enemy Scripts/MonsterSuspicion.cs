@@ -8,7 +8,6 @@ public class MonsterSuspicion : MonoBehaviour
 
     public GameObject[] mines;
     public List<string> tagList = new List<string>();
-    public Vector3 mineGridOrigin;
     public Vector3 mineGridSize;
     public LayerMask groundLayer;
 

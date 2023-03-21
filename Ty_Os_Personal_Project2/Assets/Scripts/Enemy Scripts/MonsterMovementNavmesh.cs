@@ -54,29 +54,6 @@ public class StandState : IState
     public void Exit() { Debug.Log(owner.gameObject.name + " exiting Stand State"); }
 }
 
-// enemy chases the player
-public class ChaseState : IState
-{
-    MonsterMovementNavmesh owner;
-
-    public ChaseState(MonsterMovementNavmesh owner) { this.owner = owner; }
-
-    public string name { get { return "ChaseState"; } }
-
-    public void Enter() { 
-        Debug.Log(owner.gameObject.name + " entering Chase State");
-
-        // reset
-        owner.stopEverything();
-
-        //owner.moveToTarget_wrapper();
-    }
-    
-    public void Execute() { }
-
-    public void Exit() { Debug.Log(owner.gameObject.name + " exiting Chase State"); }
-}
-
 // wander state: chooses a random node and travels to it
 public class WanderState : IState
 {
@@ -92,7 +69,7 @@ public class WanderState : IState
         // reset
         owner.stopEverything();
 
-        //owner.monsterWander_wrapper();
+        owner.monsterWander_wrapper();
     }
     
     public void Execute() { }
@@ -123,38 +100,12 @@ public class InvestigateState : IState
     public void Exit() { Debug.Log(owner.gameObject.name + " exiting Investigate State"); }
 }
 
-// enemy transitions between moving to calculating next node
-public class TransitionState : IState
-{
-    MonsterMovementNavmesh owner;
-
-    public TransitionState(MonsterMovementNavmesh owner) { this.owner = owner; }
-
-    public string name { get { return "TransitionState"; } }
-
-    public void Enter() { 
-        Debug.Log(owner.gameObject.name + " entering Transition State");
-
-        // reset
-        owner.stopEverything();
-    }
-    
-    public void Execute() { }
-
-    public void Exit() { Debug.Log(owner.gameObject.name + " exiting Transition State"); }
-}
-
 /// main script
 public class MonsterMovementNavmesh : MonoBehaviour
 {
     /// directionVector = destination - origin
 
     [HideInInspector] public MonsterStateMachine stateMachine = new MonsterStateMachine();
-
-    [Header("Action Bools")]
-    public bool isWandering = false;
-    public bool isChasing = false;
-    public bool isInvestigating = false;
 
     [Header("Movement Variables")]
     public bool moving = false;
@@ -169,6 +120,10 @@ public class MonsterMovementNavmesh : MonoBehaviour
 
     [Header("Suspicion")]
     private MonsterSuspicion mS;
+
+    [Header("Grid")]
+    public Vector3 gridSize;
+    public LayerMask groundLayer;
 
     // get stuff
     void Start()
@@ -186,29 +141,25 @@ public class MonsterMovementNavmesh : MonoBehaviour
     // Update is called once per frame
     void Update()
     {   
-        /// sound detection \\\
+        /// State Handler \\\
+        // sound detection
         if (mSD.inEarshot && pSR.soundValue >= mSD.soundSensitivity) {
             if (stateMachine.currentState.name != "InvestigateState") {
-                isInvestigating = true;
                 stateMachine.ChangeState(new InvestigateState(this));
             }
         }
-
-        /// state handler \\\
-        // wander state
-        if (isWandering && stateMachine.currentState.name != "WanderState") {
-            stateMachine.ChangeState(new WanderState(this));
-        }
-
-        // investigate state
-        if (isInvestigating && stateMachine.currentState.name != "InvestigateState") {
-            stateMachine.ChangeState(new InvestigateState(this));
+        else {
+            if (stateMachine.currentState.name != "WanderState") {
+                stateMachine.ChangeState(new WanderState(this));
+            }
         }
 
         // stand state
-        if (!(isWandering || isInvestigating || isChasing) && stateMachine.currentState.name != "StandState") {
+        /*
+        if (!(isWandering || isInvestigating) && stateMachine.currentState.name != "StandState") {
             stateMachine.ChangeState(new StandState(this));
         }
+        */
     }
 
     // method that checks if the monster arrived at its destination
@@ -223,14 +174,38 @@ public class MonsterMovementNavmesh : MonoBehaviour
         return false;
     }
 
-    // method that allows the monster to wander around the map \\
+    // method that allows the monster to wander across the map \\
+    private IEnumerator monsterWander() {
+        do {
+            // find random position on map \\
+            // random location
+            float ranX = Random.Range(-gridSize.x, 0);
+            float ranZ = Random.Range(-gridSize.z, gridSize.z);
+
+            // set up
+            Vector3 ranPos = new Vector3(ranX, 2f, ranZ);
+            bool isGround = false;
+            
+            // check if ground is underneath
+            isGround = Physics.Raycast(ranPos, Vector3.down, 10f, groundLayer);
+
+            // set the destination
+            if (isGround) nA.destination = ranPos;
+            
+            // while the monster is going to position, stop looking
+            // for a random position
+            while (!monsterArrived()) yield return null;
+        } while (true);
+    }
+    public void monsterWander_wrapper() { StartCoroutine(monsterWander()); }
+
+    // method that allows the monster to investigate sounds around the map \\
     private IEnumerator monsterInvestigate() {
         mS.suspicion += 50;
         do {
             nA.destination = mSD.pointOfSound;
             yield return null;
         } while (!monsterArrived());
-        isInvestigating = false;
         yield return new WaitForSeconds(1f);
     }
     public void monsterInvestigate_wrapper() { StartCoroutine(monsterInvestigate()); }
