@@ -148,6 +148,12 @@ public class PlayerMovementTest : MonoBehaviour
                     state = PlayerState.air;
                     playerStamina.stopRunning();
                 }
+                // ran out of stamina
+                else if (playerStamina.currentStamina <= 0) {
+                    state = PlayerState.walk;
+                    moveSpeed = walkSpeed;
+                    playerStamina.stopRunning();
+                }
             }
             /// if player is not running
             if (state != PlayerState.run) {
