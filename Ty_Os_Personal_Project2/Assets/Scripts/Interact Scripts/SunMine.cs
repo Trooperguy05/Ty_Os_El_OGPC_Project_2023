@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class SunMine : MonoBehaviour
 {
@@ -18,8 +19,8 @@ public class SunMine : MonoBehaviour
         if (inEarshot && pSR.soundValue >= soundSensitivity) {
             Mine m = transform.parent.GetComponent<Mine>();
             // player loses
-            Debug.LogError("Player Loses!!!");
-            m.destroyMine();
+            GameObject.Find("Main Camera").GetComponent<MouseLook>().unlockMouse();
+            SceneManager.LoadScene(2);
         }
     }
 
