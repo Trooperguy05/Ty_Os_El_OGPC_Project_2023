@@ -127,14 +127,18 @@ public class MonsterMovementNavmesh : MonoBehaviour
     public Vector3 gridSize;
     public LayerMask groundLayer;
 
+    [Header("Animations")]
+    private Animator monsterAnim;
+
     // get stuff
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-        mSD = transform.GetChild(0).GetComponent<MonsterSoundDetection>();
+        mSD = transform.GetChild(2).GetComponent<MonsterSoundDetection>();
         pSR = GameObject.Find("Player").GetComponent<PlayerSoundRadius>();
         nA = GetComponent<NavMeshAgent>();
         mS = GetComponent<MonsterSuspicion>();
+        monsterAnim = GetComponent<Animator>();
 
         // set default state
         stateMachine.ChangeState(new StandState(this));
