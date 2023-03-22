@@ -190,6 +190,9 @@ public class MonsterMovementNavmesh : MonoBehaviour
 
             // set the destination
             if (isGround) nA.destination = ranPos;
+
+            // trigger walk animation
+            monsterAnim.SetTrigger("StartWalking");
             
             // while the monster is going to position, stop looking for a random position
             while (!monsterArrived()) yield return null;
@@ -202,13 +205,17 @@ public class MonsterMovementNavmesh : MonoBehaviour
         isInvestigating = true;
         // investigate
         mS.suspicion += 50;
+        // trigger walk animation
+        monsterAnim.SetTrigger("StartWalking");
         do {
             nA.destination = mSD.pointOfSound;
             yield return null;
         } while (!monsterArrived());
 
-        // 'look' around
+        // 'look' around \\
         stateMachine.ChangeState(new StandState(this));
+        // trigger stand animation
+        monsterAnim.SetTrigger("StartStanding");
         yield return new WaitForSeconds(waitTime);
         isInvestigating = false;
     }
