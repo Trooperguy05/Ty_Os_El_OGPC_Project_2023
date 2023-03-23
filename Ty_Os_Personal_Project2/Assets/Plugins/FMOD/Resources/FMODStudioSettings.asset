@@ -586,8 +586,8 @@ MonoBehaviour:
   - Master
   Banks:
   - EnemySFX
-  - Map Ambience
-  - Map Red Herrings
+  - MapGeneral
+  - MapRedHerrings
   - PlayerSFX
   BanksToLoad:
   - Master

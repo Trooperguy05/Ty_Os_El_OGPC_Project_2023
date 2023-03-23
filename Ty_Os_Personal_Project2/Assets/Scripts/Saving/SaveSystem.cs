@@ -5,12 +5,12 @@ using System.Runtime.Serialization.Formatters.Binary;
 public static class SaveSystem
 {
     // save the party stats \\
-    public static void SaveTime(TimeLeaderboard tL) {
+    public static void SaveTime(float[] highscores) {
         BinaryFormatter formatter = new BinaryFormatter();
         string path = Application.persistentDataPath + "/timeLeaderboard.txt";
         FileStream stream = new FileStream(path, FileMode.Create);
 
-        TimeData data = new TimeData(tL);
+        TimeData data = new TimeData(highscores);
 
         formatter.Serialize(stream, data);
         stream.Close();

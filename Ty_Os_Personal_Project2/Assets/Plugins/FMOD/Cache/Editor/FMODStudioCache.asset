@@ -46,7 +46,7 @@ MonoBehaviour:
     Data3: -1624156272
     Data4: 1471320446
   Banks:
-  - {fileID: 5521986808053009180}
+  - {fileID: 1510716705152096068}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -125,7 +125,7 @@ MonoBehaviour:
   Path: Ty_Os_Personal_Project2 - Audio/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638151584347696880
+  lastModified: 638151615717771029
   FileSizes: []
   Exists: 1
 --- !u!114 &-2411382716731409048
@@ -195,7 +195,7 @@ MonoBehaviour:
   Path: Ty_Os_Personal_Project2 - Audio/Build/Desktop/PlayerSFX.bank
   Name: PlayerSFX
   StudioPath: bank:/PlayerSFX
-  lastModified: 638151584349620202
+  lastModified: 638148975318096575
   FileSizes: []
   Exists: 1
 --- !u!114 &-954842297237798693
@@ -240,10 +240,10 @@ MonoBehaviour:
   EditorBanks:
   - {fileID: 3140775872835095157}
   - {fileID: 3205876007356107073}
-  - {fileID: 3495922878418296082}
-  - {fileID: 5521986808053009180}
   - {fileID: -5339965546529908150}
   - {fileID: -1770072180277032687}
+  - {fileID: 1810654802613487232}
+  - {fileID: 1510716705152096068}
   EditorEvents:
   - {fileID: 4487600990734243122}
   - {fileID: -6007670356005658314}
@@ -259,8 +259,44 @@ MonoBehaviour:
   - {fileID: -5339965546529908150}
   StringsBanks:
   - {fileID: 3140775872835095157}
-  cacheTime: 638151584349620202
+  cacheTime: 638151615717876950
   cacheVersion: 131601
+--- !u!114 &1510716705152096068
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/MapRedHerrings.bank
+  m_EditorClassIdentifier: 
+  Path: Ty_Os_Personal_Project2 - Audio/Build/Desktop/MapRedHerrings.bank
+  Name: MapRedHerrings
+  StudioPath: bank:/Map Banks/MapRedHerrings
+  lastModified: 638151615717611446
+  FileSizes: []
+  Exists: 1
+--- !u!114 &1810654802613487232
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/MapGeneral.bank
+  m_EditorClassIdentifier: 
+  Path: Ty_Os_Personal_Project2 - Audio/Build/Desktop/MapGeneral.bank
+  Name: MapGeneral
+  StudioPath: bank:/Map Banks/MapGeneral
+  lastModified: 638151615717580974
+  FileSizes: []
+  Exists: 1
 --- !u!114 &1974293877900824653
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -303,10 +339,10 @@ MonoBehaviour:
   Path: Ty_Os_Personal_Project2 - Audio/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638151584347736776
+  lastModified: 638151615717876950
   FileSizes:
   - Name: 
-    Value: 1916
+    Value: 1924
   Exists: 1
 --- !u!114 &3205876007356107073
 MonoBehaviour:
@@ -323,25 +359,7 @@ MonoBehaviour:
   Path: Ty_Os_Personal_Project2 - Audio/Build/Desktop/EnemySFX.bank
   Name: EnemySFX
   StudioPath: bank:/EnemySFX
-  lastModified: 638151584300023287
-  FileSizes: []
-  Exists: 1
---- !u!114 &3495922878418296082
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/Map Ambience.bank
-  m_EditorClassIdentifier: 
-  Path: Ty_Os_Personal_Project2 - Audio/Build/Desktop/Map Ambience.bank
-  Name: Map Ambience
-  StudioPath: bank:/Map Ambience
-  lastModified: 638151584300083131
+  lastModified: 638148975318016572
   FileSizes: []
   Exists: 1
 --- !u!114 &4209893045233545395
@@ -422,24 +440,6 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 102857
---- !u!114 &5521986808053009180
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/Map Red Herrings.bank
-  m_EditorClassIdentifier: 
-  Path: Ty_Os_Personal_Project2 - Audio/Build/Desktop/Map Red Herrings.bank
-  Name: Map Red Herrings
-  StudioPath: bank:/Map Red Herrings
-  lastModified: 638151584301219955
-  FileSizes: []
-  Exists: 1
 --- !u!114 &6561178236330291209
 MonoBehaviour:
   m_ObjectHideFlags: 0
