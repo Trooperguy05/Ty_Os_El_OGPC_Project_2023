@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <objects serializationModel="Studio.02.02.00">
-	<object class="Bank" id="{5864e809-4198-4e4e-8582-4ead0d2bfdec}">
+	<object class="Bank" id="{938aa4cb-a2a9-487b-984d-2935d02d3f40}">
 		<property name="name">
-			<value>MapRedHerrings</value>
+			<value>MapGeneral</value>
 		</property>
 		<relationship name="folder">
 			<destination>{628c4ec2-c04c-46ac-a17e-98bab020671d}</destination>
