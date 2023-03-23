@@ -13,6 +13,7 @@ public class ConsoleMenu : MonoBehaviour
     private Stamina stamina;
     private MonsterMovementNavmesh monsterAI;
     private PlayerMovementTest playerSpeed;
+    private PauseMenu pauseMenu;
     
     [Header("GameObjects")]
     public GameObject console;
@@ -39,11 +40,12 @@ public class ConsoleMenu : MonoBehaviour
         staminaConsumption = stamina.staminaConsumeRate;
         monsterAI = GameObject.Find("Monster").GetComponent<MonsterMovementNavmesh>();
         playerSpeed = player.GetComponent<PlayerMovementTest>();
+        pauseMenu = GameObject.Find("Canvas").GetComponent<PauseMenu>();
     }
     
     void Update() {
         // Opens and closes the console \\
-        if (Input.GetKeyDown(KeyCode.BackQuote)) {
+        if (Input.GetKeyDown(KeyCode.BackQuote) && !pauseMenu.menuOpen) {
             isConsoleActive = !isConsoleActive;
             console.SetActive(isConsoleActive);
             mouseLook.unlockMouse();
@@ -91,7 +93,7 @@ public class ConsoleMenu : MonoBehaviour
         }
         // Turn off monster AI \\
         else if (consoleText == "toggleai") {
-            // Oscar do the funny \\
+            monsterAI.AIOn = !monsterAI.AIOn;
         }
 
         else if (consoleText.StartsWith("playerspeed")) {

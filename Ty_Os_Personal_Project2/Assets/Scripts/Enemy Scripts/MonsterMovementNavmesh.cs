@@ -47,6 +47,8 @@ public class StandState : IState
 
         // reset moving
         owner.moving = false;
+
+        owner.stopMonster();
     }
 
     public void Execute() { }
@@ -108,6 +110,7 @@ public class MonsterMovementNavmesh : MonoBehaviour
     [HideInInspector] public MonsterStateMachine stateMachine = new MonsterStateMachine();
 
     [Header("Movement Variables")]
+    public bool AIOn = true;
     public bool moving = false;
     public bool reachedTarget = false;
     public float waitTime;
@@ -147,17 +150,22 @@ public class MonsterMovementNavmesh : MonoBehaviour
     // Update is called once per frame
     void Update()
     {   
-        /// State Handler \\\
-        // sound detection
-        if (mSD.inEarshot && pSR.soundValue >= mSD.soundSensitivity) {
-            if (stateMachine.currentState.name != "InvestigateState") {
-                stateMachine.ChangeState(new InvestigateState(this));
+        if (AIOn) {
+            /// State Handler \\\
+            // sound detection
+            if (mSD.inEarshot && pSR.soundValue >= mSD.soundSensitivity) {
+                if (stateMachine.currentState.name != "InvestigateState" && !isInvestigating) {
+                    stateMachine.ChangeState(new InvestigateState(this));
+                }
+            }
+            else {
+                if (stateMachine.currentState.name != "WanderState" && !isInvestigating) {
+                    stateMachine.ChangeState(new WanderState(this));
+                }
             }
         }
         else {
-            if (stateMachine.currentState.name != "WanderState" && !isInvestigating) {
-                stateMachine.ChangeState(new WanderState(this));
-            }
+            if (stateMachine.currentState.name != "StandState") stateMachine.ChangeState(new StandState(this));
         }
     }
 
@@ -207,19 +215,23 @@ public class MonsterMovementNavmesh : MonoBehaviour
         mS.suspicion += 50;
         // trigger walk animation
         monsterAnim.SetTrigger("StartWalking");
-        do {
-            nA.destination = mSD.pointOfSound;
-            yield return null;
-        } while (!monsterArrived());
+
+        // walk towards point of sound
+        nA.destination = mSD.pointOfSound;
+        while (!monsterArrived()) yield return null;
 
         // 'look' around \\
-        stateMachine.ChangeState(new StandState(this));
         // trigger stand animation
         monsterAnim.SetTrigger("StartStanding");
         yield return new WaitForSeconds(waitTime);
         isInvestigating = false;
     }
     public void monsterInvestigate_wrapper() { StartCoroutine(monsterInvestigate()); }
+
+    // method that stops the monster when it enters stand state
+    public void stopMonster() {
+        nA.destination = transform.position;
+    }
 
     // method that stops all invokes and coroutines on the monobehaviour
     public void stopEverything() {
