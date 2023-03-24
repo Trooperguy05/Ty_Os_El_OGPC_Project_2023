@@ -1,15 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using System;
 
 public class FMODManager : MonoBehaviour
 {
+    // FMOD Variables \\
     [Header("FMOD Bank References")]
     [FMODUnity.BankRef]
     public string playerSFX;
     [FMODUnity.BankRef]
     public string enemySFX;
+
+    // Unity Variables \\
+    [Header("Sliders")]
+    private Slider volumeSlider;
 
     // Start is called before the first frame update
     void Awake()
@@ -18,6 +24,11 @@ public class FMODManager : MonoBehaviour
         FMODUnity.RuntimeManager.LoadBank(playerSFX, true);
         // Load the enemySFX FMOD bank on awake \\
         FMODUnity.RuntimeManager.LoadBank(enemySFX, true);
+    }
+
+    // Changes the master bus volume \\
+    public void changeVolume() {
+        FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Global Volume", volumeSlider.value);
     }
 
     // Loads a specified FMOD bank \\
@@ -51,4 +62,5 @@ public class FMODManager : MonoBehaviour
             yield return null;
         }
     }
+
 }

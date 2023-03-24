@@ -9,10 +9,12 @@ public class ExitPedestalCharge : MonoBehaviour
     private Animator exitDoorsAnim;
     private Animator pedestalPress;
     private PlayerInteract pI;
+    private MapGeneralAudio mGA;
 
     // get stuff
     void Start() {
         pI = GameObject.Find("Player").GetComponent<PlayerInteract>();
+        mGA = GameObject.Find("FMOD Manager").GetComponent<MapGeneralAudio>();
         exitDoorsAnim = GameObject.Find("Exit Doors").GetComponent<Animator>();
         pedestalPress = transform.GetChild(0).GetComponent<Animator>();
     }
@@ -32,6 +34,7 @@ public class ExitPedestalCharge : MonoBehaviour
 
     // method that presses button when interacted with
     public void buttonPress() {
+        StartCoroutine(mGA.playPedestalEvent());
         pedestalPress.SetTrigger("press");
     }
 

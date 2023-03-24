@@ -27,6 +27,30 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 0
+--- !u!114 &-8296480662372088827
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Global Volume
+  m_EditorClassIdentifier: 
+  Name: Global Volume
+  StudioPath: parameter:/Global Volume
+  Min: 0
+  Max: 100
+  Default: 80
+  ID:
+    data1: 3297156896
+    data2: 1600810692
+  Type: 0
+  IsGlobal: 1
+  Labels: []
+  Exists: 1
 --- !u!114 &-6545480538528395171
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -125,7 +149,7 @@ MonoBehaviour:
   Path: Ty_Os_Personal_Project2 - Audio/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638151942822824343
+  lastModified: 638152465935115824
   FileSizes: []
   Exists: 1
 --- !u!114 &-2411382716731409048
@@ -195,7 +219,7 @@ MonoBehaviour:
   Path: Ty_Os_Personal_Project2 - Audio/Build/Desktop/PlayerSFX.bank
   Name: PlayerSFX
   StudioPath: bank:/PlayerSFX
-  lastModified: 638147610504569858
+  lastModified: 638152465937682835
   FileSizes: []
   Exists: 1
 --- !u!114 &-954842297237798693
@@ -254,12 +278,13 @@ MonoBehaviour:
   - {fileID: 1974293877900824653}
   - {fileID: -954842297237798693}
   - {fileID: 4761229284710724775}
-  EditorParameters: []
+  EditorParameters:
+  - {fileID: -8296480662372088827}
   MasterBanks:
   - {fileID: -5339965546529908150}
   StringsBanks:
   - {fileID: 3140775872835095157}
-  cacheTime: 638151942822884335
+  cacheTime: 638152465939317669
   cacheVersion: 131601
 --- !u!114 &1510716705152096068
 MonoBehaviour:
@@ -276,7 +301,7 @@ MonoBehaviour:
   Path: Ty_Os_Personal_Project2 - Audio/Build/Desktop/MapRedHerrings.bank
   Name: MapRedHerrings
   StudioPath: bank:/Map Banks/MapRedHerrings
-  lastModified: 638151942822734353
+  lastModified: 638152465939317669
   FileSizes: []
   Exists: 1
 --- !u!114 &1810654802613487232
@@ -294,7 +319,7 @@ MonoBehaviour:
   Path: Ty_Os_Personal_Project2 - Audio/Build/Desktop/MapGeneral.bank
   Name: MapGeneral
   StudioPath: bank:/Map Banks/MapGeneral
-  lastModified: 638151942822699361
+  lastModified: 638152465937732734
   FileSizes: []
   Exists: 1
 --- !u!114 &1974293877900824653
@@ -339,10 +364,10 @@ MonoBehaviour:
   Path: Ty_Os_Personal_Project2 - Audio/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638151942822884335
+  lastModified: 638152465935145722
   FileSizes:
   - Name: 
-    Value: 1924
+    Value: 1968
   Exists: 1
 --- !u!114 &3205876007356107073
 MonoBehaviour:
@@ -359,7 +384,7 @@ MonoBehaviour:
   Path: Ty_Os_Personal_Project2 - Audio/Build/Desktop/EnemySFX.bank
   Name: EnemySFX
   StudioPath: bank:/EnemySFX
-  lastModified: 638147610504404846
+  lastModified: 638152465933799404
   FileSizes: []
   Exists: 1
 --- !u!114 &4209893045233545395
