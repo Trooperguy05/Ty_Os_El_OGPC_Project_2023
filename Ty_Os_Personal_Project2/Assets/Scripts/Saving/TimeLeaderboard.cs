@@ -18,9 +18,10 @@ public class TimeLeaderboard : MonoBehaviour
     // method that updates the time text while formatting it
     public string updateTimeText() {
         int minutes = (int) time / 60;
-        int seconds = (int) time;
+        int seconds = (int) time - minutes;
+        int miliseconds = (int) ((time - ((int) time)) * 100f);
 
-        return minutes + ":" + seconds; 
+        return minutes + ":" + seconds + ":" + miliseconds; 
     }
 
     // method that saves the current score to the highscore leaderboard, if faster

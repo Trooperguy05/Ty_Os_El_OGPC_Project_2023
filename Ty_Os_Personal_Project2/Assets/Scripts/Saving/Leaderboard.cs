@@ -19,9 +19,18 @@ public class Leaderboard : MonoBehaviour
 
             // print the data
             for (int i = 0; i < data.times.Length; i++) {
-                board += (i+1) + ") " + data.times[i] + "\n";
+                board += (i+1) + ") " + formatTime(data.times[i]) + "\n";
             }
         }
         text.text = board;
+    }
+
+    // method that formats the time given into a usable string
+    public string formatTime(float time) {
+        int minutes = (int) time / 60;
+        int seconds = (int) time - minutes;
+        int miliseconds = (int) ((time - ((int) time)) * 100f);
+
+        return minutes + ":" + seconds + ":" + miliseconds; 
     }
 }
