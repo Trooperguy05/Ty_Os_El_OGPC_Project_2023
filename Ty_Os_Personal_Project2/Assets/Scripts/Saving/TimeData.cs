@@ -5,10 +5,11 @@ using UnityEngine;
 [System.Serializable]
 public class TimeData
 {
-    public float[] times = new float[5];
+    public List<float> times = new List<float>() {0, 0, 0, 0, 0};
 
-    public TimeData(float[] highscores) {
-        for (int i = 0; i < highscores.Length; i++) {
+    public TimeData(List<float> highscores) {
+        //times = new List<float>() {0, 0, 0, 0, 0};
+        for (int i = 0; i < highscores.Count; i++) {
             times[i] = highscores[i];
         }
     }

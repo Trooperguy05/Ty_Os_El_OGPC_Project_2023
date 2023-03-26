@@ -1,3 +1,5 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
@@ -5,7 +7,7 @@ using System.Runtime.Serialization.Formatters.Binary;
 public static class SaveSystem
 {
     // save the party stats \\
-    public static void SaveTime(float[] highscores) {
+    public static void SaveTime(List<float> highscores) {
         BinaryFormatter formatter = new BinaryFormatter();
         string path = Application.persistentDataPath + "/timeLeaderboard.txt";
         FileStream stream = new FileStream(path, FileMode.Create);

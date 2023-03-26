@@ -15,14 +15,12 @@ public class Leaderboard : MonoBehaviour
 
         string board = "";
         if (data != null) {
-            // format the data
-
             // print the data
-            for (int i = 0; i < data.times.Length; i++) {
+            for (int i = 0; i < data.times.Count; i++) {
                 board += (i+1) + ") " + formatTime(data.times[i]) + "\n";
             }
         }
-        text.text = board;
+        text.text += "\n" + board;
     }
 
     // method that formats the time given into a usable string

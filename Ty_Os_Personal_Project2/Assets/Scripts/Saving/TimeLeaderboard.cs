@@ -26,27 +26,23 @@ public class TimeLeaderboard : MonoBehaviour
 
     // method that saves the current score to the highscore leaderboard, if faster
     public void saveData() {
+        // funky set up
         TimeData data = SaveSystem.LoadTimeLeaderboard();
-        float[] timeboard = new float[5];
+        List<float> timeboard = new List<float>();
+
         // get previous high scores
-        if (data != null) {
-            for (int i = 0; i < data.times.Length; i++) {
-                timeboard[i] = data.times[i];
-            }
-        }
+        if (data != null) for (int i = 0; i < data.times.Count; i++) timeboard.Add(data.times[i]);
+        else for (int i = 0; i < 5; i++) timeboard.Add(0);
+
         // compare highscores to current score
-        for (int i = 0; i < timeboard.Length; i++) {
+        for (int i = 0; i < timeboard.Count; i++) {
             if (time < timeboard[i] || timeboard[i] == 0) {
-                if (i != timeboard.Length-1) {
-                    for (int j = i; j < timeboard.Length-1; j+=2) {
-                        timeboard[j+1] = timeboard[j];
-                    }
-                }
-                //if (i != timeboard.Length-1) timeboard[i+1] = timeboard[i];
-                timeboard[i] = time;
+                timeboard.Insert(i, time);
+                timeboard.RemoveAt(5);
                 break;
             }
         }
+
         // save the highscores
         SaveSystem.SaveTime(timeboard);
     }
