@@ -9,7 +9,7 @@ public class ExitPortal : MonoBehaviour
         if (col.gameObject.tag == "Player") {
             GameObject.Find("Main Camera").GetComponent<MouseLook>().unlockMouse();
             GameObject.Find("Canvas").GetComponent<TimeLeaderboard>().saveData();
-            SceneManager.LoadScene(3);
+            StartCoroutine(GameObject.Find("Scene Loader").GetComponent<SceneLoader>().loadScene(3));
         }
     }
 }

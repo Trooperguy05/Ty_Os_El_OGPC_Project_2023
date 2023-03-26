@@ -20,7 +20,7 @@ public class SunMine : MonoBehaviour
             Mine m = transform.parent.GetComponent<Mine>();
             // player loses
             GameObject.Find("Main Camera").GetComponent<MouseLook>().unlockMouse();
-            SceneManager.LoadScene(2);
+            StartCoroutine(GameObject.Find("Scene Loader").GetComponent<SceneLoader>().loadScene(2));
         }
     }
 

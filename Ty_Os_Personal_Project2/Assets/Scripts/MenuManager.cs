@@ -8,7 +8,7 @@ public class MenuManager : MonoBehaviour
     // method to be put on a btn
     // switches scene to the play scene
     public void playGame() {
-        SceneManager.LoadScene(1);
+        StartCoroutine(GameObject.Find("Scene Loader").GetComponent<SceneLoader>().loadScene(1));
     }
 
     // method to be put on a btn
@@ -20,6 +20,6 @@ public class MenuManager : MonoBehaviour
     // method to be put on a btn
     // switches the scene to the main menu
     public void mainMenu() {
-        SceneManager.LoadScene(0);
+        StartCoroutine(GameObject.Find("Scene Loader").GetComponent<SceneLoader>().loadScene(0));
     }
 }
