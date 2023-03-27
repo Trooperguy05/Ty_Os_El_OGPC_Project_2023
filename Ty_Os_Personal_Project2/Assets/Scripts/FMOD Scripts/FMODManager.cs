@@ -30,15 +30,19 @@ public class FMODManager : MonoBehaviour
     private float currentMonsterVolume = 80;
     private float currentAmbienceVolume = 80;
 
-    // Start is called before the first frame update
+    // Awake is called before Start 
     void Awake()
     {
         // Load the playerSFX FMOD bank on awake \\
         FMODUnity.RuntimeManager.LoadBank(playerSFX, true);
         // Load the enemySFX FMOD bank on awake \\
         FMODUnity.RuntimeManager.LoadBank(enemySFX, true);
-        
-        // Set all volume slider values \\
+    }
+    
+    // Start is called before the first frame update
+    void Start()
+    {
+         // Set all volume slider values \\
         masterVolumeSlider.value = currentMasterVolume;
         playerVolumeSlider.value = currentPlayerVolume;
         monsterVolumeSlider.value = currentMonsterVolume;
