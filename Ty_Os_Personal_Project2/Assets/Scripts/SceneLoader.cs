@@ -9,6 +9,9 @@ public class SceneLoader : MonoBehaviour
     // scene change event
     public delegate void SceneChanged();
     public static event SceneChanged sceneChanged;
+    // before scene change event
+    public delegate void BeforeSceneChanged();
+    public static event BeforeSceneChanged beforeSceneChanged;
 
     // loading screen and scene loader variables \\
     public bool changeScene = false;
@@ -30,7 +33,10 @@ public class SceneLoader : MonoBehaviour
     }
 
     // method that loads the next scene based on the build index given \\
-    public IEnumerator loadScene(int index) { 
+    public IEnumerator loadScene(int index) {
+        // invoke the beforescenechanged event
+        if (beforeSceneChanged != null) beforeSceneChanged.Invoke();
+        
         // load the scene
         AsyncOperation aO = SceneManager.LoadSceneAsync(index);
 
