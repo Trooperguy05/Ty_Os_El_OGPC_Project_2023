@@ -74,6 +74,12 @@ public class FMODManager : MonoBehaviour
         playerVolumeSlider.value = playerVolume;
         monsterVolumeSlider.value = monsterVolume;
         ambienceVolumeSlider.value = ambienceVolume;
+        // Set FMOD parameter values \\
+        FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Global Volume", masterVolume);
+        FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Player Volume", playerVolume);
+        FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Monster Volume", monsterVolume);
+        FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Ambience Volume", ambienceVolume);
+        
     }
 
     // Changes the master bus fader \\
