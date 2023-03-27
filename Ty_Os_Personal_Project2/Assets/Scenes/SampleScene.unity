@@ -4565,16 +4565,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 000ae8d6d54f375489637db666782b3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  suspicion: 0
+  suspicion: 950
+  suspicionMax: 1000
   mines:
   - {fileID: 8512478608168676371, guid: 19fa34310cd56cd45850c4d471a8ec0b, type: 3}
   - {fileID: 7275135617010881583, guid: 369fa0af62f0a3542a452644ddd41fcf, type: 3}
   - {fileID: 5067433233954356285, guid: 276155ac15ddfa94c831292632081b92, type: 3}
-  tagList: []
+  mineExplosion:
+  - {fileID: 7411364419287283426, guid: d8280b4ad181fd4419ed68c217242fbc, type: 3}
+  - {fileID: 7411364419287283426, guid: c4d9dd83056988740bc6bd8280e104ea, type: 3}
+  - {fileID: 7411364419287283426, guid: cdc6ebcae84c2d34fb36977dddda0e1a, type: 3}
+  tagList:
+  - Player
   mineGridSize: {x: 20, y: 0, z: 20}
   groundLayer:
     serializedVersion: 2
     m_Bits: 64
+  minimumRange: 10
+  interval: 1
 --- !u!114 &1180032970
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -80738,6 +80746,7 @@ GameObject:
   - component: {fileID: 2126236221}
   - component: {fileID: 2126236224}
   - component: {fileID: 2126236225}
+  - component: {fileID: 2126236226}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -81004,6 +81013,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   text: {fileID: 877746484}
+--- !u!114 &2126236226
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2126236213}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6dbc33ab877a9ba40a8585489baef718, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isDead: 0
 --- !u!1 &2126767734
 GameObject:
   m_ObjectHideFlags: 0

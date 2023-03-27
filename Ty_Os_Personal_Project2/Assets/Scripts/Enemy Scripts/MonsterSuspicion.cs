@@ -4,12 +4,21 @@ using UnityEngine;
 
 public class MonsterSuspicion : MonoBehaviour
 {
+    [Header("Suspicion")]
     public int suspicion = 0;
+    public int suspicionMax;
 
+    [Header("Mines")]
     public GameObject[] mines;
+    public GameObject[] mineExplosion;
+
+    [Header("Mine Spawning")]
     public List<string> tagList = new List<string>();
     public Vector3 mineGridSize;
     public LayerMask groundLayer;
+    public float minimumRange;
+    public float interval;
+    private float timer;
     private Transform player;
 
     void Start() {
@@ -18,8 +27,17 @@ public class MonsterSuspicion : MonoBehaviour
 
     // when suspicion is high enough, spawn a mine
     void Update() {
-        if (suspicion >= 100) {
-            suspicion -= 100;
+        timer += Time.deltaTime;
+
+        // if suspicion reaches the max, fail the player
+        if (suspicion >= suspicionMax) {
+            GameObject.Find("Player").GetComponent<PlayerDead>().playerFail_wrapper();
+            suspicion -= suspicionMax;
+        }
+
+        // spawn a mine every interval
+        if (timer >= interval) {
+            timer -= interval;
             spawnMine();
         }
     }
@@ -37,13 +55,14 @@ public class MonsterSuspicion : MonoBehaviour
 
         // spawn the mine
         Instantiate(mines[ran], ranPos, Quaternion.identity);
+        Instantiate(mineExplosion[ran], ranPos, Quaternion.identity);
     }
 
     // method that checks for a valid mine location
     private Vector3 mineLocation() {
         // random location
-        float ranX = Random.Range(-mineGridSize.x, mineGridSize.x) + player.position.x;
-        float ranZ = Random.Range(-mineGridSize.z, mineGridSize.z) + player.position.z;
+        float ranX = Random.Range(-mineGridSize.x-minimumRange, mineGridSize.x+minimumRange) + player.position.x;
+        float ranZ = Random.Range(-mineGridSize.z-minimumRange, mineGridSize.z+minimumRange) + player.position.z;
         
         // check if ground is underneath
         bool isGround = Physics.Raycast(new Vector3(ranX, 2f, ranZ), Vector3.down, 10f, groundLayer);

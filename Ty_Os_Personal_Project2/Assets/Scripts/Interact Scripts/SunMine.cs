@@ -19,8 +19,8 @@ public class SunMine : MonoBehaviour
         if (inEarshot && pSR.soundValue >= soundSensitivity) {
             Mine m = transform.parent.GetComponent<Mine>();
             // player loses
-            GameObject.Find("Main Camera").GetComponent<MouseLook>().unlockMouse();
-            StartCoroutine(GameObject.Find("Scene Loader").GetComponent<SceneLoader>().loadScene(2));
+            GameObject.Find("Player").GetComponent<PlayerDead>().playerFail_wrapper();
+            m.destroyMine();
         }
     }
 

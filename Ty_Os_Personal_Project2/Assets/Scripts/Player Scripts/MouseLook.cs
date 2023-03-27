@@ -14,13 +14,16 @@ public class MouseLook : MonoBehaviour
 
     public bool isMenusOpen;
 
+    private PlayerDead pD;
+
     void Start() {
+        pD = GameObject.Find("Player").GetComponent<PlayerDead>();
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
     }
 
     void Update() {
-        if (!isMenusOpen) {
+        if (!isMenusOpen && !pD.isDead) {
             float mouseX = Input.GetAxisRaw("Mouse X") * Time.deltaTime * sensX;
             float mouseY = Input.GetAxisRaw("Mouse Y") * Time.deltaTime * sensY;
 

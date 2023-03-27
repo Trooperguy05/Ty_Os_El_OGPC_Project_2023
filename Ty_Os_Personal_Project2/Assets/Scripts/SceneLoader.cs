@@ -40,7 +40,7 @@ public class SceneLoader : MonoBehaviour
         // load the scene
         AsyncOperation aO = SceneManager.LoadSceneAsync(index);
 
-        // switch the loading screen back off when the new scene loads
+        // load scene
         while (!aO.isDone) yield return null;
 
         // invoke the sceneChanged event

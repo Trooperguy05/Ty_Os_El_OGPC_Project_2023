@@ -25,6 +25,7 @@ public class PlayerMovementTest : MonoBehaviour
     [Header("GameObjects")]
     public GameObject consoleMenu;
     private PauseMenu pM;
+    private PlayerDead pD;
 
     [Header("Jumping")]
     public float jumpForce;
@@ -64,6 +65,7 @@ public class PlayerMovementTest : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         playerStamina = GetComponent<Stamina>();
         pM = GameObject.Find("Canvas").GetComponent<PauseMenu>();
+        pD = GetComponent<PlayerDead>();
 
         startYScale = transform.localScale.y;
     }
@@ -86,7 +88,7 @@ public class PlayerMovementTest : MonoBehaviour
 
     // move the player through fixed update
     void FixedUpdate() {
-        if (!consoleMenu.activeSelf && !pM.menuOpen) {
+        if (!consoleMenu.activeSelf && !pM.menuOpen && !pD.isDead) {
             movePlayer();
         }
     }
