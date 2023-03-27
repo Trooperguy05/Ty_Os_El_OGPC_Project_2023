@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="ParameterPreset" id="{d18e97a6-925e-45aa-bf5b-a486bcab604d}">
+		<property name="name">
+			<value>Monster Volume</value>
+		</property>
+		<relationship name="folder">
+			<destination>{df9cbb5b-f9d3-4d8b-b4f3-ae341ef0d061}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{07dcff4d-39e3-42fb-952b-e6cb94d15887}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{07dcff4d-39e3-42fb-952b-e6cb94d15887}">
+		<property name="maximum">
+			<value>100</value>
+		</property>
+		<property name="isGlobal">
+			<value>true</value>
+		</property>
+		<property name="initialValue">
+			<value>80</value>
+		</property>
+		<property name="isExposedRecursively">
+			<value>false</value>
+		</property>
+	</object>
+</objects>

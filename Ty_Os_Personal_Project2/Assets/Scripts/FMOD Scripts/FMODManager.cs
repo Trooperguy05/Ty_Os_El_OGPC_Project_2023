@@ -14,8 +14,21 @@ public class FMODManager : MonoBehaviour
     public string enemySFX;
 
     // Unity Variables \\
+    [Header("GameObjects")]
+    public GameObject audioSettings;
+    public GameObject pauseMenu;
+
     [Header("Sliders")]
-    private Slider volumeSlider;
+    public Slider masterVolumeSlider;
+    public Slider playerVolumeSlider;
+    public Slider monsterVolumeSlider;
+    public Slider ambienceVolumeSlider;
+
+    [Header("Floats")]
+    private float currentMasterVolume = 80;
+    private float currentPlayerVolume = 80;
+    private float currentMonsterVolume = 80;
+    private float currentAmbienceVolume = 80;
 
     // Start is called before the first frame update
     void Awake()
@@ -24,11 +37,42 @@ public class FMODManager : MonoBehaviour
         FMODUnity.RuntimeManager.LoadBank(playerSFX, true);
         // Load the enemySFX FMOD bank on awake \\
         FMODUnity.RuntimeManager.LoadBank(enemySFX, true);
+        
+        // Set all volume slider values \\
+        masterVolumeSlider.value = currentMasterVolume;
+        playerVolumeSlider.value = currentPlayerVolume;
+        monsterVolumeSlider.value = currentMonsterVolume;
+        ambienceVolumeSlider.value = currentAmbienceVolume;
     }
 
-    // Changes the master bus volume \\
-    public void changeVolume() {
-        FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Global Volume", volumeSlider.value);
+    // Toggles the audio settings menu \\
+    public void toggleAudioSettings() {
+        pauseMenu.SetActive(!pauseMenu.activeSelf);
+        audioSettings.SetActive(!audioSettings.activeSelf);
+    }
+
+    // Changes the master bus fader \\
+    public void changeMasterVolume() {
+        currentMasterVolume = masterVolumeSlider.value;
+        FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Global Volume", currentMasterVolume);
+    }
+
+    // Changes the player bus fader \\
+    public void changePlayerVolume() {
+        currentPlayerVolume = playerVolumeSlider.value;
+        FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Player Volume", currentPlayerVolume);
+    }
+
+    // Changes the monster bus fader \\
+    public void changeMonsterVolume() {
+        currentMonsterVolume = monsterVolumeSlider.value;
+        FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Monster Volume", currentMonsterVolume);
+    }
+
+    // Changes the ambience bus fader \\
+    public void changeAmbienceVolume() {
+        currentAmbienceVolume = ambienceVolumeSlider.value;
+        FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Ambience Volume", currentAmbienceVolume);
     }
 
     // Loads a specified FMOD bank \\
