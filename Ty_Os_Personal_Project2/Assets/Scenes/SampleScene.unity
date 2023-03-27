@@ -4567,6 +4567,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   suspicion: 950
   suspicionMax: 1000
+  shockwave: {fileID: 648579194667338612, guid: c6c99dabf080fd74cafa677272683115, type: 3}
   mines:
   - {fileID: 8512478608168676371, guid: 19fa34310cd56cd45850c4d471a8ec0b, type: 3}
   - {fileID: 7275135617010881583, guid: 369fa0af62f0a3542a452644ddd41fcf, type: 3}

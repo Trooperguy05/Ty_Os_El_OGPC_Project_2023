@@ -7,6 +7,7 @@ public class MonsterSuspicion : MonoBehaviour
     [Header("Suspicion")]
     public int suspicion = 0;
     public int suspicionMax;
+    public GameObject shockwave;
 
     [Header("Mines")]
     public GameObject[] mines;
@@ -32,6 +33,7 @@ public class MonsterSuspicion : MonoBehaviour
         // if suspicion reaches the max, fail the player
         if (suspicion >= suspicionMax) {
             GameObject.Find("Player").GetComponent<PlayerDead>().playerFail_wrapper();
+            Instantiate(shockwave, transform.position, Quaternion.identity);
             suspicion -= suspicionMax;
         }
 
