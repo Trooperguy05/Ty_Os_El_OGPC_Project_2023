@@ -25,10 +25,10 @@ public class FMODManager : MonoBehaviour
     public Slider ambienceVolumeSlider;
 
     [Header("Floats")]
-    private float currentMasterVolume = 80;
-    private float currentPlayerVolume = 80;
-    private float currentMonsterVolume = 80;
-    private float currentAmbienceVolume = 80;
+    private float masterVolume;
+    private float playerVolume;
+    private float monsterVolume;
+    private float ambienceVolume;
 
     // Awake is called before Start 
     void Awake()
@@ -42,11 +42,18 @@ public class FMODManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-         // Set all volume slider values \\
-        masterVolumeSlider.value = currentMasterVolume;
-        playerVolumeSlider.value = currentPlayerVolume;
-        monsterVolumeSlider.value = currentMonsterVolume;
-        ambienceVolumeSlider.value = currentAmbienceVolume;
+        // Get FMODSettings script \\
+        FMODSettings FMODSettings = GameObject.Find("FMOD Settings").GetComponent<FMODSettings>();
+        // Set all current volumes \\
+        masterVolume = FMODSettings.masterVolume;
+        playerVolume = FMODSettings.playerVolume;
+        monsterVolume = FMODSettings.monsterVolume;
+        ambienceVolume = FMODSettings.ambienceVolume;
+        // Set all volume slider values \\
+        masterVolumeSlider.value = masterVolume;
+        playerVolumeSlider.value = playerVolume;
+        monsterVolumeSlider.value = monsterVolume;
+        ambienceVolumeSlider.value = ambienceVolume;
     }
 
     // Toggles the audio settings menu \\
@@ -55,28 +62,42 @@ public class FMODManager : MonoBehaviour
         audioSettings.SetActive(!audioSettings.activeSelf);
     }
 
+    // Reset all volume values to base values \\
+    public void resetVolumeSettings() {
+        // Set base values \\
+        masterVolume = 80;
+        playerVolume = 80;
+        monsterVolume = 80;
+        ambienceVolume = 80;
+        // Set volume slider values \\
+        masterVolumeSlider.value = masterVolume;
+        playerVolumeSlider.value = playerVolume;
+        monsterVolumeSlider.value = monsterVolume;
+        ambienceVolumeSlider.value = ambienceVolume;
+    }
+
     // Changes the master bus fader \\
     public void changeMasterVolume() {
-        currentMasterVolume = masterVolumeSlider.value;
-        FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Global Volume", currentMasterVolume);
+        masterVolume = masterVolumeSlider.value;
+        FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Global Volume", masterVolume);
     }
 
     // Changes the player bus fader \\
     public void changePlayerVolume() {
-        currentPlayerVolume = playerVolumeSlider.value;
-        FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Player Volume", currentPlayerVolume);
+        playerVolume = playerVolumeSlider.value;
+        FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Player Volume", playerVolume);
     }
 
     // Changes the monster bus fader \\
     public void changeMonsterVolume() {
-        currentMonsterVolume = monsterVolumeSlider.value;
-        FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Monster Volume", currentMonsterVolume);
+        monsterVolume = monsterVolumeSlider.value;
+        FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Monster Volume", monsterVolume);
     }
 
     // Changes the ambience bus fader \\
     public void changeAmbienceVolume() {
-        currentAmbienceVolume = ambienceVolumeSlider.value;
-        FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Ambience Volume", currentAmbienceVolume);
+        ambienceVolume = ambienceVolumeSlider.value;
+        FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Ambience Volume", ambienceVolume);
     }
 
     // Loads a specified FMOD bank \\

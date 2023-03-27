@@ -10,4 +10,26 @@ public class FMODSettings : MonoBehaviour
     public float playerVolume;
     public float monsterVolume;
     public float ambienceVolume;
+
+    [Header("Master Bus")]
+    private FMOD.Studio.Bus masterBus;
+
+    // Wacky scene change stuff \\
+    void OnEnable() { 
+        SceneLoader.beforeSceneChanged += stopAllSounds;
+    }
+    void OnDisable() { 
+        SceneLoader.beforeSceneChanged -= stopAllSounds;
+    }
+
+    // Get Stuff \\
+    void Start()
+    {
+        masterBus = FMODUnity.RuntimeManager.GetBus("bus:/Master Bus");
+    }
+
+    // Stops all events on the master bus \\
+    public void stopAllSounds() {
+        masterBus.stopAllEvents(FMOD.Studio.STOP_MODE.IMMEDIATE);
+    }
 }
