@@ -25,7 +25,7 @@ public class FMODSettings : MonoBehaviour
     // Get Stuff \\
     void Start()
     {
-        masterBus = FMODUnity.RuntimeManager.GetBus("bus:/Master Bus");
+        masterBus = FMODUnity.RuntimeManager.GetBus("bus:/");
     }
 
     // Stops all events on the master bus \\
