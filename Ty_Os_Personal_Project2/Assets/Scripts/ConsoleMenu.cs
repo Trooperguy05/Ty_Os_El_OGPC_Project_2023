@@ -20,6 +20,7 @@ public class ConsoleMenu : MonoBehaviour
     public GameObject consoleLog;
     public GameObject inputField;
     public GameObject player;
+    public GameObject battery;
     
     [Header("Transforms")]
     public Transform playerTransform;
@@ -30,6 +31,7 @@ public class ConsoleMenu : MonoBehaviour
     private int startingWaveNumber;
     private bool unlimitedStaminaActive;
     private float staminaConsumption;
+    private int roomNum;
     
     
     
@@ -100,6 +102,14 @@ public class ConsoleMenu : MonoBehaviour
             string[] speed = consoleText.Split(' ');
             PlayerSpeedChange(speed[1]);
         }
+        // Give battery object to player \\
+        else if (consoleText.StartsWith("givebattery")) {
+            Instantiate(battery, player.transform.position, Quaternion.identity);
+        }
+        // Reset Scene \\ 
+        else if (consoleText.StartsWith("resetscene")) {
+            SceneManager.LoadScene(0);
+        }
         // Tell the player that they inputed a non-valid command \\
         else {
             consoleLog.GetComponent<TextMeshProUGUI>().text += "\n-- unknown command \"" + consoleText + "\" --";
@@ -121,10 +131,15 @@ public class ConsoleMenu : MonoBehaviour
         // Teleport to the start room \\
         if (position == "startroom") {
             playerTransform.position = new Vector3(-3.19f, 1.0f, -1.87f);
-        }// Move here \\
-        else if (position == "endroom") {} // Move here \\
-        // Teleport to the normal room \\
-        else if (position == "normalroom") {} // Move here \\
+        }
+        // teleport to the end room \\ 
+        else if (position == "endroom") {
+            playerTransform.position = new Vector3(-50.34f, 1.0f, 101.2f);
+        } 
+        else if (position == "batteryroom") {
+            string[] roomNumString = position.Split(',');
+            int roomNum = int.Parse(roomNumString[1]);
+        }
         // Teleport the location player specified \\
         else {
             // Get the x,y,z coordinates specified \\
