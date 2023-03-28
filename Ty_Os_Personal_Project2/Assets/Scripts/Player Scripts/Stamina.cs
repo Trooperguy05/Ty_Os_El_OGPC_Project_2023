@@ -19,8 +19,8 @@ public class Stamina : MonoBehaviour
     public bool isDepleting = false;
     public bool isRegenerating = false;
 
-    [Header("MovementSFX")]
-    private MovementSFX movementSFX;
+    [Header("PlayerSFX")]
+    private PlayerSFX playerSFX;
 
     // set values on slider
     void Awake()
@@ -28,7 +28,7 @@ public class Stamina : MonoBehaviour
         currentStamina = maxStamina;
         staminaSlider.maxValue = maxStamina;
         staminaSlider.value = maxStamina;
-        movementSFX = GetComponent<MovementSFX>();
+        playerSFX = GetComponent<PlayerSFX>();
     }
 
     // method that depletes stamina
@@ -40,7 +40,7 @@ public class Stamina : MonoBehaviour
                 currentStamina -= staminaConsumeRate;
                 updateStaminaUI();
                 // Start the heavy breathing FMOD event \\
-                if (currentStamina < 30) movementSFX.startHeavyBreathing(); 
+                if (currentStamina < 30) playerSFX.startHeavyBreathing(); 
                 yield return new WaitForSeconds(0.1f);
 
             }
@@ -60,7 +60,7 @@ public class Stamina : MonoBehaviour
             currentStamina += staminaRechargeRate;
             updateStaminaUI();
             // Set the "Stamina" FMOD Event parameter to current stamina so FMOD knows when to stop event \\
-            movementSFX.heavyBreathingEmitter.SetParameter("Stamina", currentStamina); 
+            playerSFX.heavyBreathingEmitter.SetParameter("Stamina", currentStamina); 
             yield return new WaitForSeconds(0.1f);
         }
         isRegenerating = false;

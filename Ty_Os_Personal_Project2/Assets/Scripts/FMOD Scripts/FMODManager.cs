@@ -18,6 +18,9 @@ public class FMODManager : MonoBehaviour
     public GameObject audioSettings;
     public GameObject pauseMenu;
 
+    [Header("FMODSettings")]
+    private FMODSettings FMODSettings;
+
     [Header("Sliders")]
     public Slider masterVolumeSlider;
     public Slider playerVolumeSlider;
@@ -43,7 +46,7 @@ public class FMODManager : MonoBehaviour
     void Start()
     {
         // Get FMODSettings script \\
-        FMODSettings FMODSettings = GameObject.Find("FMOD Settings").GetComponent<FMODSettings>();
+        FMODSettings = GameObject.Find("FMOD Settings").GetComponent<FMODSettings>();
         // Set all current volumes \\
         masterVolume = FMODSettings.masterVolume;
         playerVolume = FMODSettings.playerVolume;
@@ -69,6 +72,10 @@ public class FMODManager : MonoBehaviour
         playerVolume = 80;
         monsterVolume = 80;
         ambienceVolume = 80;
+        FMODSettings.masterVolume = 80;
+        FMODSettings.playerVolume = 80;
+        FMODSettings.monsterVolume = 80;
+        FMODSettings.ambienceVolume = 80;
         // Set volume slider values \\
         masterVolumeSlider.value = masterVolume;
         playerVolumeSlider.value = playerVolume;
@@ -85,24 +92,28 @@ public class FMODManager : MonoBehaviour
     // Changes the master bus fader \\
     public void changeMasterVolume() {
         masterVolume = masterVolumeSlider.value;
+        FMODSettings.masterVolume = masterVolume;
         FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Global Volume", masterVolume);
     }
 
     // Changes the player bus fader \\
     public void changePlayerVolume() {
         playerVolume = playerVolumeSlider.value;
+        FMODSettings.playerVolume = playerVolume;
         FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Player Volume", playerVolume);
     }
 
     // Changes the monster bus fader \\
     public void changeMonsterVolume() {
         monsterVolume = monsterVolumeSlider.value;
+        FMODSettings.monsterVolume = monsterVolume;
         FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Monster Volume", monsterVolume);
     }
 
     // Changes the ambience bus fader \\
     public void changeAmbienceVolume() {
         ambienceVolume = ambienceVolumeSlider.value;
+        FMODSettings.ambienceVolume = ambienceVolume;
         FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Ambience Volume", ambienceVolume);
     }
 

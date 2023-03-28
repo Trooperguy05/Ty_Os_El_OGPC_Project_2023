@@ -3,14 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 
-public class MovementSFX : MonoBehaviour
+public class PlayerSFX : MonoBehaviour
 {
     // FMOD Variables \\
     [Header("Event Instances")]
     private FMOD.Studio.EventInstance footsteps;
+    private FMOD.Studio.EventInstance vocalOuchy;
     
     [Header("Event References")]
     public FMODUnity.EventReference footstepsReference;
+    public FMODUnity.EventReference vocalOuchyReference;
     
     [Header("Event Emitters")]
     public FMODUnity.StudioEventEmitter heavyBreathingEmitter;
@@ -74,6 +76,14 @@ public class MovementSFX : MonoBehaviour
     // Starts playing heavyBreathing event \\
     public void startHeavyBreathing() {
         if (!heavyBreathingEmitter.IsPlaying()) heavyBreathingEmitter.Play();
+    }
+
+    // Plays the "Ouchy" sound effect \\
+    public void ouchy() {
+        vocalOuchy = FMODUnity.RuntimeManager.CreateInstance(vocalOuchyReference);
+        vocalOuchy.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(gameObject));
+        vocalOuchy.start();
+        vocalOuchy.release();
     }
 
 }

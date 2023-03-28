@@ -80905,6 +80905,13 @@ MonoBehaviour:
       Data3: -818106995
       Data4: -902484276
     Path: event:/Player Audio/Player Footsteps/Footsteps
+  vocalOuchyReference:
+    Guid:
+      Data1: 990589657
+      Data2: 1088836545
+      Data3: -648942949
+      Data4: 2044550748
+    Path: event:/Test Event
   heavyBreathingEmitter: {fileID: 2126236223}
   isBreathing: 0
 --- !u!114 &2126236221
