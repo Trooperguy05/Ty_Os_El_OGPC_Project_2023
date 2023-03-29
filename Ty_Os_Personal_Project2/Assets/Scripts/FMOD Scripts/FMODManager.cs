@@ -13,6 +13,15 @@ public class FMODManager : MonoBehaviour
     [FMODUnity.BankRef]
     public string enemySFX;
 
+    [Header("FMOD Event Instances")]
+    private FMOD.Studio.EventInstance volumeTest;
+
+    [ Header("FMOD Event References")]
+    public FMODUnity.EventReference masterVolumeTest;
+    public FMODUnity.EventReference playerVolumeTest;
+    public FMODUnity.EventReference monsterVolumeTest;
+    public FMODUnity.EventReference ambienceVolumeTest;
+
     // Unity Variables \\
     [Header("GameObjects")]
     public GameObject audioSettings;
@@ -94,6 +103,7 @@ public class FMODManager : MonoBehaviour
         masterVolume = masterVolumeSlider.value;
         FMODSettings.masterVolume = masterVolume;
         FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Global Volume", masterVolume);
+        testAudio(masterVolumeTest);
     }
 
     // Changes the player bus fader \\
@@ -101,6 +111,7 @@ public class FMODManager : MonoBehaviour
         playerVolume = playerVolumeSlider.value;
         FMODSettings.playerVolume = playerVolume;
         FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Player Volume", playerVolume);
+        testAudio(playerVolumeTest);
     }
 
     // Changes the monster bus fader \\
@@ -108,6 +119,7 @@ public class FMODManager : MonoBehaviour
         monsterVolume = monsterVolumeSlider.value;
         FMODSettings.monsterVolume = monsterVolume;
         FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Monster Volume", monsterVolume);
+        testAudio(monsterVolumeTest);
     }
 
     // Changes the ambience bus fader \\
@@ -115,6 +127,14 @@ public class FMODManager : MonoBehaviour
         ambienceVolume = ambienceVolumeSlider.value;
         FMODSettings.ambienceVolume = ambienceVolume;
         FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Ambience Volume", ambienceVolume);
+        testAudio(ambienceVolumeTest);
+    }
+
+    // Create the test audio instance \\
+    private void testAudio(FMODUnity.EventReference reference) {
+        volumeTest = FMODUnity.RuntimeManager.CreateInstance(reference);
+        volumeTest.start();
+        volumeTest.release();
     }
 
     // Loads a specified FMOD bank \\

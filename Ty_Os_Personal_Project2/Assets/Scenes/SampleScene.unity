@@ -415,11 +415,11 @@ MonoBehaviour:
   CollisionTag: 
   EventReference:
     Guid:
-      Data1: 990589657
-      Data2: 1088836545
-      Data3: -648942949
-      Data4: 2044550748
-    Path: event:/Test Event
+      Data1: -636945458
+      Data2: 1320826236
+      Data3: 862819759
+      Data4: 1822991051
+    Path: event:/MasterVolumeTest
   Event: 
   PlayEvent: 0
   StopEvent: 0
@@ -1935,6 +1935,34 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerSFX: PlayerSFX
   enemySFX: EnemySFX
+  masterVolumeTest:
+    Guid:
+      Data1: -636945458
+      Data2: 1320826236
+      Data3: 862819759
+      Data4: 1822991051
+    Path: event:/MasterVolumeTest
+  playerVolumeTest:
+    Guid:
+      Data1: 1769096193
+      Data2: 1165099961
+      Data3: 1137361049
+      Data4: -1589086505
+    Path: event:/Player Audio/PlayerVolumeTest
+  monsterVolumeTest:
+    Guid:
+      Data1: -807738942
+      Data2: 1334298117
+      Data3: -80877945
+      Data4: 1590467675
+    Path: event:/Monster Audio/MonsterVolumeTest
+  ambienceVolumeTest:
+    Guid:
+      Data1: 14404857
+      Data2: 1212029775
+      Data3: -1518368104
+      Data4: 199532355
+    Path: event:/Map Audio/AmbienceVolumeTest
   audioSettings: {fileID: 1386503211}
   pauseMenu: {fileID: 720178927}
   masterVolumeSlider: {fileID: 1457339872}
@@ -5004,11 +5032,11 @@ MonoBehaviour:
   CollisionTag: 
   EventReference:
     Guid:
-      Data1: 990589657
-      Data2: 1088836545
-      Data3: -648942949
-      Data4: 2044550748
-    Path: event:/Test Event
+      Data1: -636945458
+      Data2: 1320826236
+      Data3: 862819759
+      Data4: 1822991051
+    Path: event:/MasterVolumeTest
   Event: 
   PlayEvent: 0
   StopEvent: 0
@@ -5442,11 +5470,11 @@ MonoBehaviour:
   CollisionTag: 
   EventReference:
     Guid:
-      Data1: 990589657
-      Data2: 1088836545
-      Data3: -648942949
-      Data4: 2044550748
-    Path: event:/Test Event
+      Data1: -636945458
+      Data2: 1320826236
+      Data3: 862819759
+      Data4: 1822991051
+    Path: event:/MasterVolumeTest
   Event: 
   PlayEvent: 0
   StopEvent: 0
