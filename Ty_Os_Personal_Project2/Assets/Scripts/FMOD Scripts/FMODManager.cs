@@ -132,9 +132,13 @@ public class FMODManager : MonoBehaviour
 
     // Create the test audio instance \\
     private void testAudio(FMODUnity.EventReference reference) {
-        volumeTest = FMODUnity.RuntimeManager.CreateInstance(reference);
-        volumeTest.start();
-        volumeTest.release();
+        FMOD.Studio.PLAYBACK_STATE playbackState;
+        volumeTest.getPlaybackState(out playbackState);
+        if (playbackState == FMOD.Studio.PLAYBACK_STATE.STOPPED) {
+            volumeTest = FMODUnity.RuntimeManager.CreateInstance(reference);
+            volumeTest.start();
+            volumeTest.release();
+        }
     }
 
     // Loads a specified FMOD bank \\
