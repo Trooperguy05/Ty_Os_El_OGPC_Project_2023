@@ -136,9 +136,8 @@ public class ConsoleMenu : MonoBehaviour
         else if (position == "endroom") {
             playerTransform.position = new Vector3(-50.34f, 1.0f, 101.2f);
         } 
-        else if (position == "batteryroom") {
-            string[] roomNumString = position.Split(',');
-            int roomNum = int.Parse(roomNumString[1]);
+        else if (position == "batteryroom1") {
+            playerTransform.position = new Vector3(11.39f, 1.0f, 98.7f);
         }
         // Teleport the location player specified \\
         else {
