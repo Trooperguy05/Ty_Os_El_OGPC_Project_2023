@@ -95,6 +95,8 @@ public class FMODManager : MonoBehaviour
         FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Player Volume", playerVolume);
         FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Monster Volume", monsterVolume);
         FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Ambience Volume", ambienceVolume);
+        // Play test audio \\
+        testAudio(masterVolumeTest);
         
     }
 
@@ -132,13 +134,9 @@ public class FMODManager : MonoBehaviour
 
     // Create the test audio instance \\
     private void testAudio(FMODUnity.EventReference reference) {
-        FMOD.Studio.PLAYBACK_STATE playbackState;
-        volumeTest.getPlaybackState(out playbackState);
-        if (playbackState == FMOD.Studio.PLAYBACK_STATE.STOPPED) {
             volumeTest = FMODUnity.RuntimeManager.CreateInstance(reference);
             volumeTest.start();
             volumeTest.release();
-        }
     }
 
     // Loads a specified FMOD bank \\
