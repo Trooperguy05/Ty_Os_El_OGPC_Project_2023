@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <objects serializationModel="Studio.02.02.00">
-	<object class="AudioFile" id="{188b1c5a-9604-4bef-a28d-ea658b814b0c}">
-		<property name="assetPath">
-			<value>Test Audio Assets/one (MUST DELETE BEFORE COMP).ogg</value>
-		</property>
+	<object class="AudioFile" id="{d64965d5-c529-41f7-965c-87750dbd35a2}">
+		<property name="assetPath" />
 		<property name="frequencyInKHz">
 			<value>44.0999985</value>
 		</property>
@@ -11,7 +9,7 @@
 			<value>1</value>
 		</property>
 		<property name="length">
-			<value>0.62716553287981858</value>
+			<value>0.60451247165532884</value>
 		</property>
 		<relationship name="masterAssetFolder">
 			<destination>{6fd61683-dba8-44b2-a092-b282ca378fab}</destination>
