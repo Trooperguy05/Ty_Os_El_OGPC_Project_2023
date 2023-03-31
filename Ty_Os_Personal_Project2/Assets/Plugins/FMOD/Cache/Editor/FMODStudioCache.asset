@@ -1,33 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-8617254215489072274
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: snapshot:/Monster Stinger
-  m_EditorClassIdentifier: 
-  Path: snapshot:/Monster Stinger
-  Guid:
-    Data1: -1495157057
-    Data2: 1101642701
-    Data3: -1862808390
-    Data4: -1687660448
-  Banks:
-  - {fileID: -5339965546529908150}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 0
-  Parameters: []
-  MinDistance: 0
-  MaxDistance: 0
-  Length: 0
---- !u!114 &-8296480662372088827
+--- !u!114 &-7052316904449987993
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -37,131 +10,21 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/Global Volume
+  m_Name: parameter:/Ambience Volume
   m_EditorClassIdentifier: 
-  Name: Global Volume
-  StudioPath: parameter:/Global Volume
+  Name: Ambience Volume
+  StudioPath: parameter:/Ambience Volume
   Min: 0
   Max: 100
   Default: 80
   ID:
-    data1: 3297156896
-    data2: 1600810692
+    data1: 1082816605
+    data2: 1471706538
   Type: 0
   IsGlobal: 1
   Labels: []
   Exists: 1
---- !u!114 &-6545480538528395171
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Map Audio/Map 'Red Herrings'/Scooby Doo Laugh
-  m_EditorClassIdentifier: 
-  Path: event:/Map Audio/Map 'Red Herrings'/Scooby Doo Laugh
-  Guid:
-    Data1: -1745399940
-    Data2: 1269737126
-    Data3: -1624156272
-    Data4: 1471320446
-  Banks:
-  - {fileID: 1510716705152096068}
-  IsStream: 0
-  Is3D: 1
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 0
-  MaxDistance: 45
-  Length: 2560
---- !u!114 &-6068377435951158597
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Map Audio/AmbienceVolumeTest
-  m_EditorClassIdentifier: 
-  Path: event:/Map Audio/AmbienceVolumeTest
-  Guid:
-    Data1: 14404857
-    Data2: 1212029775
-    Data3: -1518368104
-    Data4: 199532355
-  Banks:
-  - {fileID: -5339965546529908150}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 627
---- !u!114 &-6007670356005658314
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Monster Audio/Monster Foodsteps/MonsterFootsteps
-  m_EditorClassIdentifier: 
-  Path: event:/Monster Audio/Monster Foodsteps/MonsterFootsteps
-  Guid:
-    Data1: -942246405
-    Data2: 1121198012
-    Data3: -940638844
-    Data4: 587510386
-  Banks:
-  - {fileID: 3205876007356107073}
-  IsStream: 0
-  Is3D: 1
-  IsOneShot: 1
-  Parameters:
-  - {fileID: -2411382716731409048}
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 102
---- !u!114 &-5911874490100996500
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Player Audio/Player Breathing/HeavyBreathing
-  m_EditorClassIdentifier: 
-  Path: event:/Player Audio/Player Breathing/HeavyBreathing
-  Guid:
-    Data1: 1289914647
-    Data2: 1215308159
-    Data3: -246926705
-    Data4: -362544657
-  Banks:
-  - {fileID: -1770072180277032687}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 0
-  Parameters:
-  - {fileID: 4209893045233545395}
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 19000
---- !u!114 &-5339965546529908150
+--- !u!114 &-6315657025208308191
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -171,70 +34,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/Master.bank
+  m_Name: bank:/MapGeneral.bank
   m_EditorClassIdentifier: 
-  Path: Ty_Os_Personal_Project2 - Audio/Build/Desktop/Master.bank
-  Name: Master
-  StudioPath: bank:/Master
-<<<<<<< Updated upstream
-  lastModified: 638157638540784079
-=======
-  lastModified: 638157640037398491
->>>>>>> Stashed changes
+  Path: Ty_Os_Personal_Project2 - Audio/Build/Desktop/MapGeneral.bank
+  Name: MapGeneral
+  StudioPath: bank:/Map Banks/MapGeneral
+  lastModified: 638155888256812539
   FileSizes: []
   Exists: 1
---- !u!114 &-5075804181007116205
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Monster Audio/MonsterVolumeTest
-  m_EditorClassIdentifier: 
-  Path: event:/Monster Audio/MonsterVolumeTest
-  Guid:
-    Data1: -807738942
-    Data2: 1334298117
-    Data3: -80877945
-    Data4: 1590467675
-  Banks:
-  - {fileID: -5339965546529908150}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 627
---- !u!114 &-4966301616675704422
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/Monster Volume
-  m_EditorClassIdentifier: 
-  Name: Monster Volume
-  StudioPath: parameter:/Monster Volume
-  Min: 0
-  Max: 100
-  Default: 80
-  ID:
-    data1: 3928491897
-    data2: 316547755
-  Type: 0
-  IsGlobal: 1
-  Labels: []
-  Exists: 1
---- !u!114 &-3540947443072228453
+--- !u!114 &-6215915766137678237
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -258,7 +66,341 @@ MonoBehaviour:
   IsGlobal: 1
   Labels: []
   Exists: 1
---- !u!114 &-2411382716731409048
+--- !u!114 &-6029711062741073297
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/HeavyBreathing/Stamina
+  m_EditorClassIdentifier: 
+  Name: Stamina
+  StudioPath: 
+  Min: 0
+  Max: 100
+  Default: 0
+  ID:
+    data1: 4088995819
+    data2: 2851567109
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
+--- !u!114 &-5572513999379644840
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.strings.bank
+  m_EditorClassIdentifier: 
+  Path: Ty_Os_Personal_Project2 - Audio/Build/Desktop/Master.strings.bank
+  Name: Master.strings
+  StudioPath: bank:/Master.strings
+  lastModified: 638157640037400183
+  FileSizes:
+  - Name: 
+    Value: 2492
+  Exists: 1
+--- !u!114 &-3242520363870347117
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: snapshot:/Monster Stinger
+  m_EditorClassIdentifier: 
+  Path: snapshot:/Monster Stinger
+  Guid:
+    Data1: -1495157057
+    Data2: 1101642701
+    Data3: -1862808390
+    Data4: -1687660448
+  Banks:
+  - {fileID: 179265889566681318}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 0
+--- !u!114 &-2931115490353406787
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Map Audio/Map 'Red Herrings'/Scooby Doo Laugh
+  m_EditorClassIdentifier: 
+  Path: event:/Map Audio/Map 'Red Herrings'/Scooby Doo Laugh
+  Guid:
+    Data1: -1745399940
+    Data2: 1269737126
+    Data3: -1624156272
+    Data4: 1471320446
+  Banks:
+  - {fileID: -1318417378992662822}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 45
+  Length: 2560
+--- !u!114 &-1810110413878620721
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Monster Audio/MonsterVolumeTest
+  m_EditorClassIdentifier: 
+  Path: event:/Monster Audio/MonsterVolumeTest
+  Guid:
+    Data1: -807738942
+    Data2: 1334298117
+    Data3: -80877945
+    Data4: 1590467675
+  Banks:
+  - {fileID: 179265889566681318}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 627
+--- !u!114 &-1595521827238298132
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Global Volume
+  m_EditorClassIdentifier: 
+  Name: Global Volume
+  StudioPath: parameter:/Global Volume
+  Min: 0
+  Max: 100
+  Default: 80
+  ID:
+    data1: 3297156896
+    data2: 1600810692
+  Type: 0
+  IsGlobal: 1
+  Labels: []
+  Exists: 1
+--- !u!114 &-1318417378992662822
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/MapRedHerrings.bank
+  m_EditorClassIdentifier: 
+  Path: Ty_Os_Personal_Project2 - Audio/Build/Desktop/MapRedHerrings.bank
+  Name: MapRedHerrings
+  StudioPath: bank:/Map Banks/MapRedHerrings
+  lastModified: 638155888257008151
+  FileSizes: []
+  Exists: 1
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d32cf7c32a3ed8347bac48ef5ed56d82, type: 3}
+  m_Name: FMODStudioCache
+  m_EditorClassIdentifier: 
+  EditorBanks:
+  - {fileID: -5572513999379644840}
+  - {fileID: 3026837790738550186}
+  - {fileID: -6315657025208308191}
+  - {fileID: -1318417378992662822}
+  - {fileID: 179265889566681318}
+  - {fileID: 7159980215370309027}
+  EditorEvents:
+  - {fileID: 4230921337214347839}
+  - {fileID: 6777498510440298974}
+  - {fileID: -2931115490353406787}
+  - {fileID: 386043967843703011}
+  - {fileID: -3242520363870347117}
+  - {fileID: -1810110413878620721}
+  - {fileID: 4650932620816940665}
+  - {fileID: 7441074309804324769}
+  - {fileID: 7895908273175963307}
+  - {fileID: 8957912612890823179}
+  - {fileID: 80377485975911677}
+  - {fileID: 2152675402873832892}
+  - {fileID: 763034041894833822}
+  EditorParameters:
+  - {fileID: -1595521827238298132}
+  - {fileID: 584038251271444824}
+  - {fileID: -7052316904449987993}
+  - {fileID: -6215915766137678237}
+  MasterBanks:
+  - {fileID: 179265889566681318}
+  StringsBanks:
+  - {fileID: -5572513999379644840}
+  cacheTime: 638157640037450053
+  cacheVersion: 131601
+--- !u!114 &80377485975911677
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Player Audio/Player Flashlight/FlashlightClickOn
+  m_EditorClassIdentifier: 
+  Path: event:/Player Audio/Player Flashlight/FlashlightClickOn
+  Guid:
+    Data1: -2108165245
+    Data2: 1328894731
+    Data3: 601132422
+    Data4: -491683796
+  Banks:
+  - {fileID: 7159980215370309027}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 429
+--- !u!114 &179265889566681318
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: Ty_Os_Personal_Project2 - Audio/Build/Desktop/Master.bank
+  Name: Master
+  StudioPath: bank:/Master
+  lastModified: 638157640037398491
+  FileSizes: []
+  Exists: 1
+--- !u!114 &386043967843703011
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Player Audio/PlayerVolumeTest
+  m_EditorClassIdentifier: 
+  Path: event:/Player Audio/PlayerVolumeTest
+  Guid:
+    Data1: 1769096193
+    Data2: 1165099961
+    Data3: 1137361049
+    Data4: -1589086505
+  Banks:
+  - {fileID: 179265889566681318}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 627
+--- !u!114 &584038251271444824
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Monster Volume
+  m_EditorClassIdentifier: 
+  Name: Monster Volume
+  StudioPath: parameter:/Monster Volume
+  Min: 0
+  Max: 100
+  Default: 80
+  ID:
+    data1: 3928491897
+    data2: 316547755
+  Type: 0
+  IsGlobal: 1
+  Labels: []
+  Exists: 1
+--- !u!114 &763034041894833822
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Player Audio/Player Flashlight/FlashlightClickOff
+  m_EditorClassIdentifier: 
+  Path: event:/Player Audio/Player Flashlight/FlashlightClickOff
+  Guid:
+    Data1: 1238461418
+    Data2: 1223649899
+    Data3: -575751764
+    Data4: -1680553027
+  Banks:
+  - {fileID: 7159980215370309027}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 383
+--- !u!114 &1518399898567332628
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -284,7 +426,34 @@ MonoBehaviour:
   - Wander
   - Chasing
   Exists: 1
---- !u!114 &-2302249473631405660
+--- !u!114 &2152675402873832892
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Player Audio/Ouch/Ouch
+  m_EditorClassIdentifier: 
+  Path: event:/Player Audio/Ouch/Ouch
+  Guid:
+    Data1: -2038159151
+    Data2: 1257799300
+    Data3: 365444274
+    Data4: 1537326852
+  Banks:
+  - {fileID: 7159980215370309027}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 4616
+--- !u!114 &2590470700260819183
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -310,277 +479,7 @@ MonoBehaviour:
   - Walking
   - Running
   Exists: 1
---- !u!114 &-1770072180277032687
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/PlayerSFX.bank
-  m_EditorClassIdentifier: 
-  Path: Ty_Os_Personal_Project2 - Audio/Build/Desktop/PlayerSFX.bank
-  Name: PlayerSFX
-  StudioPath: bank:/PlayerSFX
-<<<<<<< Updated upstream
-  lastModified: 638157638542768767
-=======
-  lastModified: 638157640037450053
->>>>>>> Stashed changes
-  FileSizes: []
-  Exists: 1
---- !u!114 &-954842297237798693
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Player Audio/Player Flashlight/FlashlightClickOff
-  m_EditorClassIdentifier: 
-  Path: event:/Player Audio/Player Flashlight/FlashlightClickOff
-  Guid:
-    Data1: 1238461418
-    Data2: 1223649899
-    Data3: -575751764
-    Data4: -1680553027
-  Banks:
-  - {fileID: -1770072180277032687}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 383
---- !u!114 &11400000
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d32cf7c32a3ed8347bac48ef5ed56d82, type: 3}
-  m_Name: FMODStudioCache
-  m_EditorClassIdentifier: 
-  EditorBanks:
-  - {fileID: 3140775872835095157}
-  - {fileID: 3205876007356107073}
-  - {fileID: -5339965546529908150}
-  - {fileID: -1770072180277032687}
-  - {fileID: 1810654802613487232}
-  - {fileID: 1510716705152096068}
-  EditorEvents:
-  - {fileID: 4487600990734243122}
-  - {fileID: -6007670356005658314}
-  - {fileID: -6545480538528395171}
-  - {fileID: -8617254215489072274}
-  - {fileID: -5911874490100996500}
-  - {fileID: 6561178236330291209}
-  - {fileID: 1974293877900824653}
-  - {fileID: -954842297237798693}
-  - {fileID: 7445203455191093553}
-  - {fileID: 2227608269989011472}
-  - {fileID: -5075804181007116205}
-  - {fileID: 11734393649670907}
-  - {fileID: -6068377435951158597}
-  EditorParameters:
-  - {fileID: -8296480662372088827}
-  - {fileID: -4966301616675704422}
-  - {fileID: 3101288718255753525}
-  - {fileID: -3540947443072228453}
-  MasterBanks:
-  - {fileID: -5339965546529908150}
-  StringsBanks:
-  - {fileID: 3140775872835095157}
-<<<<<<< Updated upstream
-  cacheTime: 638157638543306248
-=======
-  cacheTime: 638157640037450053
->>>>>>> Stashed changes
-  cacheVersion: 131601
---- !u!114 &11734393649670907
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/MasterVolumeTest
-  m_EditorClassIdentifier: 
-  Path: event:/MasterVolumeTest
-  Guid:
-    Data1: -636945458
-    Data2: 1320826236
-    Data3: 862819759
-    Data4: 1822991051
-  Banks:
-  - {fileID: -5339965546529908150}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 627
---- !u!114 &1510716705152096068
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/MapRedHerrings.bank
-  m_EditorClassIdentifier: 
-  Path: Ty_Os_Personal_Project2 - Audio/Build/Desktop/MapRedHerrings.bank
-  Name: MapRedHerrings
-  StudioPath: bank:/Map Banks/MapRedHerrings
-<<<<<<< Updated upstream
-  lastModified: 638157638543306248
-=======
-  lastModified: 638155888257008151
->>>>>>> Stashed changes
-  FileSizes: []
-  Exists: 1
---- !u!114 &1810654802613487232
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/MapGeneral.bank
-  m_EditorClassIdentifier: 
-  Path: Ty_Os_Personal_Project2 - Audio/Build/Desktop/MapGeneral.bank
-  Name: MapGeneral
-  StudioPath: bank:/Map Banks/MapGeneral
-<<<<<<< Updated upstream
-  lastModified: 638157638542828632
-=======
-  lastModified: 638155888256812539
->>>>>>> Stashed changes
-  FileSizes: []
-  Exists: 1
---- !u!114 &1974293877900824653
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Player Audio/Player Flashlight/FlashlightClickOn
-  m_EditorClassIdentifier: 
-  Path: event:/Player Audio/Player Flashlight/FlashlightClickOn
-  Guid:
-    Data1: -2108165245
-    Data2: 1328894731
-    Data3: 601132422
-    Data4: -491683796
-  Banks:
-  - {fileID: -1770072180277032687}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 429
---- !u!114 &2227608269989011472
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Player Audio/PlayerVolumeTest
-  m_EditorClassIdentifier: 
-  Path: event:/Player Audio/PlayerVolumeTest
-  Guid:
-    Data1: 1769096193
-    Data2: 1165099961
-    Data3: 1137361049
-    Data4: -1589086505
-  Banks:
-  - {fileID: -5339965546529908150}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 627
---- !u!114 &3101288718255753525
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/Ambience Volume
-  m_EditorClassIdentifier: 
-  Name: Ambience Volume
-  StudioPath: parameter:/Ambience Volume
-  Min: 0
-  Max: 100
-  Default: 80
-  ID:
-    data1: 1082816605
-    data2: 1471706538
-  Type: 0
-  IsGlobal: 1
-  Labels: []
-  Exists: 1
---- !u!114 &3140775872835095157
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/Master.strings.bank
-  m_EditorClassIdentifier: 
-  Path: Ty_Os_Personal_Project2 - Audio/Build/Desktop/Master.strings.bank
-  Name: Master.strings
-  StudioPath: bank:/Master.strings
-<<<<<<< Updated upstream
-  lastModified: 638157638540823980
-=======
-  lastModified: 638157640037400183
->>>>>>> Stashed changes
-  FileSizes:
-  - Name: 
-    Value: 2492
-  Exists: 1
---- !u!114 &3205876007356107073
+--- !u!114 &3026837790738550186
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -595,38 +494,10 @@ MonoBehaviour:
   Path: Ty_Os_Personal_Project2 - Audio/Build/Desktop/EnemySFX.bank
   Name: EnemySFX
   StudioPath: bank:/EnemySFX
-<<<<<<< Updated upstream
-  lastModified: 638157638540295432
-=======
   lastModified: 638149841989161974
->>>>>>> Stashed changes
   FileSizes: []
   Exists: 1
---- !u!114 &4209893045233545395
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/HeavyBreathing/Stamina
-  m_EditorClassIdentifier: 
-  Name: Stamina
-  StudioPath: 
-  Min: 0
-  Max: 100
-  Default: 0
-  ID:
-    data1: 4088995819
-    data2: 2851567109
-  Type: 0
-  IsGlobal: 0
-  Labels: []
-  Exists: 1
---- !u!114 &4487600990734243122
+--- !u!114 &4230921337214347839
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -645,7 +516,7 @@ MonoBehaviour:
     Data3: 236102561
     Data4: -300988137
   Banks:
-  - {fileID: 3205876007356107073}
+  - {fileID: 3026837790738550186}
   IsStream: 0
   Is3D: 1
   IsOneShot: 0
@@ -653,7 +524,135 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 5050
---- !u!114 &6561178236330291209
+--- !u!114 &4650932620816940665
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/MasterVolumeTest
+  m_EditorClassIdentifier: 
+  Path: event:/MasterVolumeTest
+  Guid:
+    Data1: -636945458
+    Data2: 1320826236
+    Data3: 862819759
+    Data4: 1822991051
+  Banks:
+  - {fileID: 179265889566681318}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 627
+--- !u!114 &6777498510440298974
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Monster Audio/Monster Foodsteps/MonsterFootsteps
+  m_EditorClassIdentifier: 
+  Path: event:/Monster Audio/Monster Foodsteps/MonsterFootsteps
+  Guid:
+    Data1: -942246405
+    Data2: 1121198012
+    Data3: -940638844
+    Data4: 587510386
+  Banks:
+  - {fileID: 3026837790738550186}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters:
+  - {fileID: 1518399898567332628}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 102
+--- !u!114 &7159980215370309027
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/PlayerSFX.bank
+  m_EditorClassIdentifier: 
+  Path: Ty_Os_Personal_Project2 - Audio/Build/Desktop/PlayerSFX.bank
+  Name: PlayerSFX
+  StudioPath: bank:/PlayerSFX
+  lastModified: 638157640037450053
+  FileSizes: []
+  Exists: 1
+--- !u!114 &7441074309804324769
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Map Audio/AmbienceVolumeTest
+  m_EditorClassIdentifier: 
+  Path: event:/Map Audio/AmbienceVolumeTest
+  Guid:
+    Data1: 14404857
+    Data2: 1212029775
+    Data3: -1518368104
+    Data4: 199532355
+  Banks:
+  - {fileID: 179265889566681318}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 627
+--- !u!114 &7895908273175963307
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Player Audio/Player Breathing/HeavyBreathing
+  m_EditorClassIdentifier: 
+  Path: event:/Player Audio/Player Breathing/HeavyBreathing
+  Guid:
+    Data1: 1289914647
+    Data2: 1215308159
+    Data3: -246926705
+    Data4: -362544657
+  Banks:
+  - {fileID: 7159980215370309027}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 0
+  Parameters:
+  - {fileID: -6029711062741073297}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 19000
+--- !u!114 &8957912612890823179
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -672,39 +671,12 @@ MonoBehaviour:
     Data3: -818106995
     Data4: -902484276
   Banks:
-  - {fileID: -1770072180277032687}
+  - {fileID: 7159980215370309027}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
   Parameters:
-  - {fileID: -2302249473631405660}
+  - {fileID: 2590470700260819183}
   MinDistance: 1
   MaxDistance: 20
   Length: 300
---- !u!114 &7445203455191093553
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Player Audio/Ouch/Ouch
-  m_EditorClassIdentifier: 
-  Path: event:/Player Audio/Ouch/Ouch
-  Guid:
-    Data1: -2038159151
-    Data2: 1257799300
-    Data3: 365444274
-    Data4: 1537326852
-  Banks:
-  - {fileID: -1770072180277032687}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 4616
