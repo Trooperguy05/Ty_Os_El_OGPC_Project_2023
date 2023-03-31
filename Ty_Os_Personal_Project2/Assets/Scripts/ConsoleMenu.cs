@@ -119,7 +119,7 @@ public class ConsoleMenu : MonoBehaviour
 
     // Print the help menu into the console \\
     private void Help() {
-        consoleLog.GetComponent<TextMeshProUGUI>().text += "\n-- Nothing is here dumb dumb Do gud lul";
+        consoleLog.GetComponent<TextMeshProUGUI>().text += "\n-- tp, unlimitedstamina, clear, toggleai, playerspeed, givebattery, resetscene"+" --";
     }
 
     private void PlayerSpeedChange(string speed) {
@@ -138,6 +138,12 @@ public class ConsoleMenu : MonoBehaviour
         } 
         else if (position == "batteryroom1") {
             playerTransform.position = new Vector3(11.39f, 1.0f, 98.7f);
+        }
+        else if (position == "batteryroom2") {
+            playerTransform.position = new Vector3(-173.66f, 1.0f, -104.82f);
+        }
+        else if (position == "batteryroom3") {
+            playerTransform.position = new Vector3(-129.82f, 1.0f, 41.45f);
         }
         // Teleport the location player specified \\
         else {
