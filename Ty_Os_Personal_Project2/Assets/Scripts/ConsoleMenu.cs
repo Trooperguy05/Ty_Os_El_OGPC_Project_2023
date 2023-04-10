@@ -119,7 +119,11 @@ public class ConsoleMenu : MonoBehaviour
 
     // Print the help menu into the console \\
     private void Help() {
-        consoleLog.GetComponent<TextMeshProUGUI>().text += "\n-- tp, unlimitedstamina, clear, toggleai, playerspeed, givebattery, resetscene"+" --";
+        consoleLog.GetComponent<TextMeshProUGUI>().text += "\n-- tp, unlimitedstamina, clear, toggleai, playerspeed, givebattery, resetscene --";
+    }
+
+    private void SuccsesfulCommand() {
+        consoleLog.GetComponent<TextMeshProUGUI>().text += "\n-- Succsesful Command --";
     }
 
     private void PlayerSpeedChange(string speed) {
