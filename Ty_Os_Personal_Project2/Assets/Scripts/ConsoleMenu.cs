@@ -80,6 +80,7 @@ public class ConsoleMenu : MonoBehaviour
         else if (consoleText == "unlimitedstamina") {
             // Change bool to opposite value \\
             unlimitedStaminaActive = !unlimitedStaminaActive;
+            SuccsesfulCommand();
             // Activate unlimited stamina \\
             if (unlimitedStaminaActive) {
                 stamina.staminaConsumeRate = 0.0f;
@@ -92,23 +93,28 @@ public class ConsoleMenu : MonoBehaviour
         // Clear the console menu \\
         else if (consoleText == "clear") {
             consoleLog.GetComponent<TextMeshProUGUI>().text = "";
+            SuccsesfulCommand();
         }
         // Turn off monster AI \\
         else if (consoleText == "toggleai") {
             monsterAI.AIOn = !monsterAI.AIOn;
+            SuccsesfulCommand();
         }
 
         else if (consoleText.StartsWith("playerspeed")) {
             string[] speed = consoleText.Split(' ');
             PlayerSpeedChange(speed[1]);
+            SuccsesfulCommand();
         }
         // Give battery object to player \\
         else if (consoleText.StartsWith("givebattery")) {
             Instantiate(battery, player.transform.position, Quaternion.identity);
+            SuccsesfulCommand();
         }
         // Reset Scene \\ 
         else if (consoleText.StartsWith("resetscene")) {
             SceneManager.LoadScene(0);
+            SuccsesfulCommand();
         }
         // Tell the player that they inputed a non-valid command \\
         else {
@@ -135,19 +141,24 @@ public class ConsoleMenu : MonoBehaviour
         // Teleport to the start room \\
         if (position == "startroom") {
             playerTransform.position = new Vector3(-3.19f, 1.0f, -1.87f);
+            SuccsesfulCommand();
         }
         // teleport to the end room \\ 
         else if (position == "endroom") {
             playerTransform.position = new Vector3(-50.34f, 1.0f, 101.2f);
+            SuccsesfulCommand();
         } 
         else if (position == "batteryroom1") {
             playerTransform.position = new Vector3(11.39f, 1.0f, 98.7f);
+            SuccsesfulCommand();
         }
         else if (position == "batteryroom2") {
             playerTransform.position = new Vector3(-173.66f, 1.0f, -104.82f);
+            SuccsesfulCommand();
         }
         else if (position == "batteryroom3") {
             playerTransform.position = new Vector3(-129.82f, 1.0f, 41.45f);
+            SuccsesfulCommand();
         }
         // Teleport the location player specified \\
         else {
@@ -161,6 +172,7 @@ public class ConsoleMenu : MonoBehaviour
             // Move the player \\
             consoleLog.GetComponent<TextMeshProUGUI>().text += "\nMoving the player to (" + x + "," + y + "," + z + ")";
             playerTransform.position = new Vector3(x, y, z);
+            SuccsesfulCommand();
 
         }
     }
