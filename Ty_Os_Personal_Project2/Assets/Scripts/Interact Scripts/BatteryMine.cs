@@ -19,7 +19,7 @@ public class BatteryMine : MonoBehaviour
             // destroy battery in hand \\
             // check for battery
             GameObject grip = GameObject.Find("Object Grip");
-            if (grip.transform.GetChild(0) == null) return;
+            if (grip.transform.childCount == 0) return;
 
             // if there is a battery
             Mine m = transform.parent.GetComponent<Mine>();

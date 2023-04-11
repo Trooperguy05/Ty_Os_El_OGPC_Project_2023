@@ -18,7 +18,7 @@ public class SoundMine : MonoBehaviour
         if (inEarshot && pSR.soundValue >= soundSensitivity) {
             // increase the monster suspicion
             Mine m = transform.parent.GetComponent<Mine>();
-            GameObject.Find("Monster").GetComponent<MonsterSuspicion>().suspicion += 100;
+            GameObject.Find("Monster").GetComponent<MonsterSuspicion>().suspicion += 10;
             m.destroyMine();
         }
     }

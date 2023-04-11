@@ -212,7 +212,7 @@ public class MonsterMovementNavmesh : MonoBehaviour
     private IEnumerator monsterInvestigate() {
         isInvestigating = true;
         // investigate
-        mS.suspicion += 50;
+        StartCoroutine(mS.updateSuspicion(10));
         // trigger walk animation
         monsterAnim.SetTrigger("StartWalking");
 

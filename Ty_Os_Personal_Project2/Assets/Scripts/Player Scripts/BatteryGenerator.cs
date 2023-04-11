@@ -15,9 +15,22 @@ public class BatteryGenerator : MonoBehaviour
     private float timer = 0f;
     private GameObject previousPedestal = null;
 
+    [Header("Checking Vars")]
+    public float checkTimer;
+    private float cTimer = 0f;
+    private GameObject inGameBattery;
+
     // battery spawn routine
     void Update() {
-        if (!spawnedBattery) timer += Time.deltaTime;
+        // check if there is a battery on the map
+        cTimer += Time.deltaTime;
+        if (cTimer >= checkTimer) {
+            inGameBattery = GameObject.Find("Battery");
+            cTimer = 0f;
+        }
+
+        // spawn the battery if there is no other batteries on the map
+        if (inGameBattery == null) timer += Time.deltaTime;
 
         if (timer >= respawnTimer) {
             spawnedBattery = true;
@@ -36,5 +49,6 @@ public class BatteryGenerator : MonoBehaviour
         GameObject boo = Instantiate(battery, foo.transform.GetChild(0).position, Quaternion.identity);
         boo.name = "Battery";
         Instantiate(batteryParticles, foo.transform.GetChild(0).position, Quaternion.identity);
+        inGameBattery = boo;
     }
 }

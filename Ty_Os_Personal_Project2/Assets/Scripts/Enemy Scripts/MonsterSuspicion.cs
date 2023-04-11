@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class MonsterSuspicion : MonoBehaviour
 {
@@ -22,8 +23,12 @@ public class MonsterSuspicion : MonoBehaviour
     private float timer;
     private Transform player;
 
+    [Header("Suspicon Bar")]
+    public Slider sSlider;
+
     void Start() {
         player = GameObject.Find("Player").GetComponent<Transform>();
+        setSuspicionBar();
     }
 
     // when suspicion is high enough, spawn a mine
@@ -82,5 +87,20 @@ public class MonsterSuspicion : MonoBehaviour
         }
 
         return new Vector3(ranX, 2f, ranZ);
+    }
+
+    // method that sets the slider for the suspicion bar
+    public void setSuspicionBar() {
+        sSlider.maxValue = suspicionMax;
+        sSlider.value = suspicion;
+    }
+
+    // method that updates the slider and the suspicion value
+    public IEnumerator updateSuspicion(int value) {
+        suspicion += value;
+        for (int i = 0; i < value; i++) {
+            sSlider.value++;
+            yield return new WaitForSeconds(0.01f);
+        }
     }
 }

@@ -26,7 +26,7 @@ public class Leaderboard : MonoBehaviour
     // method that formats the time given into a usable string
     public string formatTime(float time) {
         int minutes = (int) time / 60;
-        int seconds = (int) time - minutes;
+        int seconds = (int) time - (minutes * 60);
         int miliseconds = (int) ((time - ((int) time)) * 100f);
 
         return minutes + ":" + seconds + ":" + miliseconds; 

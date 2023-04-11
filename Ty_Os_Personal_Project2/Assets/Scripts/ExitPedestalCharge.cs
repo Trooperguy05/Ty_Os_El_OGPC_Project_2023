@@ -1,11 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ExitPedestalCharge : MonoBehaviour
 {
     public float charge;
+    public float chargeMax;
     public bool chargedPedestal;
+    public Slider cSlider;
     private Animator exitDoorsAnim;
     private Animator pedestalPress;
     private PlayerInteract pI;
@@ -21,7 +24,7 @@ public class ExitPedestalCharge : MonoBehaviour
 
     // checking if the player charged the pedestal
     void Update() {
-        if (charge >= 100f && !chargedPedestal) {
+        if (charge >= chargeMax && !chargedPedestal) {
             chargedPedestal = true;
             StartCoroutine(openDoors());
             Debug.LogError("Fully Charged Pedestal!");
@@ -42,5 +45,20 @@ public class ExitPedestalCharge : MonoBehaviour
     public IEnumerator openDoors() {
         yield return new WaitForSeconds(1f);
         exitDoorsAnim.SetTrigger("openDoors");
+    }
+
+    // method that sets up the completion bar at the start of the game
+    private void setCompletionBar() {
+        cSlider.maxValue = chargeMax;
+        cSlider.value = charge;
+    }
+
+    // method that updates the completion bar 
+    public IEnumerator updateCompletionBar(float value) {
+        charge += value;
+        for (int i = 0; i < value; i++) {
+            cSlider.value++;
+            yield return new WaitForSeconds(0.01f);
+        }
     }
 }
