@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 5067433233954356282}
   - component: {fileID: 5067433233954356278}
   - component: {fileID: 8246536291227498412}
+  - component: {fileID: -270863338133152896}
   m_Layer: 8
   m_Name: Sound Mine
   m_TagString: Untagged
@@ -174,6 +175,25 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &-270863338133152896
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5067433233954356285}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37a9b2fa7a15dfe4ca8c5e48913d5c5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mineEventRef:
+    Guid:
+      Data1: 868542082
+      Data2: 1305812350
+      Data3: 1329427840
+      Data4: 1529428848
+    Path: event:/Monster Audio/Mine/MineSounds
 --- !u!1 &5067433234955579496
 GameObject:
   m_ObjectHideFlags: 0

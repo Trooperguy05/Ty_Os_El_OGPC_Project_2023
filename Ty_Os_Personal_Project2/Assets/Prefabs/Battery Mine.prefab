@@ -73,6 +73,7 @@ GameObject:
   - component: {fileID: 7275135617010881582}
   - component: {fileID: 7275135617010881586}
   - component: {fileID: 8712964917073200006}
+  - component: {fileID: 8090265010745510903}
   m_Layer: 8
   m_Name: Battery Mine
   m_TagString: Untagged
@@ -233,3 +234,22 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &8090265010745510903
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7275135617010881583}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37a9b2fa7a15dfe4ca8c5e48913d5c5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mineEventRef:
+    Guid:
+      Data1: 868542082
+      Data2: 1305812350
+      Data3: 1329427840
+      Data4: 1529428848
+    Path: event:/Monster Audio/Mine/MineSounds

@@ -17,8 +17,10 @@ public class Mine : Interactable
         }
     }
 
-    // method that destroys the mine with particles
+    // method that destroys the mine with particles and audio :)
     public void destroyMine() {
+        MineSFX MineSFX = GetComponent<MineSFX>();
+        MineSFX.explodeMine();
         Instantiate(explosion, transform.position, Quaternion.identity);
         Destroy(gameObject);
     }

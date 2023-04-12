@@ -19,15 +19,30 @@ public class MapRedHerrings : MonoBehaviour
     private FMOD.Studio.PLAYBACK_STATE playbackState;
 
     // Unity Variables \\
+    [Header("GameObjects")]
     private GameObject player;
+
+    [Header("FMODManager")]
     private FMODManager FMODManager;
 
-    // Start is called before the first frame update
+    [Header("Intergers")]
+    private int randomizedEffectTest = 50;
+    private int randomizeEffect;
+
+    [Header("Bools")]
+    public bool playRedHerrings;
+
     void Awake()
     {
         // Get Stuff \\
         FMODManager = GameObject.Find("FMOD Manager").GetComponent<FMODManager>();
         player = GameObject.Find("Player");
+    }
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        StartCoroutine(randomPlayTime());
     }
 
     // Update is called once per frame
@@ -39,6 +54,7 @@ public class MapRedHerrings : MonoBehaviour
     }
 
     private IEnumerator PlayMapAmbience(FMODUnity.EventReference reference) {
+        Debug.Log("Playing Red Herring");
         while (true) {
         // Load the ambience bank to memory \\
         StartCoroutine(FMODManager.LoadBank(redHerringsBank));
@@ -75,6 +91,19 @@ public class MapRedHerrings : MonoBehaviour
     private void RandomPos() {
         float randomAngle = Random.Range(0, 2f * Mathf.PI);
         gameObject.transform.position = player.transform.position + new Vector3(Mathf.Cos(randomAngle), 0, Mathf.Sin(randomAngle)) * 35;
+    }
+
+    // Randomize the play time of the red herrings \\
+    private IEnumerator randomPlayTime() {
+        while (playRedHerrings) {
+            // Wait for 5 minutes \\
+            yield return new WaitForSeconds(300);
+            // Attempt to play effect \\
+            randomizeEffect = Random.Range(0, 1000);
+            if (randomizeEffect == randomizedEffectTest) {
+                StartCoroutine(PlayMapAmbience(scoobyDooLaugh));
+            }
+        }
     }
 
     
