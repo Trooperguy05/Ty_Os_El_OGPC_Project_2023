@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="MixerGroup" id="{f8ecd26e-bbc6-4228-8e25-b5ad04d8aebb}">
+		<property name="name">
+			<value>Player Battery</value>
+		</property>
+		<relationship name="effectChain">
+			<destination>{7f3d182f-8521-42c1-8f36-47afd4a1cbed}</destination>
+		</relationship>
+		<relationship name="panner">
+			<destination>{26380027-760e-4243-80c4-2a9687f96633}</destination>
+		</relationship>
+		<relationship name="output">
+			<destination>{ad297504-86e4-4532-84df-4f5bf18d07f6}</destination>
+		</relationship>
+	</object>
+	<object class="MixerBusEffectChain" id="{7f3d182f-8521-42c1-8f36-47afd4a1cbed}">
+		<relationship name="effects">
+			<destination>{d4990b47-76ed-4eb5-a9e2-50c49cc84d6d}</destination>
+			<destination>{8b28d5e2-59aa-40ea-b705-573765c6a2ad}</destination>
+		</relationship>
+	</object>
+	<object class="MixerBusPanner" id="{26380027-760e-4243-80c4-2a9687f96633}" />
+	<object class="MixerBusFader" id="{d4990b47-76ed-4eb5-a9e2-50c49cc84d6d}" />
+	<object class="SFXReverbEffect" id="{8b28d5e2-59aa-40ea-b705-573765c6a2ad}" />
+</objects>
