@@ -125,7 +125,7 @@ public class ConsoleMenu : MonoBehaviour
 
     // Print the help menu into the console \\
     private void Help() {
-        consoleLog.GetComponent<TextMeshProUGUI>().text += "\n-- tp, unlimitedstamina, clear, toggleai, playerspeed, givebattery, resetscene --";
+        consoleLog.GetComponent<TextMeshProUGUI>().text += "\n\"help\" - Opens this menu\n\"tp\" - Teleport to a location or custom xyz coordinates. Use \"tp help\" for locations and xyz syntax\n\"unlimitedstamina\" - Toggles unlimited stamina for the player\n\"toggleai\" - Toggles the monsters AI\n\"playerspeed [speed]\" - Sets a new speed value for the player\n\"givebattery\" - Gives the player a battery\n\"resetscene\" - Resets the scene\n\"clear\" - Clears the console menu";
     }
 
     private void SuccsesfulCommand() {

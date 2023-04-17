@@ -39,7 +39,7 @@ MonoBehaviour:
   Path: Ty_Os_Personal_Project2 - Audio/Build/Desktop/MapGeneral.bank
   Name: MapGeneral
   StudioPath: bank:/Map Banks/MapGeneral
-  lastModified: 638168870285791981
+  lastModified: 638173178557221555
   FileSizes: []
   Exists: 1
 --- !u!114 &-6215915766137678237
@@ -105,10 +105,10 @@ MonoBehaviour:
   Path: Ty_Os_Personal_Project2 - Audio/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638168870283911897
+  lastModified: 638173178554896855
   FileSizes:
   - Name: 
-    Value: 2600
+    Value: 2794
   Exists: 1
 --- !u!114 &-3242520363870347117
 MonoBehaviour:
@@ -230,7 +230,7 @@ MonoBehaviour:
   Path: Ty_Os_Personal_Project2 - Audio/Build/Desktop/MapRedHerrings.bank
   Name: MapRedHerrings
   StudioPath: bank:/Map Banks/MapRedHerrings
-  lastModified: 638168870286380398
+  lastModified: 638173178557750112
   FileSizes: []
   Exists: 1
 --- !u!114 &11400000
@@ -267,6 +267,8 @@ MonoBehaviour:
   - {fileID: 2152675402873832892}
   - {fileID: 763034041894833822}
   - {fileID: 1686429304014681549}
+  - {fileID: 81557682729561306}
+  - {fileID: 6183168819415987031}
   EditorParameters:
   - {fileID: -1595521827238298132}
   - {fileID: 584038251271444824}
@@ -276,7 +278,7 @@ MonoBehaviour:
   - {fileID: 179265889566681318}
   StringsBanks:
   - {fileID: -5572513999379644840}
-  cacheTime: 638168870286380398
+  cacheTime: 638173178557750112
   cacheVersion: 131601
 --- !u!114 &80377485975911677
 MonoBehaviour:
@@ -305,6 +307,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 429
+--- !u!114 &81557682729561306
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Player Audio/Battery/Battery Explosion
+  m_EditorClassIdentifier: 
+  Path: event:/Player Audio/Battery/Battery Explosion
+  Guid:
+    Data1: 1262408302
+    Data2: 1137895952
+    Data3: -897914717
+    Data4: 1155251613
+  Banks:
+  - {fileID: 7159980215370309027}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &179265889566681318
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -320,7 +349,7 @@ MonoBehaviour:
   Path: Ty_Os_Personal_Project2 - Audio/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638168870283872017
+  lastModified: 638173178554827059
   FileSizes: []
   Exists: 1
 --- !u!114 &386043967843703011
@@ -447,14 +476,14 @@ MonoBehaviour:
     Data4: 1529428848
   Banks:
   - {fileID: 3026837790738550186}
-  IsStream: 0
+  IsStream: 1
   Is3D: 1
-  IsOneShot: 1
+  IsOneShot: 0
   Parameters:
   - {fileID: 7233463715502841777}
   MinDistance: 1
   MaxDistance: 20
-  Length: 0
+  Length: 14900
 --- !u!114 &2152675402873832892
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -523,7 +552,7 @@ MonoBehaviour:
   Path: Ty_Os_Personal_Project2 - Audio/Build/Desktop/EnemySFX.bank
   Name: EnemySFX
   StudioPath: bank:/EnemySFX
-  lastModified: 638168870283463093
+  lastModified: 638173178554378361
   FileSizes: []
   Exists: 1
 --- !u!114 &4230921337214347839
@@ -580,6 +609,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 627
+--- !u!114 &6183168819415987031
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Empty Event
+  m_EditorClassIdentifier: 
+  Path: event:/Empty Event
+  Guid:
+    Data1: -854503710
+    Data2: 1189517713
+    Data3: 2026645663
+    Data4: -476732626
+  Banks:
+  - {fileID: 179265889566681318}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &6777498510440298974
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -623,7 +679,7 @@ MonoBehaviour:
   Path: Ty_Os_Personal_Project2 - Audio/Build/Desktop/PlayerSFX.bank
   Name: PlayerSFX
   StudioPath: bank:/PlayerSFX
-  lastModified: 638168870285722166
+  lastModified: 638173178557161673
   FileSizes: []
   Exists: 1
 --- !u!114 &7233463715502841777

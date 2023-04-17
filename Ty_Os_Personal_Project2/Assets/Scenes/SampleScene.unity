@@ -4848,6 +4848,39 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!114 &1180032974
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1180032968}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0c871da67d220e4ba92101392698d0f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  movementReference:
+    Guid:
+      Data1: -942246405
+      Data2: 1121198012
+      Data3: -940638844
+      Data4: 587510386
+    Path: event:/Monster Audio/Monster Foodsteps/MonsterFootsteps
+  enemyAmbientReference:
+    Guid:
+      Data1: -854503710
+      Data2: 1189517713
+      Data3: 2026645663
+      Data4: -476732626
+    Path: event:/Empty Event
+  stingerReference:
+    Guid:
+      Data1: -854503710
+      Data2: 1189517713
+      Data3: 2026645663
+      Data4: -476732626
+    Path: event:/Empty Event
 --- !u!1 &1185096821
 GameObject:
   m_ObjectHideFlags: 0
