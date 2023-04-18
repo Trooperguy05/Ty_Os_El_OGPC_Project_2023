@@ -113,7 +113,7 @@ public class ConsoleMenu : MonoBehaviour
         }
         // Reset Scene \\ 
         else if (consoleText.StartsWith("resetscene")) {
-            SceneManager.LoadScene(0);
+            SceneManager.LoadScene(1);
             SuccsesfulCommand();
         }
         // Tell the player that they inputed a non-valid command \\
@@ -125,7 +125,7 @@ public class ConsoleMenu : MonoBehaviour
 
     // Print the help menu into the console \\
     private void Help() {
-        consoleLog.GetComponent<TextMeshProUGUI>().text += "\n\"help\" - Opens this menu\n\"tp\" - Teleport to a location or custom xyz coordinates. Use \"tp help\" for locations and xyz syntax\n\"unlimitedstamina\" - Toggles unlimited stamina for the player\n\"toggleai\" - Toggles the monsters AI\n\"playerspeed [speed]\" - Sets a new speed value for the player\n\"givebattery\" - Gives the player a battery\n\"resetscene\" - Resets the scene\n\"clear\" - Clears the console menu";
+        consoleLog.GetComponent<TextMeshProUGUI>().text += "\n\n-\"help\" - Opens this menu\n-\"tp\" - Teleport to a location or custom xyz coordinates. Use \"tp help\" for locations and xyz syntax\n-\"unlimitedstamina\" - Toggles unlimited stamina for the player\n-\"toggleai\" - Toggles the monsters AI\n-\"playerspeed [speed]\" - Sets a new speed value for the player\n-\"givebattery\" - Gives the player a battery\n-\"resetscene\" - Resets the scene\n-\"clear\" - Clears the console menu\n";
     }
 
     private void SuccsesfulCommand() {
@@ -159,6 +159,9 @@ public class ConsoleMenu : MonoBehaviour
         else if (position == "batteryroom3") {
             playerTransform.position = new Vector3(-129.82f, 1.0f, 41.45f);
             SuccsesfulCommand();
+        }
+        else if (position == "help") {
+            consoleLog.GetComponent<TextMeshProUGUI>().text += "\nLocations Syntax: \"tp [endroom, batteryroom1, batteryroom2, batteryroom3]\"\n X,Y,Z Syntax: \"tp [x],[y],[z]\"\n";
         }
         // Teleport the location player specified \\
         else {
