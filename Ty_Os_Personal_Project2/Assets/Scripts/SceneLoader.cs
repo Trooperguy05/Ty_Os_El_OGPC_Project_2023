@@ -14,7 +14,7 @@ public class SceneLoader : MonoBehaviour
     public static event BeforeSceneChanged beforeSceneChanged;
 
     // loading screen and scene loader variables \\
-    public static bool changeScene = false;
+    public bool changeScene = false;
     
     // method that loads the next scene in the build setting \\
     public void nextScene() {

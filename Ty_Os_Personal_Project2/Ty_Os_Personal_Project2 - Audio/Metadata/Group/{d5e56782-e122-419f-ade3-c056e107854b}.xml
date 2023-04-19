@@ -17,22 +17,8 @@
 	<object class="MixerBusEffectChain" id="{c4743e9c-e888-45d5-b620-5e9c5faf5616}">
 		<relationship name="effects">
 			<destination>{cbd6852a-ddcf-41ff-8a55-a9d3a590bf0e}</destination>
-			<destination>{b738d6bb-98db-4ad4-9ee9-ed44ca69344a}</destination>
-			<destination>{86212040-ca54-4477-969e-32ad6a66a66d}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{945c5b0d-f357-4566-9a49-5eba71f8dbe0}" />
 	<object class="MixerBusFader" id="{cbd6852a-ddcf-41ff-8a55-a9d3a590bf0e}" />
-	<object class="SFXReverbEffect" id="{b738d6bb-98db-4ad4-9ee9-ed44ca69344a}" />
-	<object class="TremoloEffect" id="{86212040-ca54-4477-969e-32ad6a66a66d}">
-		<property name="frequency">
-			<value>0.340000004</value>
-		</property>
-		<property name="depth">
-			<value>0.529999971</value>
-		</property>
-		<property name="duty">
-			<value>0.405000001</value>
-		</property>
-	</object>
 </objects>

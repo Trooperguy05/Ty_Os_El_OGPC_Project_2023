@@ -39,7 +39,7 @@ MonoBehaviour:
   Path: Ty_Os_Personal_Project2 - Audio/Build/Desktop/MapGeneral.bank
   Name: MapGeneral
   StudioPath: bank:/Map Banks/MapGeneral
-  lastModified: 638173178557221555
+  lastModified: 638174538028282278
   FileSizes: []
   Exists: 1
 --- !u!114 &-6215915766137678237
@@ -105,38 +105,11 @@ MonoBehaviour:
   Path: Ty_Os_Personal_Project2 - Audio/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638173178554896855
+  lastModified: 638174538026441632
   FileSizes:
   - Name: 
-    Value: 2794
+    Value: 2738
   Exists: 1
---- !u!114 &-3242520363870347117
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: snapshot:/Monster Stinger
-  m_EditorClassIdentifier: 
-  Path: snapshot:/Monster Stinger
-  Guid:
-    Data1: -1495157057
-    Data2: 1101642701
-    Data3: -1862808390
-    Data4: -1687660448
-  Banks:
-  - {fileID: 179265889566681318}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 0
-  Parameters: []
-  MinDistance: 0
-  MaxDistance: 0
-  Length: 0
 --- !u!114 &-2931115490353406787
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -230,7 +203,7 @@ MonoBehaviour:
   Path: Ty_Os_Personal_Project2 - Audio/Build/Desktop/MapRedHerrings.bank
   Name: MapRedHerrings
   StudioPath: bank:/Map Banks/MapRedHerrings
-  lastModified: 638173178557750112
+  lastModified: 638174538029032406
   FileSizes: []
   Exists: 1
 --- !u!114 &11400000
@@ -257,7 +230,6 @@ MonoBehaviour:
   - {fileID: 6777498510440298974}
   - {fileID: -2931115490353406787}
   - {fileID: 386043967843703011}
-  - {fileID: -3242520363870347117}
   - {fileID: -1810110413878620721}
   - {fileID: 4650932620816940665}
   - {fileID: 7441074309804324769}
@@ -278,7 +250,7 @@ MonoBehaviour:
   - {fileID: 179265889566681318}
   StringsBanks:
   - {fileID: -5572513999379644840}
-  cacheTime: 638173178557750112
+  cacheTime: 638174538029032406
   cacheVersion: 131601
 --- !u!114 &80377485975911677
 MonoBehaviour:
@@ -349,7 +321,7 @@ MonoBehaviour:
   Path: Ty_Os_Personal_Project2 - Audio/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638173178554827059
+  lastModified: 638174538026391629
   FileSizes: []
   Exists: 1
 --- !u!114 &386043967843703011
@@ -483,7 +455,7 @@ MonoBehaviour:
   - {fileID: 7233463715502841777}
   MinDistance: 1
   MaxDistance: 20
-  Length: 14900
+  Length: 6400
 --- !u!114 &2152675402873832892
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -552,7 +524,7 @@ MonoBehaviour:
   Path: Ty_Os_Personal_Project2 - Audio/Build/Desktop/EnemySFX.bank
   Name: EnemySFX
   StudioPath: bank:/EnemySFX
-  lastModified: 638173178554378361
+  lastModified: 638174538025091404
   FileSizes: []
   Exists: 1
 --- !u!114 &4230921337214347839
@@ -679,7 +651,7 @@ MonoBehaviour:
   Path: Ty_Os_Personal_Project2 - Audio/Build/Desktop/PlayerSFX.bank
   Name: PlayerSFX
   StudioPath: bank:/PlayerSFX
-  lastModified: 638173178557161673
+  lastModified: 638174538028222259
   FileSizes: []
   Exists: 1
 --- !u!114 &7233463715502841777
