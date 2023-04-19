@@ -14,7 +14,7 @@ public class SceneLoader : MonoBehaviour
     public static event BeforeSceneChanged beforeSceneChanged;
 
     // loading screen and scene loader variables \\
-    public bool changeScene = false;
+    public static bool changeScene = false;
     
     // method that loads the next scene in the build setting \\
     public void nextScene() {
@@ -39,20 +39,20 @@ public class SceneLoader : MonoBehaviour
         
         // load the scene
         AsyncOperation aO = SceneManager.LoadSceneAsync(index);
-
-        // load scene
-        while (!aO.isDone) yield return null;
-
-        // invoke the sceneChanged event
-        if (sceneChanged != null) sceneChanged.Invoke();
-
+        aO.allowSceneActivation = false;
         
+        // load scene
         while (!aO.isDone) {
             if (changeScene) {
                 aO.allowSceneActivation = true;
             }
             yield return null;
-        }
+        } 
+
+        // invoke the sceneChanged event
+        if (sceneChanged != null) sceneChanged.Invoke();
+        
+        changeScene = false;
         
     }
 }

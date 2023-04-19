@@ -8,9 +8,11 @@ public class Credits : MonoBehaviour
     
     public void loadMainMenu() {
         StartCoroutine(sL.loadScene(0));
+        SceneLoader.changeScene = true;
     }
 
     public void loadCredits() {
         StartCoroutine(sL.loadScene(4));
+        SceneLoader.changeScene = true;
     }
 }
