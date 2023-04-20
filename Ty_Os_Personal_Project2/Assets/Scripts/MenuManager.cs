@@ -5,14 +5,10 @@ using UnityEngine.SceneManagement;
 
 public class MenuManager : MonoBehaviour
 {
-    void Start()
-    {
-        GameObject.Find("Scene Loader").GetComponent<SceneLoader>().nextScene();
-    }
     // method to be put on a btn
     // switches scene to the play scene
     public void playGame() {
-        SceneLoader.changeScene = true;
+        StartCoroutine(GameObject.Find("Scene Loader").GetComponent<SceneLoader>().loadScene(1));
     }
 
     // method to be put on a btn

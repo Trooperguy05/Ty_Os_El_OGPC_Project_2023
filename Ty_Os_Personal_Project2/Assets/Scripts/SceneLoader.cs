@@ -34,12 +34,18 @@ public class SceneLoader : MonoBehaviour
 
     // method that loads the next scene based on the build index given \\
     public IEnumerator loadScene(int index) {
+        // change to loading scene
+        SceneManager.LoadScene(5);
+
         // invoke the beforescenechanged event
         if (beforeSceneChanged != null) beforeSceneChanged.Invoke();
         
         // load the scene
         AsyncOperation aO = SceneManager.LoadSceneAsync(index);
         aO.allowSceneActivation = false;
+
+        yield return new WaitForSeconds(1f);
+        changeScene = true;
         
         // load scene
         while (!aO.isDone) {
@@ -53,6 +59,5 @@ public class SceneLoader : MonoBehaviour
         if (sceneChanged != null) sceneChanged.Invoke();
         
         changeScene = false;
-        
     }
 }
