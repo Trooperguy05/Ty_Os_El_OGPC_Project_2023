@@ -39,7 +39,7 @@ MonoBehaviour:
   Path: Ty_Os_Personal_Project2 - Audio/Build/Desktop/MapGeneral.bank
   Name: MapGeneral
   StudioPath: bank:/Map Banks/MapGeneral
-  lastModified: 638151942822699361
+  lastModified: 638175462402343748
   FileSizes: []
   Exists: 1
 --- !u!114 &-6215915766137678237
@@ -105,7 +105,7 @@ MonoBehaviour:
   Path: Ty_Os_Personal_Project2 - Audio/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638175207031894402
+  lastModified: 638175462401363567
   FileSizes:
   - Name: 
     Value: 2738
@@ -203,7 +203,7 @@ MonoBehaviour:
   Path: Ty_Os_Personal_Project2 - Audio/Build/Desktop/MapRedHerrings.bank
   Name: MapRedHerrings
   StudioPath: bank:/Map Banks/MapRedHerrings
-  lastModified: 638151942822734353
+  lastModified: 638175462402673799
   FileSizes: []
   Exists: 1
 --- !u!114 &11400000
@@ -250,7 +250,7 @@ MonoBehaviour:
   - {fileID: 179265889566681318}
   StringsBanks:
   - {fileID: -5572513999379644840}
-  cacheTime: 638175207031919401
+  cacheTime: 638175462402673799
   cacheVersion: 131601
 --- !u!114 &80377485975911677
 MonoBehaviour:
@@ -321,7 +321,7 @@ MonoBehaviour:
   Path: Ty_Os_Personal_Project2 - Audio/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638175207031759404
+  lastModified: 638175462401303566
   FileSizes: []
   Exists: 1
 --- !u!114 &386043967843703011
@@ -454,7 +454,7 @@ MonoBehaviour:
   Parameters:
   - {fileID: 7233463715502841777}
   MinDistance: 1
-  MaxDistance: 20
+  MaxDistance: 300
   Length: 6400
 --- !u!114 &2152675402873832892
 MonoBehaviour:
@@ -524,7 +524,7 @@ MonoBehaviour:
   Path: Ty_Os_Personal_Project2 - Audio/Build/Desktop/EnemySFX.bank
   Name: EnemySFX
   StudioPath: bank:/EnemySFX
-  lastModified: 638175207031754402
+  lastModified: 638175462400998509
   FileSizes: []
   Exists: 1
 --- !u!114 &4230921337214347839
@@ -651,7 +651,7 @@ MonoBehaviour:
   Path: Ty_Os_Personal_Project2 - Audio/Build/Desktop/PlayerSFX.bank
   Name: PlayerSFX
   StudioPath: bank:/PlayerSFX
-  lastModified: 638175207031919401
+  lastModified: 638175462402293744
   FileSizes: []
   Exists: 1
 --- !u!114 &7233463715502841777

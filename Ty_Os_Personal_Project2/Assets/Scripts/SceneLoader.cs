@@ -15,7 +15,7 @@ public class SceneLoader : MonoBehaviour
 
     // loading screen and scene loader variables \\
     public static bool changeScene = false;
-    
+
     // method that loads the next scene in the build setting \\
     public void nextScene() {
         // stop loading coroutines
@@ -34,10 +34,9 @@ public class SceneLoader : MonoBehaviour
 
     // method that loads the next scene based on the build index given \\
     public IEnumerator loadScene(int index) {
-        // change to loading scene
-        SceneManager.LoadScene(5);
-        yield return new WaitForSeconds(1f);
-
+        GameObject loadingScreen = GameObject.Find("Loading Screen");
+        loadingScreen.transform.GetChild(0).gameObject.SetActive(true);
+        loadingScreen.transform.GetChild(1).gameObject.SetActive(true);
         // invoke the beforescenechanged event
         if (beforeSceneChanged != null) beforeSceneChanged.Invoke();
         
