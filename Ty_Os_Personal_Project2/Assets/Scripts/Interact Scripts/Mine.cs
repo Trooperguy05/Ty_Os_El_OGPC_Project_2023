@@ -10,7 +10,12 @@ public class Mine : Interactable
         //Debug.Log("Interacted with " + gameObject.name);
 
         // destroy the battery after depleting the battery charge
-        BatteryLight bL = GameObject.Find("Battery").GetComponent<BatteryLight>();
+        GameObject foo = GameObject.Find("Object Grip");
+        if (foo.transform.childCount == 0) {
+            return;
+        }
+
+        BatteryLight bL = foo.transform.GetChild(0).GetComponent<BatteryLight>();
         if (bL.batteryCharge >= 2) {
             bL.updateCharge(-2f);
             destroyMine();

@@ -16,11 +16,13 @@ public class BatteryLight : MonoBehaviour
         bG = GameObject.Find("Battery Generator").GetComponent<BatteryGenerator>();
     }
 
+    /*
     void Update() {
         if (Input.GetKeyDown(KeyCode.E) && pI.holdingBattery) {
             updateCharge(-1f);
         }
     }
+    */
 
     // updates the emission light of the battery based on the charge
     public void updateCharge(float n) {
