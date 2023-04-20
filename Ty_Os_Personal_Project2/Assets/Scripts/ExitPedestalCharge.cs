@@ -30,9 +30,11 @@ public class ExitPedestalCharge : MonoBehaviour
             Debug.LogError("Fully Charged Pedestal!");
         }
 
+        /*
         if (Input.GetKeyDown(KeyCode.Y)) {
             StartCoroutine(openDoors());
         }
+        */
     }
 
     // method that presses button when interacted with

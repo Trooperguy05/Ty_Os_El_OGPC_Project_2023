@@ -833,7 +833,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 2a73ab47506afe84587f04d299df0917, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 8.3924
+      value: -162
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 2a73ab47506afe84587f04d299df0917, type: 3}
       propertyPath: m_LocalPosition.y
@@ -841,7 +841,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 2a73ab47506afe84587f04d299df0917, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 2.5786
+      value: 43
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 2a73ab47506afe84587f04d299df0917, type: 3}
       propertyPath: m_LocalRotation.w
@@ -4334,63 +4334,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1138263646}
   m_CullTransparentMesh: 1
---- !u!1001 &1164414186
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 958083448502887712, guid: 7f3e80e1dd467654d88ab30e6cd8f2a9, type: 3}
-      propertyPath: m_Name
-      value: Battery
-      objectReference: {fileID: 0}
-    - target: {fileID: 958083448502887727, guid: 7f3e80e1dd467654d88ab30e6cd8f2a9, type: 3}
-      propertyPath: m_RootOrder
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 958083448502887727, guid: 7f3e80e1dd467654d88ab30e6cd8f2a9, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -7.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 958083448502887727, guid: 7f3e80e1dd467654d88ab30e6cd8f2a9, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 2.01
-      objectReference: {fileID: 0}
-    - target: {fileID: 958083448502887727, guid: 7f3e80e1dd467654d88ab30e6cd8f2a9, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 5.49
-      objectReference: {fileID: 0}
-    - target: {fileID: 958083448502887727, guid: 7f3e80e1dd467654d88ab30e6cd8f2a9, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 958083448502887727, guid: 7f3e80e1dd467654d88ab30e6cd8f2a9, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 958083448502887727, guid: 7f3e80e1dd467654d88ab30e6cd8f2a9, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 958083448502887727, guid: 7f3e80e1dd467654d88ab30e6cd8f2a9, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 958083448502887727, guid: 7f3e80e1dd467654d88ab30e6cd8f2a9, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 958083448502887727, guid: 7f3e80e1dd467654d88ab30e6cd8f2a9, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 958083448502887727, guid: 7f3e80e1dd467654d88ab30e6cd8f2a9, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 7f3e80e1dd467654d88ab30e6cd8f2a9, type: 3}
 --- !u!1 &1180032968 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 2a73ab47506afe84587f04d299df0917, type: 3}
@@ -4939,7 +4882,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   charge: 0
-  chargeMax: 100
+  chargeMax: 50
   chargedPedestal: 0
   cSlider: {fileID: 1221868221}
 --- !u!114 &1224283968
@@ -8117,7 +8060,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 0, g: 0, b: 0, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
