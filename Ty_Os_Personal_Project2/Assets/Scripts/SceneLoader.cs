@@ -36,6 +36,7 @@ public class SceneLoader : MonoBehaviour
     public IEnumerator loadScene(int index) {
         // change to loading scene
         SceneManager.LoadScene(5);
+        yield return new WaitForSeconds(1f);
 
         // invoke the beforescenechanged event
         if (beforeSceneChanged != null) beforeSceneChanged.Invoke();
