@@ -22,7 +22,7 @@ TagManager:
   - collideables
   - interactables
   - 
-  - 
+  - player
   - post-processing
   - 
   - 
