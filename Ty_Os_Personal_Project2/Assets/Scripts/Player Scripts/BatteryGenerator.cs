@@ -12,7 +12,7 @@ public class BatteryGenerator : MonoBehaviour
     [Header("Respawn Vars")]
     public GameObject[] batteryPedestals;
     public float respawnTimer;
-    private float timer = 0f;
+    [HideInInspector] public float timer = 0f;
     private GameObject previousPedestal = null;
 
     [Header("Checking Vars")]
@@ -50,5 +50,17 @@ public class BatteryGenerator : MonoBehaviour
         boo.name = "Battery";
         Instantiate(batteryParticles, foo.transform.GetChild(0).position, Quaternion.identity);
         inGameBattery = boo;
+    }
+
+    // method that spawns a battery at a certain location
+    // used for forcing a battery to spawn at the cost of suspicion
+    public void spawnBattery(GameObject location) {
+        // destroy other battery(s) on the map
+        GameObject batt = GameObject.Find("Battery");
+        if (batt != null) Destroy(batt);
+        // instantiate the battery
+        GameObject boo = Instantiate(battery, location.transform.GetChild(0).position, Quaternion.identity);
+        boo.name = "Battery";
+        Instantiate(batteryParticles, location.transform.GetChild(0).position, Quaternion.identity);
     }
 }

@@ -140,7 +140,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1592560540389000224, guid: c04563bbbc0aebc4d8bc59ceb9cd0bea, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1
+      value: 0.75
       objectReference: {fileID: 0}
     - target: {fileID: 1592560540389000224, guid: c04563bbbc0aebc4d8bc59ceb9cd0bea, type: 3}
       propertyPath: m_LocalPosition.z
@@ -4345,7 +4345,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   minimumRange: 10
-  interval: 1
+  interval: 60
   sSlider: {fileID: 1687414652}
 --- !u!114 &1180032970
 MonoBehaviour:
@@ -5506,7 +5506,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1592560540389000224, guid: c04563bbbc0aebc4d8bc59ceb9cd0bea, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1
+      value: 0.75
       objectReference: {fileID: 0}
     - target: {fileID: 1592560540389000224, guid: c04563bbbc0aebc4d8bc59ceb9cd0bea, type: 3}
       propertyPath: m_LocalPosition.z
@@ -81517,6 +81517,7 @@ MonoBehaviour:
   - {fileID: 1364569736}
   - {fileID: 27880105}
   respawnTimer: 30
+  timer: 0
   checkTimer: 20
 --- !u!1001 &1592560541280985814
 PrefabInstance:
@@ -81535,7 +81536,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1592560540389000224, guid: c04563bbbc0aebc4d8bc59ceb9cd0bea, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1
+      value: 0.75
       objectReference: {fileID: 0}
     - target: {fileID: 1592560540389000224, guid: c04563bbbc0aebc4d8bc59ceb9cd0bea, type: 3}
       propertyPath: m_LocalPosition.z
