@@ -5,6 +5,12 @@ using UnityEngine.SceneManagement;
 
 public class MenuManager : MonoBehaviour
 {
+    [Header("Bools")]
+    private bool controlsActive;
+
+    [Header("GameObjects")]
+    public GameObject controls;
+
     // method to be put on a btn
     // switches scene to the play scene
     public void playGame() {
@@ -21,5 +27,12 @@ public class MenuManager : MonoBehaviour
     // switches the scene to the main menu
     public void mainMenu() {
         StartCoroutine(GameObject.Find("Scene Loader").GetComponent<SceneLoader>().loadScene(0));
+    }
+
+    // method to be put on a btn
+    // Toggles the controls panel
+    public void toggleControls() {
+        controlsActive = !controlsActive;
+        controls.SetActive(controlsActive);
     }
 }
