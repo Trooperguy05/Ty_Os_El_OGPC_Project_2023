@@ -252,4 +252,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inEarshot: 0
+  baseSoundSensitivity: -1
   soundSensitivity: 1

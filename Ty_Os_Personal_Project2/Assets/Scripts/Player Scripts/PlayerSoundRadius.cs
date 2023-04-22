@@ -12,6 +12,7 @@ public class PlayerSoundRadius : MonoBehaviour
     public float walkValue;
     public float runValue;
     public float stompValue;
+    private float variableSoundValue;
 
     [Header("Sound Radi(?)")]
     public float walkRadius;
@@ -31,6 +32,10 @@ public class PlayerSoundRadius : MonoBehaviour
 
     void Update()
     {
+        // variable sound values so movement states aren't always one value
+        bool playerIsMoving = (pM.state != PlayerMovementTest.PlayerState.air && pM.state != PlayerMovementTest.PlayerState.crouch && pM.state != PlayerMovementTest.PlayerState.stand);
+        if (playerIsMoving) variableSoundValue = Random.Range(-1f, 1f);
+
         // checking if the player landed from a jump or fall \\
         // check for jump input
         if (pM.state == PlayerMovementTest.PlayerState.air) {
@@ -44,19 +49,19 @@ public class PlayerSoundRadius : MonoBehaviour
         }
         // create noise from landing
         if (stomped) {
-            soundValue = stompValue;
+            soundValue = stompValue + variableSoundValue;
             soundCollider.radius = stompRadius;
         }
         else {
             /// other high noise activities \\\
             // if player is walking
             if (pM.state == PlayerMovementTest.PlayerState.walk) {
-                soundValue = walkValue;
+                soundValue = walkValue + variableSoundValue;
                 soundCollider.radius = walkRadius;
             }
             // if player is running
             else if (pM.state == PlayerMovementTest.PlayerState.run) {
-                soundValue = runValue;
+                soundValue = runValue + variableSoundValue;
                 soundCollider.radius = runRadius;
             }
             /// low noise activities \\\

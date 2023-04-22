@@ -4332,6 +4332,8 @@ MonoBehaviour:
   shockwave: {fileID: 648579194667338612, guid: c6c99dabf080fd74cafa677272683115, type: 3}
   mines:
   - {fileID: 5067433233954356285, guid: 276155ac15ddfa94c831292632081b92, type: 3}
+  - {fileID: 7275135617010881583, guid: 369fa0af62f0a3542a452644ddd41fcf, type: 3}
+  - {fileID: 8512478608168676371, guid: 19fa34310cd56cd45850c4d471a8ec0b, type: 3}
   mineExplosion:
   - {fileID: 7411364419287283426, guid: d8280b4ad181fd4419ed68c217242fbc, type: 3}
   - {fileID: 7411364419287283426, guid: c4d9dd83056988740bc6bd8280e104ea, type: 3}
@@ -4343,7 +4345,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   minimumRange: 10
-  interval: 30
+  interval: 1
   sSlider: {fileID: 1687414652}
 --- !u!114 &1180032970
 MonoBehaviour:
@@ -81294,7 +81296,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   soundCollider: {fileID: 34542043}
   soundValue: 0
-  walkValue: 0
+  walkValue: 1
   runValue: 5
   stompValue: 10
   walkRadius: 2
