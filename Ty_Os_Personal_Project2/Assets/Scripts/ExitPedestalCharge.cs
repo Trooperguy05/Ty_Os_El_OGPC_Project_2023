@@ -20,6 +20,8 @@ public class ExitPedestalCharge : MonoBehaviour
         mGA = GameObject.Find("FMOD Manager").GetComponent<MapGeneralAudio>();
         exitDoorsAnim = GameObject.Find("Exit Doors").GetComponent<Animator>();
         pedestalPress = transform.GetChild(0).GetComponent<Animator>();
+
+        setCompletionBar();
     }
 
     // checking if the player charged the pedestal

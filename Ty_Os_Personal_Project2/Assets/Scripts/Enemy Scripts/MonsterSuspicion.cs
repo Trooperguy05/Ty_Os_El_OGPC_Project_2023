@@ -103,4 +103,8 @@ public class MonsterSuspicion : MonoBehaviour
             yield return new WaitForSeconds(0.01f);
         }
     }
+    // method that acts as the wrapper for the method above
+    public void updateSuspicion_wrapper(int val) {
+        StartCoroutine(updateSuspicion(val));
+    }
 }

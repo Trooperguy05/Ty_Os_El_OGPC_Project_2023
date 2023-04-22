@@ -4214,7 +4214,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 0, g: 0, b: 0, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -4331,8 +4331,6 @@ MonoBehaviour:
   suspicionMax: 100
   shockwave: {fileID: 648579194667338612, guid: c6c99dabf080fd74cafa677272683115, type: 3}
   mines:
-  - {fileID: 8512478608168676371, guid: 19fa34310cd56cd45850c4d471a8ec0b, type: 3}
-  - {fileID: 7275135617010881583, guid: 369fa0af62f0a3542a452644ddd41fcf, type: 3}
   - {fileID: 5067433233954356285, guid: 276155ac15ddfa94c831292632081b92, type: 3}
   mineExplosion:
   - {fileID: 7411364419287283426, guid: d8280b4ad181fd4419ed68c217242fbc, type: 3}
@@ -4345,7 +4343,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   minimumRange: 10
-  interval: 60
+  interval: 30
   sSlider: {fileID: 1687414652}
 --- !u!114 &1180032970
 MonoBehaviour:
@@ -4392,7 +4390,7 @@ NavMeshAgent:
   m_AutoBraking: 1
   m_AutoRepath: 1
   m_Height: 2
-  m_BaseOffset: 0
+  m_BaseOffset: -0.1
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
 --- !u!114 &1180032974
@@ -4741,7 +4739,7 @@ MonoBehaviour:
   m_Direction: 0
   m_MinValue: 0
   m_MaxValue: 100
-  m_WholeNumbers: 0
+  m_WholeNumbers: 1
   m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -4873,7 +4871,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3247499f837640439874a5dd55a89ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  promptMessage: Charge?
+  promptMessage: Charge? (Requires BATTERY)
 --- !u!114 &1224283969
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7174,7 +7172,7 @@ MonoBehaviour:
   m_Direction: 0
   m_MinValue: 0
   m_MaxValue: 1000
-  m_WholeNumbers: 0
+  m_WholeNumbers: 1
   m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:

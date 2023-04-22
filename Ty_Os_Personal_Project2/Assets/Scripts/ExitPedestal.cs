@@ -6,8 +6,9 @@ public class ExitPedestal : Interactable
 {
     protected override void Interact() {
         // check for battery
-        GameObject battery = GameObject.Find("Battery");
-        if (battery == null) return;
+        GameObject grip = GameObject.Find("Object Grip");
+        if (grip.transform.childCount == 0) return;
+        GameObject battery = grip.transform.GetChild(0).gameObject;
         BatteryLight bL = battery.GetComponent<BatteryLight>();
 
         // add battery charge to pedestal
