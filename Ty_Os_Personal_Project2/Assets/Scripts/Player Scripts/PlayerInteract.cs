@@ -7,6 +7,7 @@ public class PlayerInteract : MonoBehaviour
     public bool holdingBattery;
     private Camera cam;
     private InteractText iT;
+    [SerializeField] private GameObject interactBox;
     [SerializeField] private KeyCode interactBtn;
     [SerializeField] private Transform objectGripPos;
     [SerializeField] private float distance = 3f;
@@ -33,6 +34,7 @@ public class PlayerInteract : MonoBehaviour
             Interactable objectInteract = hitInfo.collider.GetComponent<Interactable>();
             if (objectInteract != null) {
                 // display prompt message
+                interactBox.SetActive(true);
                 iT.updateText(objectInteract.promptMessage);
                 // interact with object
                 if (Input.GetKeyDown(interactBtn)) {
@@ -41,6 +43,9 @@ public class PlayerInteract : MonoBehaviour
                 }
             }
         }
-        else iT.updateText("");
+        else {
+            iT.updateText("");
+            interactBox.SetActive(false);
+        }
     }
 }

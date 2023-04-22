@@ -110,7 +110,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ce819be7879c8a4dbea1df4530258d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  promptMessage: Pick Up?
+  promptMessage: Pick up BATTERY?
 --- !u!114 &958083448502887721
 MonoBehaviour:
   m_ObjectHideFlags: 0

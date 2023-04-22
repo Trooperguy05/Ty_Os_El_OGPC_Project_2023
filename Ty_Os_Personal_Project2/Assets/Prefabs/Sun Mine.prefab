@@ -170,7 +170,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a5bb3a83c052564e8e1be8113ee218a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  promptMessage: Destroy? (2 charges)
+  promptMessage: Destroy MINE? (Requires BATTERY)
   explosion: {fileID: 7411364419287283426, guid: d8280b4ad181fd4419ed68c217242fbc, type: 3}
 --- !u!108 &4230454956017391267
 Light:
