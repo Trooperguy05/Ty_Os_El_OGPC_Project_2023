@@ -184,6 +184,7 @@ public class MonsterMovementNavmesh : MonoBehaviour
     // method that allows the monster to wander across the map \\
     private IEnumerator monsterWander() {
         do {
+            mS.sawFlashlight = false;
             // find random position on map \\
             // random location
             float ranX = Random.Range(-gridSize.x, 0);

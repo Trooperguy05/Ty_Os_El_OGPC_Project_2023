@@ -26,8 +26,21 @@ public class MonsterSuspicion : MonoBehaviour
     [Header("Suspicon Bar")]
     public Slider sSlider;
 
+    [Header("Scripts")]
+    private MonsterMovementNavmesh monsterMovement;
+    private MonsterSoundDetection monsterSoundDetection;
+
+    [Header("Player Flashlight")]
+    public GameObject flashlight;
+    public bool sawFlashlight;
+
+    [Header("LayerMask")]
+    public LayerMask raycastLayerMask;
+
     void Start() {
         player = GameObject.Find("Player").GetComponent<Transform>();
+        monsterMovement = GetComponent<MonsterMovementNavmesh>();
+        monsterSoundDetection = GameObject.Find("Sound Detection").GetComponent<MonsterSoundDetection>();
         setSuspicionBar();
     }
 
@@ -35,6 +48,17 @@ public class MonsterSuspicion : MonoBehaviour
     void Update() {
         timer += Time.deltaTime;
 
+        // Check line of sight \\
+        Vector3 dir = player.transform.position - transform.position;
+        Debug.DrawRay(new Vector3(transform.position.x, transform.position.y + 1, transform.position.z), dir, new Color(255, 165, 0));
+        RaycastHit hit = new RaycastHit();
+        Physics.Raycast(new Vector3(transform.position.x, transform.position.y + 1, transform.position.z), dir, out hit, Vector3.Distance(player.transform.position, transform.position), raycastLayerMask);
+        // if line of sight & player has flashlight on {investigate} \\
+        if (hit.collider == null && flashlight.activeSelf && monsterMovement.stateMachine.currentState.name != "InvestigateState" && !sawFlashlight) {
+            sawFlashlight = true;
+            monsterSoundDetection.pointOfSound = player.transform.position;
+            monsterMovement.monsterInvestigate_wrapper();
+        }
         // if suspicion reaches the max, fail the player
         if (suspicion >= suspicionMax) {
             GameObject.Find("Player").GetComponent<PlayerDead>().playerFail_wrapper();

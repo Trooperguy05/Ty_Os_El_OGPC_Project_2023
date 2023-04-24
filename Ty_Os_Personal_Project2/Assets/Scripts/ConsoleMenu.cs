@@ -161,6 +161,10 @@ public class ConsoleMenu : MonoBehaviour
             playerTransform.position = new Vector3(-129.82f, 1.0f, 41.45f);
             SuccsesfulCommand();
         }
+        else if (position == "monster") {
+            playerTransform.position = GameObject.Find("Monster").transform.position;
+            SuccsesfulCommand();
+        }
         else if (position == "help") {
             consoleLog.GetComponent<TextMeshProUGUI>().text += "\nLocations Syntax: \"tp [endroom, batteryroom1, batteryroom2, batteryroom3]\"\n X,Y,Z Syntax: \"tp [x],[y],[z]\"\n";
         }
