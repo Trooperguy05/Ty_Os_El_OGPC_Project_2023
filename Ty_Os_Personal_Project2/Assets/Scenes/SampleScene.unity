@@ -4625,7 +4625,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inEarshot: 0
-  soundSensitivity: 5
+  baseSoundSensitivity: -1
+  soundSensitivity: -1
   pointOfSound: {x: 0, y: 0, z: 0}
 --- !u!1 &1217854639
 GameObject:

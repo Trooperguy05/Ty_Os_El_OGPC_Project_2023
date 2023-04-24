@@ -5,8 +5,24 @@ using UnityEngine;
 public class MonsterSoundDetection : MonoBehaviour
 {
     public bool inEarshot = false;
-    public float soundSensitivity = 5f;
+    public float baseSoundSensitivity;
+    public float soundSensitivity;
     public Vector3 pointOfSound;
+    private GameObject player;
+
+    void Start() {
+        player = GameObject.Find("Player");
+    }
+
+    void Update() {
+        // sound sensitivity decreases as the player gets close to the mine
+        if (inEarshot) {
+            soundSensitivity = baseSoundSensitivity + Vector3.Distance(transform.position, player.transform.position);
+        }
+        else {
+            soundSensitivity = baseSoundSensitivity;
+        }
+    }
 
     // sound detection
     void OnTriggerEnter(Collider col) {

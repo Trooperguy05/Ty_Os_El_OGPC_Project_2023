@@ -57,7 +57,7 @@ public class MonsterSuspicion : MonoBehaviour
         if (hit.collider == null && flashlight.activeSelf && monsterMovement.stateMachine.currentState.name != "InvestigateState" && !sawFlashlight) {
             sawFlashlight = true;
             monsterSoundDetection.pointOfSound = player.transform.position;
-            monsterMovement.monsterInvestigate_wrapper();
+            monsterMovement.stateMachine.ChangeState(new InvestigateState(monsterMovement));
         }
         // if suspicion reaches the max, fail the player
         if (suspicion >= suspicionMax) {
