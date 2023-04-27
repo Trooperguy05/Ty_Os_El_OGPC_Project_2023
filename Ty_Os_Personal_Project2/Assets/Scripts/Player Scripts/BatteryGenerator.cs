@@ -46,7 +46,7 @@ public class BatteryGenerator : MonoBehaviour
             foo = batteryPedestals[Random.Range(0, batteryPedestals.Length)];
         } while (foo == previousPedestal);
 
-        GameObject boo = Instantiate(battery, foo.transform.GetChild(0).position, Quaternion.identity);
+        GameObject boo = Instantiate(battery, foo.transform.GetChild(0).position, Quaternion.Euler(-90, 0, 0));
         boo.name = "Battery";
         Instantiate(batteryParticles, foo.transform.GetChild(0).position, Quaternion.identity);
         inGameBattery = boo;
@@ -59,7 +59,7 @@ public class BatteryGenerator : MonoBehaviour
         GameObject batt = GameObject.Find("Battery");
         if (batt != null) Destroy(batt);
         // instantiate the battery
-        GameObject boo = Instantiate(battery, location.transform.GetChild(0).position, Quaternion.identity);
+        GameObject boo = Instantiate(battery, location.transform.GetChild(0).position, Quaternion.Euler(-90, 0, 0));
         boo.name = "Battery";
         Instantiate(batteryParticles, location.transform.GetChild(0).position, Quaternion.identity);
     }

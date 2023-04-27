@@ -25,7 +25,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f2e1caa0169ff2444b703dc176bda19b, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.7071067
+      value: 0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f2e1caa0169ff2444b703dc176bda19b, type: 3}
       propertyPath: m_LocalRotation.x
@@ -37,11 +37,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f2e1caa0169ff2444b703dc176bda19b, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f2e1caa0169ff2444b703dc176bda19b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
+      value: -90
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f2e1caa0169ff2444b703dc176bda19b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
@@ -89,7 +89,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: f2e1caa0169ff2444b703dc176bda19b, type: 3}
       propertyPath: m_Name
-      value: Battery_holder
+      value: Battery_holder Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: f2e1caa0169ff2444b703dc176bda19b, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: f2e1caa0169ff2444b703dc176bda19b, type: 3}
       propertyPath: m_IsActive
@@ -141,3 +145,50 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 81e61606e8949b54281a19d25c51a6e6, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f2e1caa0169ff2444b703dc176bda19b, type: 3}
+--- !u!1 &3456409276774090896 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: f2e1caa0169ff2444b703dc176bda19b, type: 3}
+  m_PrefabInstance: {fileID: 2537435605469574593}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &343771337861288115
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3456409276774090896}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a3247499f837640439874a5dd55a89ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  promptMessage: Charge? (Requires BATTERY)
+--- !u!114 &4475652837756768792
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3456409276774090896}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc2fa66d5a91f994b9a138a4442a12c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  charge: 0
+  chargeMax: 50
+  chargedPedestal: 0
+  cSlider: {fileID: 0}
+--- !u!65 &201416726705063864
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3456409276774090896}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.0013628, y: 3.6952977, z: 2.0000005}
+  m_Center: {x: -0.0006814599, y: 0.0155608095, z: 0}

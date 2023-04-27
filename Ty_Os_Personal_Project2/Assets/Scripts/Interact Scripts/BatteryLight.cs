@@ -23,6 +23,7 @@ public class BatteryLight : MonoBehaviour
         }
     }
     */
+    
 
     // updates the emission light of the battery based on the charge
     public void updateCharge(float n) {

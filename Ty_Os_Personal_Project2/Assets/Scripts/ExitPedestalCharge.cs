@@ -6,9 +6,14 @@ using UnityEngine.UI;
 public class ExitPedestalCharge : MonoBehaviour
 {
     public float charge;
+    public int batteriesInserted;
     public float chargeMax;
     public bool chargedPedestal;
     public Slider cSlider;
+    public GameObject b1;
+    public GameObject b2;
+    public GameObject b3;
+    public GameObject b4;
     private Animator exitDoorsAnim;
     private Animator pedestalPress;
     private PlayerInteract pI;
@@ -39,11 +44,12 @@ public class ExitPedestalCharge : MonoBehaviour
         */
     }
 
+    /*
     // method that presses button when interacted with
     public void buttonPress() {
         StartCoroutine(mGA.playPedestalEvent());
         pedestalPress.SetTrigger("press");
-    }
+    */
 
     // method that opens the doors after a set duration
     public IEnumerator openDoors() {
@@ -64,5 +70,13 @@ public class ExitPedestalCharge : MonoBehaviour
             cSlider.value++;
             yield return new WaitForSeconds(0.01f);
         }
+    }
+
+    public void insertBattery() {
+        batteriesInserted++;
+        if (batteriesInserted == 1) b1.SetActive(true);
+        else if (batteriesInserted == 2) b2.SetActive(true); 
+        else if (batteriesInserted == 3) b3.SetActive(true); 
+        else if (batteriesInserted == 4) b4.SetActive(true); 
     }
 }

@@ -98,7 +98,7 @@ GameObject:
   - component: {fileID: -1972158939482718603}
   m_Layer: 8
   m_Name: Battery 1
-  m_TagString: Untagged
+  m_TagString: battery
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -179,7 +179,7 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -2159965483007997719, guid: f2e1caa0169ff2444b703dc176bda19b, type: 3}
 --- !u!114 &8217183996629371227
