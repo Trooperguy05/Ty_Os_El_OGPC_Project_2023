@@ -4336,9 +4336,9 @@ MonoBehaviour:
   suspicionMax: 100
   shockwave: {fileID: 648579194667338612, guid: c6c99dabf080fd74cafa677272683115, type: 3}
   mines:
-  - {fileID: 5067433233954356285, guid: 276155ac15ddfa94c831292632081b92, type: 3}
-  - {fileID: 7275135617010881583, guid: 369fa0af62f0a3542a452644ddd41fcf, type: 3}
-  - {fileID: 8512478608168676371, guid: 19fa34310cd56cd45850c4d471a8ec0b, type: 3}
+  - {fileID: 1331304984184311115, guid: c819b06b70ab38a469669707873048e2, type: 3}
+  - {fileID: 3193125349480445476, guid: d82e04de67493e54d9a97cb813f33db9, type: 3}
+  - {fileID: 2727640958346974093, guid: 1a723eaad8080bf48b9e354ad22c4189, type: 3}
   mineExplosion:
   - {fileID: 7411364419287283426, guid: d8280b4ad181fd4419ed68c217242fbc, type: 3}
   - {fileID: 7411364419287283426, guid: c4d9dd83056988740bc6bd8280e104ea, type: 3}
@@ -4971,7 +4971,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh26118
+  m_Name: pb_Mesh21232
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
