@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerInteract : MonoBehaviour
 {
     public bool holdingBattery;
+    public bool canInteract = true;
     private Camera cam;
     private InteractText iT;
     [SerializeField] private GameObject interactBox;
@@ -29,7 +30,7 @@ public class PlayerInteract : MonoBehaviour
         bool isHit = Physics.Raycast(ray, out hitInfo, distance, mask);
 
         // if there is an object
-        if (isHit) {
+        if (isHit && canInteract) {
             // get the interact script & object
             Interactable objectInteract = hitInfo.collider.GetComponent<Interactable>();
             if (objectInteract != null) {

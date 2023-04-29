@@ -8,12 +8,14 @@ public class PlayerDead : MonoBehaviour
 {
     public bool isDead;
     public Image fade;
+    private PlayerInteract pI;
     private bool fading = false;
     private SceneLoader sL;
     private PlayerSFX pSFX;
     private FMOD.Studio.Bus mBus;
 
     void Start() {
+        pI = GetComponent<PlayerInteract>();
         sL = GameObject.Find("Scene Loader").GetComponent<SceneLoader>();
         pSFX = GetComponent<PlayerSFX>();
         mBus = FMODUnity.RuntimeManager.GetBus("bus:/");
@@ -23,6 +25,7 @@ public class PlayerDead : MonoBehaviour
     private IEnumerator playerFail() {
         // set dead to true
         isDead = true;
+        pI.canInteract = false;
         // death sound
         mBus.stopAllEvents(FMOD.Studio.STOP_MODE.IMMEDIATE);
         pSFX.ouchy();

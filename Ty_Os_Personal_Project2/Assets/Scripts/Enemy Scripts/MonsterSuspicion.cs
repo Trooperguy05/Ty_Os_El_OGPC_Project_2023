@@ -85,7 +85,7 @@ public class MonsterSuspicion : MonoBehaviour
         } while (ranPos == new Vector3(0, 0, 0));
 
         // spawn the mine
-        Instantiate(mines[ran], ranPos, Quaternion.identity);
+        Instantiate(mines[ran], ranPos, mines[ran].transform.rotation);
         Instantiate(mineExplosion[ran], ranPos, Quaternion.identity);
     }
 
