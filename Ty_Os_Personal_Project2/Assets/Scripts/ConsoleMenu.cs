@@ -108,7 +108,7 @@ public class ConsoleMenu : MonoBehaviour
         }
         // Give battery object to player \\
         else if (consoleText.StartsWith("givebattery")) {
-            GameObject foo = Instantiate(battery, player.transform.position, Quaternion.identity);
+            GameObject foo = Instantiate(battery, player.transform.position, Quaternion.Euler(-90, 0, 0));
             foo.name = "Battery";
             SuccsesfulCommand();
         }

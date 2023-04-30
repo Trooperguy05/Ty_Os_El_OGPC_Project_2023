@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BatteryLight : MonoBehaviour
 {
-    private Material mat;
+    public Material mat;
     private PlayerInteract pI;
     private BatteryGenerator bG;
     public GameObject explosion;
@@ -44,6 +44,13 @@ public class BatteryLight : MonoBehaviour
         pI.holdingBattery = false;
         bG.spawnedBattery= false;
         GameObject foo = Instantiate(explosion, transform.position, Quaternion.identity);
+        Destroy(gameObject);
+    }
+
+    // Destroy battery without explosion
+    public void deleteBattery() {
+        pI.holdingBattery = false;
+        bG.spawnedBattery= false;
         Destroy(gameObject);
     }
 }

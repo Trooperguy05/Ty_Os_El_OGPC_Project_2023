@@ -14,7 +14,7 @@ public class ExitPedestal : Interactable
         // add battery charge to pedestal
         StartCoroutine(GetComponent<ExitPedestalCharge>().updateCompletionBar(bL.batteryCharge));
         //GetComponent<ExitPedestalCharge>().buttonPress();
-        bL.destroyBattery();
-        GetComponent<ExitPedestalCharge>().insertBattery();
+        bL.deleteBattery();
+        GetComponent<ExitPedestalCharge>().insertBattery(bL.mat.GetColor("_EmissionColor"));
     }
 }

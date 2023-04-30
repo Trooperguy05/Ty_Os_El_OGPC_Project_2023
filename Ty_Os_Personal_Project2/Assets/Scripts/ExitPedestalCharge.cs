@@ -10,12 +10,11 @@ public class ExitPedestalCharge : MonoBehaviour
     public float chargeMax;
     public bool chargedPedestal;
     public Slider cSlider;
-    public GameObject b1;
-    public GameObject b2;
-    public GameObject b3;
-    public GameObject b4;
+    public Material mat;
+    public GameObject battery;
     private Animator exitDoorsAnim;
     private Animator pedestalPress;
+    private Animator batteryHolderAnim;
     private PlayerInteract pI;
     private MapGeneralAudio mGA;
 
@@ -25,6 +24,8 @@ public class ExitPedestalCharge : MonoBehaviour
         mGA = GameObject.Find("FMOD Manager").GetComponent<MapGeneralAudio>();
         exitDoorsAnim = GameObject.Find("Exit Doors").GetComponent<Animator>();
         pedestalPress = transform.GetChild(0).GetComponent<Animator>();
+        batteryHolderAnim = GameObject.Find("BatteryHolder").GetComponent<Animator>();
+        mat = battery.GetComponent<MeshRenderer>().material;
 
         setCompletionBar();
     }
@@ -72,11 +73,9 @@ public class ExitPedestalCharge : MonoBehaviour
         }
     }
 
-    public void insertBattery() {
-        batteriesInserted++;
-        if (batteriesInserted == 1) b1.SetActive(true);
-        else if (batteriesInserted == 2) b2.SetActive(true); 
-        else if (batteriesInserted == 3) b3.SetActive(true); 
-        else if (batteriesInserted == 4) b4.SetActive(true); 
+    public void insertBattery(Color color) {
+        mat.SetColor("_EmissionColor", color);
+        batteryHolderAnim.SetTrigger("InsertBattery");
     }
+
 }
