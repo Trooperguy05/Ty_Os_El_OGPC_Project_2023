@@ -505,6 +505,17 @@ MonoBehaviour:
   OverrideAttenuation: 0
   OverrideMinDistance: 1
   OverrideMaxDistance: 20
+--- !u!114 &141762831 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5319708810100469245, guid: 061079dea1037d243a0e67e4cf306ba5, type: 3}
+  m_PrefabInstance: {fileID: 181648529}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc2fa66d5a91f994b9a138a4442a12c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &181648529
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -512,10 +523,46 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 465054471609034385, guid: 061079dea1037d243a0e67e4cf306ba5, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 512363627723102321, guid: 061079dea1037d243a0e67e4cf306ba5, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4140795570531845576, guid: 061079dea1037d243a0e67e4cf306ba5, type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4917443838348325160, guid: 061079dea1037d243a0e67e4cf306ba5, type: 3}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 5319708810100469245, guid: 061079dea1037d243a0e67e4cf306ba5, type: 3}
       propertyPath: cSlider
       value: 
       objectReference: {fileID: 1221868221}
+    - target: {fileID: 6226649984316102327, guid: 061079dea1037d243a0e67e4cf306ba5, type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7481816785886729078, guid: 061079dea1037d243a0e67e4cf306ba5, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7689919444812460702, guid: 061079dea1037d243a0e67e4cf306ba5, type: 3}
+      propertyPath: ePC
+      value: 
+      objectReference: {fileID: 141762831}
+    - target: {fileID: 7689919444812460702, guid: 061079dea1037d243a0e67e4cf306ba5, type: 3}
+      propertyPath: text
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7689919444812460702, guid: 061079dea1037d243a0e67e4cf306ba5, type: 3}
+      propertyPath: mats.Array.size
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 8531555396790920462, guid: 061079dea1037d243a0e67e4cf306ba5, type: 3}
       propertyPath: m_RootOrder
       value: 17
@@ -560,9 +607,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8849720057693544297, guid: 061079dea1037d243a0e67e4cf306ba5, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9020143543107878836, guid: 061079dea1037d243a0e67e4cf306ba5, type: 3}
       propertyPath: m_Name
       value: BatteryHolder
+      objectReference: {fileID: 0}
+    - target: {fileID: 9020143543107878836, guid: 061079dea1037d243a0e67e4cf306ba5, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 061079dea1037d243a0e67e4cf306ba5, type: 3}
@@ -5027,7 +5082,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh60574
+  m_Name: pb_Mesh18702
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
