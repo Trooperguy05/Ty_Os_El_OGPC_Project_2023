@@ -65,5 +65,8 @@ public class Why : MonoBehaviour
             if (netCharge == 0.0f) netCharge = step;
             mats[4].SetColor("_EmissionColor", new Color(0, 191, 71) * netCharge);
         }
+        if (ePC.charge >= ePC.chargeMax) {
+            StartCoroutine(ePC.openDoors());
+        }
     }
 }

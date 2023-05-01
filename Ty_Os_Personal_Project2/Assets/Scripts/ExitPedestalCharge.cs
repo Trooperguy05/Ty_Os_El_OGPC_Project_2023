@@ -34,7 +34,7 @@ public class ExitPedestalCharge : MonoBehaviour
     void Update() {
         if (charge >= chargeMax && !chargedPedestal) {
             chargedPedestal = true;
-            StartCoroutine(openDoors());
+            //StartCoroutine(openDoors());
             Debug.LogError("Fully Charged Pedestal!");
         }
 
