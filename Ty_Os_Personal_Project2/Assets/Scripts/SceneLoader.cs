@@ -44,7 +44,7 @@ public class SceneLoader : MonoBehaviour
         AsyncOperation aO = SceneManager.LoadSceneAsync(index);
         aO.allowSceneActivation = false;
 
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(Random.Range(0.5f, 2f));
         changeScene = true;
         
         // load scene

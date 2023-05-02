@@ -44,28 +44,28 @@ public class Why : MonoBehaviour
             mats[0].SetColor("_EmissionColor", new Color(0, 191, 71) * step);
             float batteryDiff = 20-totalCharge;
             float netCharge = step/(2*batteryDiff);
-            if (netCharge == 0.0f) netCharge = step;
+            if (netCharge == Mathf.Infinity) netCharge = step;
             mats[1].SetColor("_EmissionColor", new Color(0, 191, 71) * netCharge);
         }
         else if (totalCharge <= 30) {
             mats[1].SetColor("_EmissionColor", new Color(0, 191, 71) * step);
             float batteryDiff = 30-totalCharge;
             float netCharge = step/(2*batteryDiff);
-            if (netCharge == 0.0f) netCharge = step;
+            if (netCharge == Mathf.Infinity) netCharge = step;
             mats[2].SetColor("_EmissionColor", new Color(0, 191, 71) * netCharge);
         }
         else if (totalCharge <= 40) {
             mats[2].SetColor("_EmissionColor", new Color(0, 191, 71) * step);
             float batteryDiff = 40-totalCharge;
             float netCharge = step/(2*batteryDiff);
-            if (netCharge == 0.0f) netCharge = step;
+            if (netCharge == Mathf.Infinity) netCharge = step;
             mats[3].SetColor("_EmissionColor", new Color(0, 191, 71) * netCharge);
         }
         else {
             mats[3].SetColor("_EmissionColor", new Color(0, 191, 71) * step);
             float batteryDiff = 50-totalCharge;
             float netCharge = step/(2*batteryDiff);
-            if (netCharge == 0.0f) netCharge = step;
+            if (netCharge == Mathf.Infinity) netCharge = step;
             mats[4].SetColor("_EmissionColor", new Color(0, 191, 71) * netCharge);
             if (ePC.charge >= ePC.chargeMax) {
                 StartCoroutine(ePC.openDoors());

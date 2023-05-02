@@ -6,12 +6,19 @@ using System;
 
 public class PlayerDead : MonoBehaviour
 {
+    [Header("Bools")]
     public bool isDead;
-    public Image fade;
-    private PlayerInteract pI;
     private bool fading = false;
+
+    [Header("Images")]
+    public Image fade;
+
+    [Header("Scripts")]
+    private PlayerInteract pI;
     private SceneLoader sL;
     private PlayerSFX pSFX;
+
+    [Header("FMOD Buses")]
     private FMOD.Studio.Bus mBus;
 
     void Start() {

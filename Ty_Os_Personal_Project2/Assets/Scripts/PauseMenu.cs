@@ -4,10 +4,14 @@ using UnityEngine;
 
 public class PauseMenu : MonoBehaviour
 {
+    [Header("KeyCodes")]
     public KeyCode pauseButton;
+    [Header("GameObjects")]
     public GameObject menu;
     public GameObject audioMenu;
+    [Header("Bools")]
     public bool menuOpen = false;
+    [Header("Scripts")]
     private MouseLook mL;
     private ConsoleMenu cM;
 

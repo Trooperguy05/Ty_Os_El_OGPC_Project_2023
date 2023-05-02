@@ -7,11 +7,11 @@ public class WebGLOptimizer : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        // LMAO
+        // Force WebGL to run at browser recommended frame rate to prevent studdering
         if (Application.platform == RuntimePlatform.WebGLPlayer) {
             Application.targetFrameRate = -1;
         }
-        // Goofy Ahhh
+        // Other playforms should run at 60 fps
         else {
             Application.targetFrameRate = 60;
         }

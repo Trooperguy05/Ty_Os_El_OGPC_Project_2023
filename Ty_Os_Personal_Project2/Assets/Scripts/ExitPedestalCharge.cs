@@ -5,16 +5,28 @@ using UnityEngine.UI;
 
 public class ExitPedestalCharge : MonoBehaviour
 {
+    [Header("Floats")]
     public float charge;
-    public int batteriesInserted;
     public float chargeMax;
+
+    [Header("Booleans")]
     public bool chargedPedestal;
+
+    [Header("Sliders")]
     public Slider cSlider;
+
+    [Header("Materials")]
     public Material mat;
+
+    [Header("GameObjects")]
     public GameObject battery;
+
+    [Header("Animators")]
     private Animator exitDoorsAnim;
     private Animator pedestalPress;
     private Animator batteryHolderAnim;
+
+    [Header("Scripts")]
     private PlayerInteract pI;
     private MapGeneralAudio mGA;
 
