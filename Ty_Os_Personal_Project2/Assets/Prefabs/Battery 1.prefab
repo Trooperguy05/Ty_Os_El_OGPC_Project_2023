@@ -207,6 +207,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a941c0c7460aaad418c87654b7ff15b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mat: {fileID: 0}
   explosion: {fileID: 7411364419287283426, guid: e2295bcc93880d94c9ff5356aa9c6b67, type: 3}
   batteryCharge: 10
 --- !u!108 &-1972158939482718603
@@ -330,7 +331,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: c458808be97cd854f876d9890246e935, type: 2}
+  - {fileID: 2100000, guid: 81e61606e8949b54281a19d25c51a6e6, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
