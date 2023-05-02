@@ -73,6 +73,7 @@ public class ExitPedestalCharge : MonoBehaviour
         }
     }
 
+    // Set the emission color of the animation battery
     public void insertBattery(Color color) {
         mat.SetColor("_EmissionColor", color);
         batteryHolderAnim.SetTrigger("InsertBattery");

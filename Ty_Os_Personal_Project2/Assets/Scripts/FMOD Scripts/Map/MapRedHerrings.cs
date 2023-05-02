@@ -43,6 +43,7 @@ public class MapRedHerrings : MonoBehaviour
     void Start()
     {
         StartCoroutine(randomPlayTime());
+        StartCoroutine(PlayMapAmbience(scoobyDooLaugh));
     }
 
     // Update is called once per frame
@@ -55,7 +56,6 @@ public class MapRedHerrings : MonoBehaviour
 
     private IEnumerator PlayMapAmbience(FMODUnity.EventReference reference) {
         Debug.Log("Playing Red Herring");
-        while (true) {
         // Load the ambience bank to memory \\
         StartCoroutine(FMODManager.LoadBank(redHerringsBank));
         
@@ -84,7 +84,6 @@ public class MapRedHerrings : MonoBehaviour
         // Unload the ambience bank from memory \\
         StartCoroutine(FMODManager.UnloadBank(redHerringsBank));
         yield return null;
-        }
     }
 
     // Move the gameObject to a random position around the player \\

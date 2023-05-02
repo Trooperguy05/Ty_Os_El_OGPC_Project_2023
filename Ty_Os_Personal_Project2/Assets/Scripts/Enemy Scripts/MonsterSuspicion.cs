@@ -38,6 +38,7 @@ public class MonsterSuspicion : MonoBehaviour
     public LayerMask raycastLayerMask;
 
     void Start() {
+        // Get Stuff \\
         player = GameObject.Find("Player").GetComponent<Transform>();
         monsterMovement = GetComponent<MonsterMovementNavmesh>();
         monsterSoundDetection = GameObject.Find("Sound Detection").GetComponent<MonsterSoundDetection>();

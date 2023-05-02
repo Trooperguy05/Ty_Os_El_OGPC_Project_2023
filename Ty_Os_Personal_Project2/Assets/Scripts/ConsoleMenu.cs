@@ -100,7 +100,7 @@ public class ConsoleMenu : MonoBehaviour
             monsterAI.AIOn = !monsterAI.AIOn;
             SuccsesfulCommand();
         }
-
+        // Changes the players speed
         else if (consoleText.StartsWith("playerspeed")) {
             string[] speed = consoleText.Split(' ');
             PlayerSpeedChange(speed[1]);
@@ -128,11 +128,11 @@ public class ConsoleMenu : MonoBehaviour
     private void Help() {
         consoleLog.GetComponent<TextMeshProUGUI>().text += "\n\n-\"help\" - Opens this menu\n-\"tp\" - Teleport to a location or custom xyz coordinates. Use \"tp help\" for locations and xyz syntax\n-\"unlimitedstamina\" - Toggles unlimited stamina for the player\n-\"toggleai\" - Toggles the monsters AI\n-\"playerspeed [speed]\" - Sets a new speed value for the player\n-\"givebattery\" - Gives the player a battery\n-\"resetscene\" - Resets the scene\n-\"clear\" - Clears the console menu\n";
     }
-
+    // Let the player know the command was successful
     private void SuccsesfulCommand() {
         consoleLog.GetComponent<TextMeshProUGUI>().text += "\n-- Succsesful Command --";
     }
-
+    // change player speed
     private void PlayerSpeedChange(string speed) {
         int walkSpeed = int.Parse(speed);
         playerSpeed.walkSpeed = walkSpeed;
@@ -149,22 +149,27 @@ public class ConsoleMenu : MonoBehaviour
             playerTransform.position = new Vector3(-50.34f, 1.0f, 101.2f);
             SuccsesfulCommand();
         } 
+        // Teleport to first battery room
         else if (position == "batteryroom1") {
             playerTransform.position = new Vector3(11.39f, 1.0f, 98.7f);
             SuccsesfulCommand();
         }
+        // Teleport to second battery room
         else if (position == "batteryroom2") {
             playerTransform.position = new Vector3(-173.66f, 1.0f, -104.82f);
             SuccsesfulCommand();
         }
+        // Teleport to third battery room
         else if (position == "batteryroom3") {
             playerTransform.position = new Vector3(-129.82f, 1.0f, 41.45f);
             SuccsesfulCommand();
         }
+        // Teleport the player to the monster
         else if (position == "monster") {
             playerTransform.position = GameObject.Find("Monster").transform.position;
             SuccsesfulCommand();
         }
+        // Let the player know the syntax
         else if (position == "help") {
             consoleLog.GetComponent<TextMeshProUGUI>().text += "\nLocations Syntax: \"tp [endroom, batteryroom1, batteryroom2, batteryroom3]\"\n X,Y,Z Syntax: \"tp [x],[y],[z]\"\n";
         }

@@ -136,6 +136,7 @@ public class MonsterMovementNavmesh : MonoBehaviour
     // get stuff
     void Start()
     {
+        // Get Stuff \\
         rb = GetComponent<Rigidbody>();
         mSD = transform.GetChild(2).GetComponent<MonsterSoundDetection>();
         pSR = GameObject.Find("Player").GetComponent<PlayerSoundRadius>();

@@ -14,6 +14,7 @@ public class Why : MonoBehaviour
 
     void Awake()
     {
+        // Cronge
         mats[0] = GameObject.Find("Battery.001").GetComponent<Renderer>().material;
         mats[1] = GameObject.Find("Battery.002").GetComponent<Renderer>().material;
         mats[2] = GameObject.Find("Battery.003").GetComponent<Renderer>().material;
@@ -26,8 +27,10 @@ public class Why : MonoBehaviour
     // Play particles and update intuitive charge indicator
     void Angy()
     {
+        // Play particle effects
         topParticles.Play();
         bottomParticles.Play();
+        // Update charge indicator based on charge
         float totalCharge = ePC.charge;
         float step = 0.015625f;
         if (totalCharge <= 10) {
@@ -64,9 +67,9 @@ public class Why : MonoBehaviour
             float netCharge = step/(2*batteryDiff);
             if (netCharge == 0.0f) netCharge = step;
             mats[4].SetColor("_EmissionColor", new Color(0, 191, 71) * netCharge);
-        }
-        if (ePC.charge >= ePC.chargeMax) {
-            StartCoroutine(ePC.openDoors());
+            if (ePC.charge >= ePC.chargeMax) {
+                StartCoroutine(ePC.openDoors());
+            }
         }
     }
 }

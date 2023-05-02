@@ -11,6 +11,7 @@ public class MonsterSoundDetection : MonoBehaviour
     private GameObject player;
 
     void Start() {
+        // Get Stuff \\
         player = GameObject.Find("Player");
     }
 
