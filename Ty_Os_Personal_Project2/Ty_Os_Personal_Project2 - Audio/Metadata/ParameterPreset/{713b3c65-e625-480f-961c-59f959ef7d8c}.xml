@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="ParameterPreset" id="{713b3c65-e625-480f-961c-59f959ef7d8c}">
+		<property name="name">
+			<value>Highlighted Button</value>
+		</property>
+		<relationship name="folder">
+			<destination>{df9cbb5b-f9d3-4d8b-b4f3-ae341ef0d061}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{8cc73a3a-c1a9-4d5f-8d59-71955c28bb0f}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{8cc73a3a-c1a9-4d5f-8d59-71955c28bb0f}">
+		<property name="parameterType">
+			<value>2</value>
+		</property>
+		<property name="maximum">
+			<value>2</value>
+		</property>
+		<property name="enumerationLabels">
+			<value>False</value>
+			<value>True</value>
+		</property>
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+	</object>
+</objects>
