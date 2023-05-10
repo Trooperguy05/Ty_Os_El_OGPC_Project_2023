@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Why : MonoBehaviour
 {
+    [Header("FMOD Studio Event Emitters")]
+    public FMODUnity.StudioEventEmitter explosionEmitter;
     [Header("Particle Systems")]
     public ParticleSystem topParticles;
     public ParticleSystem bottomParticles;
@@ -15,14 +17,14 @@ public class Why : MonoBehaviour
     void Awake()
     {
         // Cronge
-        mats[0] = GameObject.Find("Battery.001").GetComponent<Renderer>().material;
-        mats[1] = GameObject.Find("Battery.002").GetComponent<Renderer>().material;
-        mats[2] = GameObject.Find("Battery.003").GetComponent<Renderer>().material;
-        mats[3] = GameObject.Find("Battery.004").GetComponent<Renderer>().material;
-        mats[4] = GameObject.Find("Battery.005").GetComponent<Renderer>().material;
+        for (int i = 0; i < 5; i++) {
+            mats[i] = GameObject.Find("Battery.00" + (i + 1)).GetComponent<Renderer>().material;
+        }
+
         foreach (Material mat in mats) {
             mat.SetColor("_EmissionColor", new Color(0, 191, 71) * 0f);
         }
+        explosionEmitter = gameObject.transform.GetChild(1).gameObject.GetComponent<FMODUnity.StudioEventEmitter>();
     }
     // Play particles and update intuitive charge indicator
     void Angy()
@@ -30,6 +32,7 @@ public class Why : MonoBehaviour
         // Play particle effects
         topParticles.Play();
         bottomParticles.Play();
+        explosionEmitter.Play();
         // Update charge indicator based on charge
         float totalCharge = ePC.charge;
         float step = 0.015625f;
