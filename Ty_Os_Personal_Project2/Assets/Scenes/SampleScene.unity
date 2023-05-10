@@ -4410,7 +4410,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   minimumRange: 10
-  interval: 60
+  interval: 45
   sSlider: {fileID: 1687414652}
   flashlight: {fileID: 1950210603}
   sawFlashlight: 0

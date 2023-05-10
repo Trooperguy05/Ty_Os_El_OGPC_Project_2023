@@ -588,6 +588,7 @@ MonoBehaviour:
   - EnemySFX
   - MapGeneral
   - MapRedHerrings
+  - Music
   - PlayerSFX
   BanksToLoad:
   - Master
