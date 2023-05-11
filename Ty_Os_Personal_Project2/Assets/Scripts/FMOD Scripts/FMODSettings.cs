@@ -10,6 +10,7 @@ public class FMODSettings : MonoBehaviour
     public float playerVolume;
     public float monsterVolume;
     public float ambienceVolume;
+    public float musicVolume;
 
     [Header("Master Bus")]
     private FMOD.Studio.Bus masterBus;

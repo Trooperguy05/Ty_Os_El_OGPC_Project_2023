@@ -34,12 +34,14 @@ public class FMODManager : MonoBehaviour
     public Slider playerVolumeSlider;
     public Slider monsterVolumeSlider;
     public Slider ambienceVolumeSlider;
+    public Slider musicVolumeSlider;
 
     [Header("Floats")]
     private float masterVolume;
     private float playerVolume;
     private float monsterVolume;
     private float ambienceVolume;
+    private float musicVolume;
 
 
     // Awake is called before Start 
@@ -61,13 +63,15 @@ public class FMODManager : MonoBehaviour
         playerVolume = FMODSettings.playerVolume;
         monsterVolume = FMODSettings.monsterVolume;
         ambienceVolume = FMODSettings.ambienceVolume;
+        musicVolume = FMODSettings.musicVolume;
         // Set all volume slider values \\
         masterVolumeSlider.value = masterVolume;
         playerVolumeSlider.value = playerVolume;
         monsterVolumeSlider.value = monsterVolume;
         ambienceVolumeSlider.value = ambienceVolume;
+        musicVolumeSlider.value = musicVolume;
         // Play the main menu music
-        //menuMusic.Play();
+        menuMusic.Play();
     }
 
     public void alterMusic(bool buttonHighlighted) {
@@ -92,20 +96,24 @@ public class FMODManager : MonoBehaviour
         playerVolume = 80;
         monsterVolume = 80;
         ambienceVolume = 80;
+        musicVolume = 80;
         FMODSettings.masterVolume = 80;
         FMODSettings.playerVolume = 80;
         FMODSettings.monsterVolume = 80;
         FMODSettings.ambienceVolume = 80;
+        FMODSettings.musicVolume = 80;
         // Set volume slider values \\
         masterVolumeSlider.value = masterVolume;
         playerVolumeSlider.value = playerVolume;
         monsterVolumeSlider.value = monsterVolume;
         ambienceVolumeSlider.value = ambienceVolume;
+        musicVolumeSlider.value = musicVolume;
         // Set FMOD parameter values \\
         FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Global Volume", masterVolume);
         FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Player Volume", playerVolume);
         FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Monster Volume", monsterVolume);
         FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Ambience Volume", ambienceVolume);
+        FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Music Volume", musicVolume);
         // Play test audio \\
         testAudio(masterVolumeTest);
         
@@ -141,6 +149,50 @@ public class FMODManager : MonoBehaviour
         FMODSettings.ambienceVolume = ambienceVolume;
         FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Ambience Volume", ambienceVolume);
         testAudio(ambienceVolumeTest);
+    }
+
+    // Changes the music bus fader \\
+    public IEnumerator changeMusicVolume() {
+        while (true) {
+            musicVolume = musicVolumeSlider.value;
+            FMODSettings.musicVolume = musicVolume;
+            FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Music Volume", musicVolume);
+            yield return null;
+        }
+    }
+
+    // Wrapper for the changeMusicVolume coroutine \\
+    public void changeMusicVolume(bool stop) {
+        if (stop) StopCoroutine(changeMusicVolume());
+        else StartCoroutine(changeMusicVolume());
+    }
+
+    // Fade the music down while interacting with another slider \\
+    public IEnumerator fadeMusic(bool fadeUp) {
+        if (fadeUp) {
+            for (float i = 0; i < musicVolume; i += 1.0f) {
+                FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Music Volume", i);
+                yield return null;
+            }
+        }
+        else {
+            for (float i = musicVolume; i > musicVolume; i -= 1.0f) {
+                FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Music Volume", i);
+                yield return null;
+            }
+        }
+    }
+
+    // Wrapper for the slider to interact with \\
+    public void fadeMusicWrapper(bool fadeUp) {
+        if (fadeUp) {
+            StopCoroutine(fadeMusic(false));
+            StartCoroutine(fadeMusic(true));
+        }
+        else {
+            StopCoroutine(fadeMusic(true));
+            StartCoroutine(fadeMusic(false));
+        }
     }
 
     // Create the test audio instance \\
