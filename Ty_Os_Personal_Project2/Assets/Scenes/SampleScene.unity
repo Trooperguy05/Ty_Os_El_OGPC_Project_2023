@@ -2050,24 +2050,24 @@ MonoBehaviour:
     Path: event:/MasterVolumeTest
   playerVolumeTest:
     Guid:
-      Data1: 1769096193
-      Data2: 1165099961
-      Data3: 1137361049
-      Data4: -1589086505
+      Data1: -1312404174
+      Data2: 1184615546
+      Data3: 1209600644
+      Data4: -459388450
     Path: event:/Player Audio/PlayerVolumeTest
   monsterVolumeTest:
     Guid:
-      Data1: -807738942
-      Data2: 1334298117
-      Data3: -80877945
-      Data4: 1590467675
+      Data1: 1187289934
+      Data2: 1236989668
+      Data3: 109481857
+      Data4: -322142713
     Path: event:/Monster Audio/MonsterVolumeTest
   ambienceVolumeTest:
     Guid:
-      Data1: 14404857
-      Data2: 1212029775
-      Data3: -1518368104
-      Data4: 199532355
+      Data1: 2013448581
+      Data2: 1148562133
+      Data3: 483627663
+      Data4: -1750783561
     Path: event:/Map Audio/AmbienceVolumeTest
   audioSettings: {fileID: 1386503211}
   pauseMenu: {fileID: 720178927}

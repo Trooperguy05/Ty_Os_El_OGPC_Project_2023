@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028334, g: 0.22571328, b: 0.3069217, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -380,6 +380,7 @@ GameObject:
   - component: {fileID: 71089270}
   - component: {fileID: 71089269}
   - component: {fileID: 71089268}
+  - component: {fileID: 71089271}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -457,6 +458,38 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &71089271
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 71089267}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -854850352
+      Data2: 1308696912
+      Data3: -1021422454
+      Data4: -1292022772
+    Path: event:/Music lol/Main Menu
+  Event: 
+  PlayEvent: 0
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params:
+  - Name: Highlighted Button
+    Value: 0
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &95291809
 GameObject:
   m_ObjectHideFlags: 0
@@ -1568,6 +1601,7 @@ GameObject:
   - component: {fileID: 316522715}
   - component: {fileID: 316522714}
   - component: {fileID: 316522713}
+  - component: {fileID: 316522716}
   m_Layer: 5
   m_Name: Back Btn
   m_TagString: Untagged
@@ -1689,6 +1723,51 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 316522711}
   m_CullTransparentMesh: 1
+--- !u!114 &316522716
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 316522711}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1351152491}
+          m_TargetAssemblyTypeName: FMODManager, Assembly-CSharp
+          m_MethodName: alterMusic
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1351152491}
+          m_TargetAssemblyTypeName: FMODManager, Assembly-CSharp
+          m_MethodName: alterMusic
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &367912427
 GameObject:
   m_ObjectHideFlags: 0
@@ -1776,6 +1855,7 @@ GameObject:
   - component: {fileID: 384921248}
   - component: {fileID: 384921247}
   - component: {fileID: 384921246}
+  - component: {fileID: 384921249}
   m_Layer: 5
   m_Name: Audio Btn
   m_TagString: Untagged
@@ -1897,6 +1977,51 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 384921244}
   m_CullTransparentMesh: 1
+--- !u!114 &384921249
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 384921244}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1351152491}
+          m_TargetAssemblyTypeName: FMODManager, Assembly-CSharp
+          m_MethodName: alterMusic
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1351152491}
+          m_TargetAssemblyTypeName: FMODManager, Assembly-CSharp
+          m_MethodName: alterMusic
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &386956218
 GameObject:
   m_ObjectHideFlags: 0
@@ -4259,6 +4384,7 @@ GameObject:
   - component: {fileID: 801218017}
   - component: {fileID: 801218016}
   - component: {fileID: 801218015}
+  - component: {fileID: 801218018}
   m_Layer: 5
   m_Name: Reset Btn
   m_TagString: Untagged
@@ -4380,6 +4506,51 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 801218013}
   m_CullTransparentMesh: 1
+--- !u!114 &801218018
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 801218013}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1351152491}
+          m_TargetAssemblyTypeName: FMODManager, Assembly-CSharp
+          m_MethodName: alterMusic
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1351152491}
+          m_TargetAssemblyTypeName: FMODManager, Assembly-CSharp
+          m_MethodName: alterMusic
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &858415865
 GameObject:
   m_ObjectHideFlags: 0
@@ -4712,6 +4883,7 @@ GameObject:
   - component: {fileID: 956221176}
   - component: {fileID: 956221175}
   - component: {fileID: 956221174}
+  - component: {fileID: 956221177}
   m_Layer: 5
   m_Name: Play Btn
   m_TagString: Untagged
@@ -4833,6 +5005,51 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 956221172}
   m_CullTransparentMesh: 1
+--- !u!114 &956221177
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 956221172}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1351152491}
+          m_TargetAssemblyTypeName: FMODManager, Assembly-CSharp
+          m_MethodName: alterMusic
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1351152491}
+          m_TargetAssemblyTypeName: FMODManager, Assembly-CSharp
+          m_MethodName: alterMusic
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &1002287963
 GameObject:
   m_ObjectHideFlags: 0
@@ -5933,6 +6150,7 @@ GameObject:
   - component: {fileID: 1304139391}
   - component: {fileID: 1304139390}
   - component: {fileID: 1304139389}
+  - component: {fileID: 1304139392}
   m_Layer: 5
   m_Name: Controls Btn
   m_TagString: Untagged
@@ -6054,6 +6272,51 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1304139387}
   m_CullTransparentMesh: 1
+--- !u!114 &1304139392
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1304139387}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1351152491}
+          m_TargetAssemblyTypeName: FMODManager, Assembly-CSharp
+          m_MethodName: alterMusic
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1351152491}
+          m_TargetAssemblyTypeName: FMODManager, Assembly-CSharp
+          m_MethodName: alterMusic
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &1321517366
 GameObject:
   m_ObjectHideFlags: 0
@@ -6200,6 +6463,7 @@ GameObject:
   - component: {fileID: 1328058793}
   - component: {fileID: 1328058792}
   - component: {fileID: 1328058791}
+  - component: {fileID: 1328058794}
   m_Layer: 5
   m_Name: Quit Btn
   m_TagString: Untagged
@@ -6321,6 +6585,51 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1328058789}
   m_CullTransparentMesh: 1
+--- !u!114 &1328058794
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1328058789}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1351152491}
+          m_TargetAssemblyTypeName: FMODManager, Assembly-CSharp
+          m_MethodName: alterMusic
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1351152491}
+          m_TargetAssemblyTypeName: FMODManager, Assembly-CSharp
+          m_MethodName: alterMusic
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &1351152490
 GameObject:
   m_ObjectHideFlags: 0
@@ -6350,8 +6659,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f84fefad158b28845b5e5adbe5e778da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerSFX: PlayerSFX
-  enemySFX: EnemySFX
+  banks:
+  - PlayerSFX
+  - EnemySFX
+  - Music
   masterVolumeTest:
     Guid:
       Data1: -636945458
@@ -6361,24 +6672,24 @@ MonoBehaviour:
     Path: event:/MasterVolumeTest
   playerVolumeTest:
     Guid:
-      Data1: 1769096193
-      Data2: 1165099961
-      Data3: 1137361049
-      Data4: -1589086505
+      Data1: -1312404174
+      Data2: 1184615546
+      Data3: 1209600644
+      Data4: -459388450
     Path: event:/Player Audio/PlayerVolumeTest
   monsterVolumeTest:
     Guid:
-      Data1: -807738942
-      Data2: 1334298117
-      Data3: -80877945
-      Data4: 1590467675
+      Data1: 1187289934
+      Data2: 1236989668
+      Data3: 109481857
+      Data4: -322142713
     Path: event:/Monster Audio/MonsterVolumeTest
   ambienceVolumeTest:
     Guid:
-      Data1: 14404857
-      Data2: 1212029775
-      Data3: -1518368104
-      Data4: 199532355
+      Data1: 2013448581
+      Data2: 1148562133
+      Data3: 483627663
+      Data4: -1750783561
     Path: event:/Map Audio/AmbienceVolumeTest
   audioSettings: {fileID: 697342088}
   pauseMenu: {fileID: 672253657}
@@ -7135,6 +7446,7 @@ GameObject:
   - component: {fileID: 1623401699}
   - component: {fileID: 1623401698}
   - component: {fileID: 1623401697}
+  - component: {fileID: 1623401700}
   m_Layer: 5
   m_Name: Back Btn
   m_TagString: Untagged
@@ -7256,6 +7568,51 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1623401695}
   m_CullTransparentMesh: 1
+--- !u!114 &1623401700
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1623401695}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1351152491}
+          m_TargetAssemblyTypeName: FMODManager, Assembly-CSharp
+          m_MethodName: alterMusic
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1351152491}
+          m_TargetAssemblyTypeName: FMODManager, Assembly-CSharp
+          m_MethodName: alterMusic
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &1653602709
 GameObject:
   m_ObjectHideFlags: 0
@@ -8350,6 +8707,7 @@ GameObject:
   - component: {fileID: 2089868294}
   - component: {fileID: 2089868293}
   - component: {fileID: 2089868292}
+  - component: {fileID: 2089868295}
   m_Layer: 5
   m_Name: Credits
   m_TagString: Untagged
@@ -8471,3 +8829,48 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2089868290}
   m_CullTransparentMesh: 1
+--- !u!114 &2089868295
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2089868290}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1351152491}
+          m_TargetAssemblyTypeName: FMODManager, Assembly-CSharp
+          m_MethodName: alterMusic
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1351152491}
+          m_TargetAssemblyTypeName: FMODManager, Assembly-CSharp
+          m_MethodName: alterMusic
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2

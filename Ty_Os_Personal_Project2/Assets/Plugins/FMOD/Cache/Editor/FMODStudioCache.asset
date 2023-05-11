@@ -39,7 +39,7 @@ MonoBehaviour:
   Path: Ty_Os_Personal_Project2 - Audio/Build/Desktop/MapGeneral.bank
   Name: MapGeneral
   StudioPath: bank:/Map Banks/MapGeneral
-  lastModified: 638192209009491710
+  lastModified: 638193568241952256
   FileSizes: []
   Exists: 1
 --- !u!114 &-6215915766137678237
@@ -105,10 +105,10 @@ MonoBehaviour:
   Path: Ty_Os_Personal_Project2 - Audio/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638192209006145515
+  lastModified: 638193568240677036
   FileSizes:
   - Name: 
-    Value: 2930
+    Value: 3008
   Exists: 1
 --- !u!114 &-3089756569119698207
 MonoBehaviour:
@@ -177,10 +177,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: event:/Monster Audio/MonsterVolumeTest
   Guid:
-    Data1: -807738942
-    Data2: 1334298117
-    Data3: -80877945
-    Data4: 1590467675
+    Data1: 1187289934
+    Data2: 1236989668
+    Data3: 109481857
+    Data4: -322142713
   Banks:
   - {fileID: 179265889566681318}
   IsStream: 0
@@ -189,7 +189,7 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 627
+  Length: 142
 --- !u!114 &-1595521827238298132
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -229,7 +229,7 @@ MonoBehaviour:
   Path: Ty_Os_Personal_Project2 - Audio/Build/Desktop/MapRedHerrings.bank
   Name: MapRedHerrings
   StudioPath: bank:/Map Banks/MapRedHerrings
-  lastModified: 638192209010030263
+  lastModified: 638193568242237312
   FileSizes: []
   Exists: 1
 --- !u!114 &-1013792513786639869
@@ -247,7 +247,7 @@ MonoBehaviour:
   Path: Ty_Os_Personal_Project2 - Audio/Build/Desktop/Music.bank
   Name: Music
   StudioPath: bank:/Music
-  lastModified: 638192209006664137
+  lastModified: 638193568240967081
   FileSizes: []
   Exists: 1
 --- !u!114 &11400000
@@ -293,11 +293,12 @@ MonoBehaviour:
   - {fileID: 584038251271444824}
   - {fileID: -7052316904449987993}
   - {fileID: -6215915766137678237}
+  - {fileID: 6593659657380276308}
   MasterBanks:
   - {fileID: 179265889566681318}
   StringsBanks:
   - {fileID: -5572513999379644840}
-  cacheTime: 638192209010030263
+  cacheTime: 638193568242237312
   cacheVersion: 131601
 --- !u!114 &80377485975911677
 MonoBehaviour:
@@ -368,7 +369,7 @@ MonoBehaviour:
   Path: Ty_Os_Personal_Project2 - Audio/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638192209006105641
+  lastModified: 638193568240652028
   FileSizes: []
   Exists: 1
 --- !u!114 &386043967843703011
@@ -385,10 +386,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: event:/Player Audio/PlayerVolumeTest
   Guid:
-    Data1: 1769096193
-    Data2: 1165099961
-    Data3: 1137361049
-    Data4: -1589086505
+    Data1: -1312404174
+    Data2: 1184615546
+    Data3: 1209600644
+    Data4: -459388450
   Banks:
   - {fileID: 179265889566681318}
   IsStream: 0
@@ -397,7 +398,7 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 627
+  Length: 142
 --- !u!114 &584038251271444824
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -552,12 +553,12 @@ MonoBehaviour:
   - {fileID: -1013792513786639869}
   IsStream: 0
   Is3D: 0
-  IsOneShot: 1
+  IsOneShot: 0
   Parameters:
   - {fileID: -3089756569119698207}
   MinDistance: 1
   MaxDistance: 20
-  Length: 7578
+  Length: 8000
 --- !u!114 &2590470700260819183
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -599,7 +600,7 @@ MonoBehaviour:
   Path: Ty_Os_Personal_Project2 - Audio/Build/Desktop/EnemySFX.bank
   Name: EnemySFX
   StudioPath: bank:/EnemySFX
-  lastModified: 638192209005268064
+  lastModified: 638193568240391987
   FileSizes: []
   Exists: 1
 --- !u!114 &4230921337214347839
@@ -682,7 +683,7 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 627
+  Length: 142
 --- !u!114 &6183168819415987031
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -710,6 +711,30 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &6593659657380276308
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Music Volume
+  m_EditorClassIdentifier: 
+  Name: Music Volume
+  StudioPath: parameter:/Music Volume
+  Min: 0
+  Max: 100
+  Default: 80
+  ID:
+    data1: 3843462031
+    data2: 724392292
+  Type: 0
+  IsGlobal: 1
+  Labels: []
+  Exists: 1
 --- !u!114 &6777498510440298974
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -753,7 +778,7 @@ MonoBehaviour:
   Path: Ty_Os_Personal_Project2 - Audio/Build/Desktop/PlayerSFX.bank
   Name: PlayerSFX
   StudioPath: bank:/PlayerSFX
-  lastModified: 638192209009247228
+  lastModified: 638193568241747215
   FileSizes: []
   Exists: 1
 --- !u!114 &7233463715502841777
@@ -796,10 +821,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: event:/Map Audio/AmbienceVolumeTest
   Guid:
-    Data1: 14404857
-    Data2: 1212029775
-    Data3: -1518368104
-    Data4: 199532355
+    Data1: 2013448581
+    Data2: 1148562133
+    Data3: 483627663
+    Data4: -1750783561
   Banks:
   - {fileID: 179265889566681318}
   IsStream: 0
@@ -808,7 +833,7 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 627
+  Length: 142
 --- !u!114 &7895908273175963307
 MonoBehaviour:
   m_ObjectHideFlags: 0

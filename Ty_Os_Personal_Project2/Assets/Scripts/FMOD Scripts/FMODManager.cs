@@ -9,12 +9,11 @@ public class FMODManager : MonoBehaviour
     // FMOD Variables \\
     [Header("FMOD Bank References")]
     [FMODUnity.BankRef]
-    public string playerSFX;
-    [FMODUnity.BankRef]
-    public string enemySFX;
+    public List<string> banks = new List<string>();
 
     [Header("FMOD Event Instances")]
     private FMOD.Studio.EventInstance volumeTest;
+    private FMODUnity.StudioEventEmitter menuMusic;
 
     [ Header("FMOD Event References")]
     public FMODUnity.EventReference masterVolumeTest;
@@ -46,10 +45,8 @@ public class FMODManager : MonoBehaviour
     // Awake is called before Start 
     void Awake()
     {
-        // Load the playerSFX FMOD bank on awake \\
-        FMODUnity.RuntimeManager.LoadBank(playerSFX, true);
-        // Load the enemySFX FMOD bank on awake \\
-        FMODUnity.RuntimeManager.LoadBank(enemySFX, true);
+        // Load all required FMOD banks
+        StartCoroutine(LoadBank(banks));
     }
     
     // Start is called before the first frame update
@@ -57,6 +54,8 @@ public class FMODManager : MonoBehaviour
     {
         // Get FMODSettings script \\
         FMODSettings = GameObject.Find("FMOD Settings").GetComponent<FMODSettings>();
+        // Get FMOD Studio Event Emitter
+        menuMusic = GameObject.Find("Main Camera").GetComponent<FMODUnity.StudioEventEmitter>();
         // Set all current volumes \\
         masterVolume = FMODSettings.masterVolume;
         playerVolume = FMODSettings.playerVolume;
@@ -67,6 +66,17 @@ public class FMODManager : MonoBehaviour
         playerVolumeSlider.value = playerVolume;
         monsterVolumeSlider.value = monsterVolume;
         ambienceVolumeSlider.value = ambienceVolume;
+        // Play the main menu music
+        //menuMusic.Play();
+    }
+
+    public void alterMusic(bool buttonHighlighted) {
+        if (buttonHighlighted) {
+            menuMusic.SetParameter("Highlighted Button", 1.0f);
+        }
+        else {
+            menuMusic.SetParameter("Highlighted Button", 0.0f);
+        }
     }
 
     // Toggles the audio settings menu \\
