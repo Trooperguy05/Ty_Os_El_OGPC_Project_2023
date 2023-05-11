@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using System;
+using UnityEngine.SceneManagement;
 
 public class FMODManager : MonoBehaviour
 {
@@ -70,10 +71,13 @@ public class FMODManager : MonoBehaviour
         monsterVolumeSlider.value = monsterVolume;
         ambienceVolumeSlider.value = ambienceVolume;
         musicVolumeSlider.value = musicVolume;
-        // Play the main menu music
-        menuMusic.Play();
+        // Play the main menu music (if in main menu scene)
+        if (SceneManager.GetActiveScene().buildIndex == 0) {
+            menuMusic.Play();
+        }
     }
 
+    // Sets the FMOD parameter to add the 3rd stereo track into the menu music \\
     public void alterMusic(bool buttonHighlighted) {
         if (buttonHighlighted) {
             menuMusic.SetParameter("Highlighted Button", 1.0f);
@@ -176,7 +180,7 @@ public class FMODManager : MonoBehaviour
             }
         }
         else {
-            for (float i = musicVolume; i > musicVolume; i -= 1.0f) {
+            for (float i = musicVolume; i > 0; i -= 1.0f) {
                 FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Music Volume", i);
                 yield return null;
             }
@@ -186,11 +190,9 @@ public class FMODManager : MonoBehaviour
     // Wrapper for the slider to interact with \\
     public void fadeMusicWrapper(bool fadeUp) {
         if (fadeUp) {
-            StopCoroutine(fadeMusic(false));
             StartCoroutine(fadeMusic(true));
         }
         else {
-            StopCoroutine(fadeMusic(true));
             StartCoroutine(fadeMusic(false));
         }
     }
