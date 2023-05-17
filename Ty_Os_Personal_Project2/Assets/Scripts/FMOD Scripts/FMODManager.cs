@@ -21,6 +21,7 @@ public class FMODManager : MonoBehaviour
     public FMODUnity.EventReference playerVolumeTest;
     public FMODUnity.EventReference monsterVolumeTest;
     public FMODUnity.EventReference ambienceVolumeTest;
+    public FMODUnity.EventReference musicVolumeTest;
 
     // Unity Variables \\
     [Header("GameObjects")]
@@ -155,25 +156,19 @@ public class FMODManager : MonoBehaviour
         testAudio(ambienceVolumeTest);
     }
 
-    // Changes the music bus fader \\
-    public IEnumerator changeMusicVolume() {
-        while (true) {
-            musicVolume = musicVolumeSlider.value;
-            FMODSettings.musicVolume = musicVolume;
-            FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Music Volume", musicVolume);
-            yield return null;
-        }
-    }
-
     // Wrapper for the changeMusicVolume coroutine \\
-    public void changeMusicVolume(bool stop) {
-        if (stop) StopCoroutine(changeMusicVolume());
-        else StartCoroutine(changeMusicVolume());
+    public void changeMusicVolume() {
+        musicVolume = musicVolumeSlider.value;
+        FMODSettings.musicVolume = musicVolume;
+        FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Music Volume", musicVolume);
+        testAudio(musicVolumeTest);
     }
 
     // Fade the music down while interacting with another slider \\
-    public IEnumerator fadeMusic(bool fadeUp) {
+    private IEnumerator fadeMusic(bool fadeUp) {
         if (fadeUp) {
+            FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Music Volume", 0.0f);
+            menuMusic.EventInstance.setPaused(false);
             for (float i = 0; i < musicVolume; i += 1.0f) {
                 FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Music Volume", i);
                 yield return null;
@@ -184,17 +179,13 @@ public class FMODManager : MonoBehaviour
                 FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Music Volume", i);
                 yield return null;
             }
+            menuMusic.EventInstance.setPaused(true);
         }
     }
 
-    // Wrapper for the slider to interact with \\
     public void fadeMusicWrapper(bool fadeUp) {
-        if (fadeUp) {
-            StartCoroutine(fadeMusic(true));
-        }
-        else {
-            StartCoroutine(fadeMusic(false));
-        }
+        if (fadeUp) StartCoroutine(fadeMusic(true));
+        else StartCoroutine(fadeMusic(false));
     }
 
     // Create the test audio instance \\
