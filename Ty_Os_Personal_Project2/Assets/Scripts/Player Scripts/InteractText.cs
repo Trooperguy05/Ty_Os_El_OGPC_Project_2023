@@ -8,6 +8,7 @@ public class InteractText : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI text;
 
+    // updates the interact text to match the string
     public void updateText(string n){
         text.text = n;
     }

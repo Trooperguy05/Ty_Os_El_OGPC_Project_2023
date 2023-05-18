@@ -4,25 +4,28 @@ using UnityEngine;
 
 public class BatteryLight : MonoBehaviour
 {
+    // battery variables
     public Material mat;
     private PlayerInteract pI;
     private BatteryGenerator bG;
     public GameObject explosion;
     public float batteryCharge = 10f;
 
+    // get objects on awake
     void Awake() {
         mat = GetComponent<Renderer>().material;
         pI = GameObject.Find("Player").GetComponent<PlayerInteract>();
         bG = GameObject.Find("Battery Generator").GetComponent<BatteryGenerator>();
     }
 
-    ///*
+    // FOR TESTING PURPOSES
+    /*
     void Update() {
         if (Input.GetKeyDown(KeyCode.E) && pI.holdingBattery) {
             updateCharge(-1f);
         }
     }
-    //*/
+    */
     
 
     // updates the emission light of the battery based on the charge

@@ -7,14 +7,12 @@ public class Mine : Interactable
     public GameObject explosion;
 
     protected override void Interact() {
-        //Debug.Log("Interacted with " + gameObject.name);
-
-        // destroy the battery after depleting the battery charge
+        // find if the player has a battery in their hand
         GameObject foo = GameObject.Find("Object Grip");
         if (foo.transform.childCount == 0) {
             return;
         }
-
+        // destroy the battery & mine after depleting the battery charge
         BatteryLight bL = foo.transform.GetChild(0).GetComponent<BatteryLight>();
         if (bL.batteryCharge >= 2) {
             bL.updateCharge(-2f);

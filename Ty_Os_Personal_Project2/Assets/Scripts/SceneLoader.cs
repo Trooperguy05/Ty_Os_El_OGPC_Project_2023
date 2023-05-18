@@ -34,13 +34,15 @@ public class SceneLoader : MonoBehaviour
 
     // method that loads the next scene based on the build index given \\
     public IEnumerator loadScene(int index) {
+        // loading screen
         GameObject loadingScreen = GameObject.Find("Loading Screen");
         loadingScreen.transform.GetChild(0).gameObject.SetActive(true);
         loadingScreen.transform.GetChild(1).gameObject.SetActive(true);
+        
         // invoke the beforescenechanged event
         if (beforeSceneChanged != null) beforeSceneChanged.Invoke();
         
-        // load the scene
+        // start to load the scene
         AsyncOperation aO = SceneManager.LoadSceneAsync(index);
         aO.allowSceneActivation = false;
 

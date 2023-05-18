@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerInteract : MonoBehaviour
 {
+    // important variables
     public bool holdingBattery;
     public bool canInteract = true;
     private Camera cam;

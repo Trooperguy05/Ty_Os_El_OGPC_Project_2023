@@ -4,12 +4,14 @@ using UnityEngine;
 
 public class BatteryMine : MonoBehaviour
 {
+    // sound variables
     public bool inEarshot = false;
     public float baseSoundSensitivity;
     [SerializeField] private float soundSensitivity;
     private PlayerSoundRadius pSR;
     private GameObject player;
 
+    // get objects
     void Start() {
         player = GameObject.Find("Player");
         pSR = player.GetComponent<PlayerSoundRadius>();
@@ -26,6 +28,7 @@ public class BatteryMine : MonoBehaviour
             soundSensitivity = baseSoundSensitivity;
         }
 
+        // if the player is within earshot and makes too much noise
         if (inEarshot && pSR.soundValue >= soundSensitivity) {
             // destroy battery in hand \\
             // check for battery

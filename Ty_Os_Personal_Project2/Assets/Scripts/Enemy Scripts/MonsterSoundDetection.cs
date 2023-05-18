@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class MonsterSoundDetection : MonoBehaviour
 {
+    // sound variables
     public bool inEarshot = false;
     public float baseSoundSensitivity;
     public float soundSensitivity;
@@ -27,6 +28,7 @@ public class MonsterSoundDetection : MonoBehaviour
 
     // sound detection
     void OnTriggerEnter(Collider col) {
+        // when player is within range to be heard
         if (col.gameObject.tag == "player sound") {
             inEarshot = true;
 
@@ -34,6 +36,7 @@ public class MonsterSoundDetection : MonoBehaviour
         }
     }
     void OnTriggerExit(Collider col) {
+        // when player is out of range
         if (col.gameObject.tag == "player sound") {
             inEarshot = false;
         }

@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PersistThroughLoad : MonoBehaviour
 {
+    // bools to better help the object persist through load
     public bool initialized = false;
     public bool isCanvas = false;
 

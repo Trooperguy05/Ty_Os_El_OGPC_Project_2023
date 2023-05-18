@@ -2,6 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/*
+THIS CODE IS NOT BEING USED ANYMORE IN THE PROJECT
+---
+HOWEVER IT IS BEING LEFT IN BECAUSE THIS WAS THE ORIGINAL VERSION OF THE PLAYER'S
+MOVEMENT CONTROLLER
+*/
 public class PlayerMovement : MonoBehaviour
 {
     [Header("Keybinds")]

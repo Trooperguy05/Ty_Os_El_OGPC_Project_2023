@@ -33,8 +33,6 @@ public class ConsoleMenu : MonoBehaviour
     private float staminaConsumption;
     private int roomNum;
     
-    
-    
     void Start() {
         // Get stuff \\
         mouseLook = GameObject.Find("Main Camera").GetComponent<MouseLook>();

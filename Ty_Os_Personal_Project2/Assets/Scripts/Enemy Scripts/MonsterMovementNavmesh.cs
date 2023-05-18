@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.AI;
 using System.Linq;
 
+// state machine template
 public interface IState
 {
     public string name { get; }
@@ -12,10 +13,13 @@ public interface IState
     public void Exit();
 }
 
+// monster state machine
 public class MonsterStateMachine
 {
+    // the current state
     public IState currentState;
- 
+    
+    // when state changes
     public void ChangeState(IState newState)
     {
         if (currentState != null) currentState.Exit();
@@ -23,7 +27,7 @@ public class MonsterStateMachine
         currentState = newState;
         currentState.Enter();
     }
- 
+    
     public void Update()
     {
         if (currentState != null) currentState.Execute();

@@ -21,6 +21,7 @@ public class PlayerDead : MonoBehaviour
     [Header("FMOD Buses")]
     private FMOD.Studio.Bus mBus;
 
+    // get objects
     void Start() {
         pI = GetComponent<PlayerInteract>();
         sL = GameObject.Find("Scene Loader").GetComponent<SceneLoader>();
@@ -48,7 +49,7 @@ public class PlayerDead : MonoBehaviour
     }
     public void playerFail_wrapper() { StartCoroutine(playerFail()); }
 
-    // method that fades out
+    // method that fades in the red fail "image"
     private IEnumerator fadeIn() {
         fading = true;
         float duration = 1.5f;

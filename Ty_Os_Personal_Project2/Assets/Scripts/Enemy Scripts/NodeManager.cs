@@ -2,6 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/*
+THIS CODE IS NOT BEING USED ANYMORE IN THE PROJECT
+---
+HOWEVER IT IS BEING LEFT IN BECAUSE I (OL) PUT A LOT OF EFFORT INTO IT
+AND DON'T WANT IT TO GO TO WASTE
+*/
 public class NodeManager : MonoBehaviour
 {   
     [Header("Tag List")]

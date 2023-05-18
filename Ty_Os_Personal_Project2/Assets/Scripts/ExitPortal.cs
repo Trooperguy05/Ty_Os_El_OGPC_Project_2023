@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class ExitPortal : MonoBehaviour
 {
+    // when the player goes through the exit portal (they win)
     void OnTriggerEnter(Collider col) {
         if (col.gameObject.tag == "Player") {
             GameObject.Find("Main Camera").GetComponent<MouseLook>().unlockMouse();
