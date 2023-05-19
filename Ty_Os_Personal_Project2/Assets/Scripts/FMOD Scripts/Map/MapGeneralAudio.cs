@@ -29,23 +29,16 @@ public class MapGeneralAudio : MonoBehaviour
     void Start()
     {
         FMODManager = GameObject.Find("FMOD Manager").GetComponent<FMODManager>();
-        exitPedestalCharge = GameObject.Find("Exit Pedestal").GetComponent<ExitPedestalCharge>();
+        exitPedestalCharge = GameObject.Find("Battery Holder").GetComponent<ExitPedestalCharge>();
     }
     
     // Play the open doors event for both doors and unload the bank once finished\\
     public IEnumerator playOpenDoorsEvent() {
-        leftDoorEmitter.Play();
-        rightDoorEmitter.Play();
-        while (rightDoorEmitter.IsPlaying()) { yield return null; }
-        FMODManager.UnloadBank(mapGeneralBank);
+        yield return null;
     }
 
     // Load the bank and play the pedestal event \\
     public IEnumerator playPedestalEvent() {
-        FMODManager.LoadBank(mapGeneralBank);
-        while (!FMODUnity.RuntimeManager.HaveAllBanksLoaded) { yield return null; }
-        pedestalEmitter.Play();
-        if (exitPedestalCharge.chargedPedestal) StartCoroutine(playOpenDoorsEvent());
-        else { FMODManager.UnloadBank(mapGeneralBank); }
+        yield return null;
     }
 }

@@ -565,11 +565,11 @@ MonoBehaviour:
   CollisionTag: 
   EventReference:
     Guid:
-      Data1: -636945458
-      Data2: 1320826236
-      Data3: 862819759
-      Data4: 1822991051
-    Path: event:/MasterVolumeTest
+      Data1: -854503710
+      Data2: 1189517713
+      Data3: 2026645663
+      Data4: -476732626
+    Path: event:/Empty Event
   Event: 
   PlayEvent: 0
   StopEvent: 0
@@ -6140,11 +6140,11 @@ MonoBehaviour:
   CollisionTag: 
   EventReference:
     Guid:
-      Data1: -636945458
-      Data2: 1320826236
-      Data3: 862819759
-      Data4: 1822991051
-    Path: event:/MasterVolumeTest
+      Data1: -854503710
+      Data2: 1189517713
+      Data3: 2026645663
+      Data4: -476732626
+    Path: event:/Empty Event
   Event: 
   PlayEvent: 0
   StopEvent: 0
