@@ -39,7 +39,7 @@ MonoBehaviour:
   Path: Ty_Os_Personal_Project2 - Audio/Build/Desktop/MapGeneral.bank
   Name: MapGeneral
   StudioPath: bank:/Map Banks/MapGeneral
-  lastModified: 638199109912740253
+  lastModified: 638199119198582671
   FileSizes: []
   Exists: 1
 --- !u!114 &-6215915766137678237
@@ -105,7 +105,7 @@ MonoBehaviour:
   Path: Ty_Os_Personal_Project2 - Audio/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638199109903867489
+  lastModified: 638199119195706205
   FileSizes:
   - Name: 
     Value: 3064
@@ -229,7 +229,7 @@ MonoBehaviour:
   Path: Ty_Os_Personal_Project2 - Audio/Build/Desktop/MapRedHerrings.bank
   Name: MapRedHerrings
   StudioPath: bank:/Map Banks/MapRedHerrings
-  lastModified: 638199109914826270
+  lastModified: 638199119199121222
   FileSizes: []
   Exists: 1
 --- !u!114 &-1013792513786639869
@@ -247,7 +247,7 @@ MonoBehaviour:
   Path: Ty_Os_Personal_Project2 - Audio/Build/Desktop/Music.bank
   Name: Music
   StudioPath: bank:/Music
-  lastModified: 638199109907215238
+  lastModified: 638199119196484136
   FileSizes: []
   Exists: 1
 --- !u!114 &11400000
@@ -299,7 +299,7 @@ MonoBehaviour:
   - {fileID: 179265889566681318}
   StringsBanks:
   - {fileID: -5572513999379644840}
-  cacheTime: 638199109914826270
+  cacheTime: 638199119199121222
   cacheVersion: 131601
 --- !u!114 &80377485975911677
 MonoBehaviour:
@@ -370,7 +370,7 @@ MonoBehaviour:
   Path: Ty_Os_Personal_Project2 - Audio/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638199109903817615
+  lastModified: 638199119195656348
   FileSizes: []
   Exists: 1
 --- !u!114 &386043967843703011
@@ -628,7 +628,7 @@ MonoBehaviour:
   Path: Ty_Os_Personal_Project2 - Audio/Build/Desktop/EnemySFX.bank
   Name: EnemySFX
   StudioPath: bank:/EnemySFX
-  lastModified: 638199109900343240
+  lastModified: 638199119195057940
   FileSizes: []
   Exists: 1
 --- !u!114 &4230921337214347839
@@ -806,7 +806,7 @@ MonoBehaviour:
   Path: Ty_Os_Personal_Project2 - Audio/Build/Desktop/PlayerSFX.bank
   Name: PlayerSFX
   StudioPath: bank:/PlayerSFX
-  lastModified: 638199109911349743
+  lastModified: 638199119198309247
   FileSizes: []
   Exists: 1
 --- !u!114 &7233463715502841777
