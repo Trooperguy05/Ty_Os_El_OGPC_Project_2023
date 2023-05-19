@@ -2183,13 +2183,20 @@ MonoBehaviour:
       Data3: 483627663
       Data4: -1750783561
     Path: event:/Map Audio/AmbienceVolumeTest
+  musicVolumeTest:
+    Guid:
+      Data1: -1393966012
+      Data2: 1149721226
+      Data3: -1817100646
+      Data4: -1107498250
+    Path: event:/Music lol/MusicVolumeTest
   audioSettings: {fileID: 1386503211}
   pauseMenu: {fileID: 720178927}
   masterVolumeSlider: {fileID: 1457339872}
   playerVolumeSlider: {fileID: 1787702833}
   monsterVolumeSlider: {fileID: 245522527}
   ambienceVolumeSlider: {fileID: 513036639}
-  musicVolumeSlider: {fileID: 0}
+  musicVolumeSlider: {fileID: 709804011}
 --- !u!4 &587026405
 Transform:
   m_ObjectHideFlags: 0
@@ -2222,11 +2229,11 @@ MonoBehaviour:
   pedestalEmitter: {fileID: 0}
   batteryEventReference:
     Guid:
-      Data1: 990589657
-      Data2: 1088836545
-      Data3: -648942949
-      Data4: 2044550748
-    Path: event:/Test Event
+      Data1: -854503710
+      Data2: 1189517713
+      Data3: 2026645663
+      Data4: -476732626
+    Path: event:/Empty Event
 --- !u!1 &590238842
 GameObject:
   m_ObjectHideFlags: 0
